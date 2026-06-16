@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS reset file -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Card-4</title>
+  </head>
+  <body>
+    <!-- Project from: https://www.uidesigndaily.com/posts/sign-in-ui-design -->
+
+    <main class="index-page">
+      <section class="card-section">
+        <!-- Card -->
+        <div class="card">
+          <h2 class="card__heading">You are signed out</h2>
+          <p class="card__subtext">Sign in to get the best experience</p>
+
+          <div class="card__buttons">
+            <button class="auth-button auth-button--email">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="card__icon card__icon--email"
+              >
+                <path
+                  d="M17.4167 4.58334H4.58333C3.57081 4.58334 2.75 5.40415 2.75 6.41668V15.5833C2.75 16.5959 3.57081 17.4167 4.58333 17.4167H17.4167C18.4292 17.4167 19.25 16.5959 19.25 15.5833V6.41668C19.25 5.40415 18.4292 4.58334 17.4167 4.58334Z"
+                  stroke="white"
+                  stroke-width="1.375"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2.75 6.41666L11 11.9167L19.25 6.41666"
+                  stroke="white"
+                  stroke-width="1.375"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Continue with email
+            </button>
+
+            <button class="auth-button auth-button--facebook">
+              <svg
+                width="12"
+                height="18"
+                viewBox="0 0 12 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="card__icon card__icon--facebook"
+              >
+                <path
+                  d="M0.6875 7.10417V10.7708H3.4375V17.1875H7.10417V10.7708H9.85417L10.7708 7.10417H7.10417V5.27083C7.10417 5.02772 7.20074 4.79456 7.37265 4.62265C7.54456 4.45074 7.77772 4.35417 8.02083 4.35417H10.7708V0.6875H8.02083C6.80526 0.6875 5.63947 1.17039 4.77993 2.02993C3.92039 2.88947 3.4375 4.05526 3.4375 5.27083V7.10417H0.6875Z"
+                  stroke="white"
+                  stroke-width="1.375"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Continue with Facebook
+            </button>
+          </div>
+
+          <p class="card__disclaimer card__disclaimer--tos">
+            By continuing, you agree to our
+            <a href="#" class="card__link card__link--tos">Terms of Service</a>
+          </p>
+          <p class="card__disclaimer card__disclaimer--policy">
+            and acknowledge you’ve read our
+            <a href="#" class="card__link card__link--policy">Privacy Policy</a
+            >.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

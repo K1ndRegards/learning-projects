@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS reset file -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <!-- Project from: https://www.uidesigndaily.com/posts/edit-availability -->
+    <main class="index-page">
+      <!-- Section with the form -->
+      <section class="form-section">
+        <!-- Form container -->
+        <div class="form-face">
+          <h2 class="form-face__heading">Edit availability</h2>
+
+          <p class="form-face__context">
+            Add a “Hire me” button to let know that you’re available for new
+            opportunities
+          </p>
+
+          <!-- The form -->
+          <form action="#" class="form-face__form">
+            <!-- Custom checkbox -->
+            <label class="form-face__option">
+              <input
+                type="checkbox"
+                name="availability"
+                class="form-face__check-input"
+              />
+              <span class="form-face__check-box"></span>
+              <span class="form-face__label-text">Full time</span>
+            </label>
+
+            <!-- Custom checkbox -->
+            <label class="form-face__option">
+              <input
+                type="checkbox"
+                name="occupations"
+                class="form-face__check-input"
+              />
+              <span class="form-face__check-box"></span>
+              <span class="form-face__label-text">Freelance & Projects</span>
+            </label>
+
+            <div class="form-face__buttons">
+              <button type="submit" class="btn btn--primary">Done</button>
+              <button type="button" class="btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

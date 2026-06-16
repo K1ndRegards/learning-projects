@@ -1,0 +1,84 @@
+/* Variables */
+
+:root {
+  /* Colors */
+  --primary-color: #d5d4f0;
+  --secondary-color: #d1d0f5;
+  --background-color: #f5f5fd;
+  --white: #fff;
+  --black: #000;
+
+  /* Spacing scale */
+  /* Space scaling from Figma layout */
+  /* 8 16 32 90 */
+  --space-1: 0.8rem;
+  --space-2: 1.6rem;
+  --space-3: 3.2rem;
+  --custom-space: 9rem;
+
+  /* Typography scale */
+  /* Typography scaling from Figma layout */
+  /* 18 24 26 28*/
+  --font-sm: 1.8rem;
+  --font-base: 2.4rem;
+  --font-lg: 2.6rem;
+  --font-xl: 2.8rem;
+}
+
+/* General */
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Progress card styling */
+.progress-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.progress-card {
+  border-radius: 3rem;
+  padding: var(--custom-space);
+  background-color: var(--white);
+  box-shadow: -5rem -5rem 1px var(--primary-color);
+}
+
+.progress-card__header {
+  margin-bottom: var(--space-3);
+  font-family: Merriweather, serif;
+  font-size: var(--font-lg);
+  font-weight: 900;
+}
+
+.progress-card__info {
+  display: flex;
+  align-items: center;
+}
+
+.progress-card__percent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--space-2);
+  border-radius: 50%;
+  border: 8px solid var(--secondary-color);
+  box-shadow: 0px 15px 34px var(--secondary-color);
+  aspect-ratio: 1 / 1;
+  width: 11.8rem;
+  font-size: var(--font-xl);
+  font-weight: 900;
+}
+
+.progress-card__complete {
+  margin-bottom: var(--space-1);
+  font-size: var(--font-base);
+  font-weight: bold;
+}
+
+.progress-card__message {
+  font-size: var(--font-sm);
+}

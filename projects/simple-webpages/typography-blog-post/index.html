@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS reset file -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Typography Blog Post</title>
+  </head>
+  <body>
+    <main class="blog-page">
+      <section class="blog-hero">
+        <div class="blog-hero__wrapper l-container-md">
+          <h1 class="blog-hero__heading">A Blog Post</h1>
+
+          <p class="blog-hero__subtext">
+            Typography is one of the most important elements of front end design
+            and development! In this exercise, we'll play around with some of
+            the common CSS properties to manage and style our fonts by making a
+            nice blog post-like web page.
+          </p>
+        </div>
+      </section>
+
+      <p class="blog-page__info">
+        12.31.2050 | <span class="t-highlight">ALL ABOUT CSS BLOG</span>
+      </p>
+
+      <!-- Typography section -->
+      <section class="typography">
+        <div class="typography__wrapper l-container-sm">
+          <h2 class="typography__heading">All About Typography</h2>
+
+          <p class="typography__headline t-upper">
+            Headlines, like this one, are great ways to quickly capture the
+            reader's attention, to give them a summary, intro, or other
+            important information in a web page. You can use
+            <code class="t-highlight">text-transform: uppercase;</code>
+            to make a whole body of text uppercase using CSS if you really need
+            to grab attention!
+          </p>
+
+          <p class="typography__text-content">
+            Okay, now that we're done screaming in the headline in all caps
+            (which you should do sparingly) - it's time to chat more about other
+            components of typography. You'll notice that we chose a nice serif
+            font for our headings, and a nice sans-serif font for our body text.
+            This is intentional! Serif font faces are generally considered
+            pretty inaccessible as a body text style, since at smaller sizes
+            it's much more difficult to visually differentiate the characters
+            from one another. At large font sizes, such as those seen in most
+            headings, serif fonts are considered fine, since the larger style
+            makes it easier to see where serif characters start and where they
+            end.
+          </p>
+
+          <p class="typography__text-content">
+            But wait! What if you want more than just normal text on your page?
+            Another common thing you might see in web pages are quotes. To make
+            quotes, we can use the
+            <code class="t-highlight">blockquote</code> element and style it
+            accordingly, so it stands out a bit as a non-body text quote.
+          </p>
+
+          <blockquote class="typography__quote">
+            <p class="typography__quote-text typography__quote-text--quote">
+              "This is a quote - you probably knew that at a glance since we
+              gave it some nice styling. Pretty nice, huh? A great lesson in
+              User Experience Design, where we take special care to implement
+              our web page in a way that makes it pleasant and intuitive for our
+              users/readers. Differentiating our different typography components
+              visually makes information much more organized and easier to
+              digest for our users."
+            </p>
+            <p class="typography__quote-text typography__quote-text--author">
+              – A wise person
+            </p>
+          </blockquote>
+
+          <hr class="typography__divider" />
+        </div>
+      </section>
+
+      <!-- Heading section -->
+      <section class="heading-section">
+        <div class="heading-section__wrapper l-container-sm">
+          <h3
+            class="heading-section__heading heading-section__heading--lg t-capitalize"
+          >
+            a new section
+          </h3>
+
+          <p class="heading-section__text-content">
+            And just like that, we've got a new section of content separated by
+            a <code class="t-highlight">hr</code> element (a 'horizontal rule'
+            or a divider) and a new heading. Isn't putting content together fun?
+          </p>
+
+          <p class="heading-section__text-content">
+            Notice as well that when we entered in the
+            <code class="t-highlight">H3</code> content, it was all lowercase,
+            but now it's in a nice Title Case, where the first letter of each
+            word is capitalized. We did that with CSS! Using
+            <code class="t-highlight">text-transform: capitalize;</code> we can
+            implement title cased content.
+          </p>
+
+          <h4 class="heading-section__heading heading-section__heading--md">
+            Heading 4
+          </h4>
+
+          <p class="heading-section__text-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            vitae est dapibus, viverra metus ac, fermentum libero. Integer
+            lobortis enim ac arcu malesuada ultrices. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit.
+          </p>
+
+          <h5 class="heading-section__heading heading-section__heading--sm">
+            Heading 5
+          </h5>
+          <p class="heading-section__text-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            vitae est dapibus, viverra metus ac, fermentum libero. Integer
+            lobortis enim ac arcu malesuada ultrices. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit.
+          </p>
+
+          <h6 class="heading-section__heading heading-section__heading--xs">
+            Heading 6
+          </h6>
+
+          <p class="heading-section__text-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            vitae est dapibus, viverra metus ac, fermentum libero. Integer
+            lobortis enim ac arcu malesuada ultrices. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </section>
+
+      <!-- Font sizing section -->
+      <section class="font-sizing">
+        <div class="font-sizing__wrapper l-container-sm">
+          <h3 class="font-sizing__heading font-sizing__heading--primary">
+            Common Font Sizing Approaches
+          </h3>
+
+          <h4 class="font-sizing__heading font-sizing__heading--secondary">
+            <code class="t-highlight">px</code>(pixels)
+          </h4>
+
+          <p class="font-sizing__text-content">
+            Pixels are the simplest way to hard code your font size. By default
+            the browser sets the root font size to
+            <code class="t-highlight">16px</code>, but you can change the font
+            size in the <code class="t-highlight">body</code> element or any
+            other HTML element by setting
+            <code class="t-highlight">font-size</code> to any number of
+            <code class="t-highlight">px</code>.
+          </p>
+
+          <h4 class="font-sizing__heading font-sizing__heading--secondary">
+            <code class="t-highlight">em</code>
+          </h4>
+
+          <p class="font-sizing__text-content">
+            <code class="t-highlight">em</code> units size font relative to the
+            parent element. For example, if the
+            <code class="t-highlight">body</code> element is 16px, and a nested
+            <code class="t-highlight">div</code> element's font size is set to
+            <code class="t-highlight">1.5em</code>, the browser will multiply
+            <code class="t-highlight">16px</code> x 1.5, resulting in
+            <code class="t-highlight">24px</code> font in the
+            <code class="t-highlight">div</code>.
+          </p>
+
+          <h4 class="font-sizing__heading font-sizing__heading--secondary">
+            <code class="t-highlight">rem</code>(root em)
+          </h4>
+
+          <p class="font-sizing__text-content">
+            Root <code class="t-highlight">em</code> units are similar to em,
+            but they are relative to the root font size instead of the parent
+            element of whatever is being styled. For example, if the root font
+            size (the font size of the body element) is set to
+            <code class="t-highlight">16px</code>, and we have a
+            <code class="t-highlight">p</code> element nested many layers down
+            with a <code class="t-highlight">font-size</code> set to
+            <code class="t-highlight">2rem</code>, that paragraph will have
+            <code class="t-highlight">32px</code>
+            font. If the body font size ever changes, this paragraph will also
+            change accordingly.
+          </p>
+
+          <h4 class="font-sizing__heading font-sizing__heading--secondary">
+            Which one do I use?
+          </h4>
+
+          <p class="font-sizing__text-content">
+            Great question! Generally, people try to stick to using
+            <code class="t-highlight">em</code> or
+            <code class="t-highlight">rem</code> over
+            <code class="t-highlight">px</code>, since they make responsive
+            typography that scales up and down across different device widths
+            much easier. Using px for your font sizes is not as dynamic, and you
+            may find that writing media queries to update all the various
+            element font sizes in pixels at different screen widths is not the
+            most scalable approach to typography.
+          </p>
+
+          <p class="font-sizing__text-content">
+            Between <code class="t-highlight">em</code> and
+            <code class="t-highlight">rem</code>, rem has a nice advantage of
+            all elements being relative to one single root font value, where
+            nested elements with parent/child font size dependencies can still
+            be hard to manage with em units. When writing responsive styles, rem
+            allows you to simply update the root font size at different screen
+            sizes and all elements using rem units will adjust themselves
+            accordingly creating a super easy-to-manage typography size system.
+          </p>
+          <p class="font-sizing__text-content">
+            In small projects you may not have an issues hard coding pixelage,
+            but it's always important to understand the drawbacks of writing
+            styles that may not be responsive or dynamic.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <nav class="main-footer__nav">
+        <ul class="main-footer__list">
+          <li class="main-footer__list-item">
+            <a href="#" class="main-footer__link">Privacy Policy</a>
+          </li>
+          <li class="main-footer__list-item">
+            <a href="#" class="main-footer__link">Terms & Conditions</a>
+          </li>
+          <li class="main-footer__list-item">
+            <a href="#" class="main-footer__link">About</a>
+          </li>
+          <li class="main-footer__list-item">
+            <a href="#" class="main-footer__link">Contact Us</a>
+          </li>
+          <li class="main-footer__list-item">
+            <a href="#" class="main-footer__link">More Info</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

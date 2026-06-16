@@ -1,0 +1,122 @@
+/* Variables */
+:root {
+  /* Colors */
+  --primary-color: #1d284e;
+  --background-color: #f3f7fc;
+  --facebook-color: #227bef;
+  --white: #fff;
+  --black: #000;
+
+  /* Spacing scale from layout */
+  /* 8px 10px 16px 24px 54px 62px */
+  --space-1: 0.8rem;
+  --space-2: 1rem;
+  --space-3: 1.6rem;
+  --space-4: 2.4rem;
+  --space-5: 5.4rem;
+  --space-6: 6.2rem;
+
+  /* Typography scale from layout */
+  /* 14px 18px 32px */
+  --font-sm: 1.4rem;
+  --font-base: 1.8rem;
+  --font-lg: 3.2rem;
+}
+
+/* General styles */
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Page styling */
+.card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+/* Card styling */
+.card {
+  position: relative;
+  box-shadow: 0 44px 84px rgba(27, 57, 134, 0.12);
+  border-radius: 40px;
+  padding: var(--space-5);
+  background-color: var(--white);
+}
+
+.card::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: -68px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  height: 100%;
+  width: 120%;
+  background-color: var(--primary-color);
+}
+
+.card__heading {
+  margin-bottom: var(--space-1);
+  font-family: 'Merriweather', serif;
+  font-size: var(--font-lg);
+  font-weight: 700;
+}
+
+.card__subtext {
+  margin-bottom: var(--space-6);
+  font-size: var(--font-base);
+}
+
+.card__buttons {
+  display: flex;
+  column-gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.auth-button {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+  border-radius: 16px;
+  border: none;
+  padding: var(--space-4);
+  cursor: pointer;
+  font-size: var(--font-base);
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.auth-button:hover {
+  opacity: 0.9;
+}
+
+.auth-button--email {
+  background-color: var(--primary-color);
+}
+
+.auth-button--facebook {
+  background-color: var(--facebook-color);
+}
+
+.card__icon {
+  margin-right: var(--space-2);
+}
+
+.card__disclaimer {
+  font-size: var(--font-sm);
+}
+
+.card__link {
+  text-decoration: underline;
+}
+
+.card__disclaimer--tos {
+  margin-bottom: var(--space-1);
+}
