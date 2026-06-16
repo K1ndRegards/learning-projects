@@ -1,7 +1,6 @@
 # Learning Projects
 
-A structured collection of practice components, simple webpages, and learning projects created while studying frontend development.  
-This repository is not a reusable component library — it is a personal space for experimenting, practicing, and improving skills in HTML, CSS, JavaScript, and other frontend technologies.
+A structured collection of practice components, simple webpages, and learning projects created while studying frontend development.
 
 ---
 
@@ -11,19 +10,14 @@ The project is organized into two main areas: **components** and **projects**.
 
 ### **Components**
 
-Small, focused UI elements built for practice.  
-These are not meant to be reused as a library — each component is an isolated exercise based on layouts, mockups, or personal ideas.
+Small, focused UI elements built for practice where each component is an isolated exercise based on layouts, mockups, or personal ideas.
 
 Located in:  
 `/components/`
 
 #### Static Components
 
-Pure HTML/CSS components such as:
-
-- Cards
-- Forms
-- Basic UI blocks
+Pure HTML/CSS components.
 
 `/components/static-components/`
 
