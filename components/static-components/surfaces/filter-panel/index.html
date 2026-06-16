@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS reset file -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Filter Panel</title>
+  </head>
+  <body>
+    <!-- Project from: https://www.uidesigndaily.com/posts/filter -->
+
+    <main class="index-page">
+      <section class="filter-hero">
+        <div class="filter-wrapper">
+          <div class="filter">
+            <form action="#" class="filter__form">
+              <input
+                type="text"
+                class="filter__search-input"
+                name="search"
+                id="search"
+                placeholder="Add an industry"
+              />
+
+              <!-- Custom checkbox fields -->
+              <div class="filter__checkbox-fields">
+                <!-- Agriculture -->
+                <label for="agriculture" class="filter__check">
+                  <input
+                    type="checkbox"
+                    name="agriculture"
+                    id="agriculture"
+                    class="filter__check-input"
+                  />
+                  <span class="filter__check-box"></span>
+                  <span class="filter__check-text">Agriculture</span>
+                </label>
+
+                <!-- Air Transport -->
+                <label for="air-transport" class="filter__check">
+                  <input
+                    type="checkbox"
+                    name="air-transport"
+                    id="air-transport"
+                    class="filter__check-input"
+                  />
+                  <span class="filter__check-box"></span>
+                  <span class="filter__check-text">Air Transport</span>
+                </label>
+
+                <!-- Business Services -->
+                <label for="business-services" class="filter__check">
+                  <input
+                    type="checkbox"
+                    name="business-services"
+                    id="business-services"
+                    class="filter__check-input"
+                  />
+                  <span class="filter__check-box"></span>
+                  <span class="filter__check-text">Business Services</span>
+                </label>
+
+                <!-- Construction -->
+                <label for="construction" class="filter__check">
+                  <input
+                    type="checkbox"
+                    name="construction"
+                    id="construction"
+                    class="filter__check-input"
+                  />
+                  <span class="filter__check-box"></span>
+                  <span class="filter__check-text">Construction</span>
+                </label>
+
+                <!-- Dairy -->
+                <label for="dairy" class="filter__check">
+                  <input
+                    type="checkbox"
+                    name="dairy"
+                    id="dairy"
+                    class="filter__check-input"
+                  />
+                  <span class="filter__check-box"></span>
+                  <span class="filter__check-text">Dairy</span>
+                </label>
+
+                <!-- Education -->
+                <label for="education" class="filter__check">
+                  <input
+                    type="checkbox"
+                    name="education"
+                    id="education"
+                    class="filter__check-input"
+                  />
+                  <span class="filter__check-box"></span>
+                  <span class="filter__check-text">Education</span>
+                </label>
+
+                <!-- Health -->
+                <label for="health" class="filter__check">
+                  <input
+                    type="checkbox"
+                    name="health"
+                    id="health"
+                    class="filter__check-input"
+                  />
+                  <span class="filter__check-box"></span>
+                  <span class="filter__check-text">Health</span>
+                </label>
+              </div>
+
+              <!-- Buttons -->
+              <div class="filter__buttons">
+                <button
+                  type="reset"
+                  class="filter__button filter__button--reset"
+                >
+                  Reset
+                </button>
+                <button
+                  type="submit"
+                  class="filter__button filter__button--show"
+                >
+                  Show results
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
