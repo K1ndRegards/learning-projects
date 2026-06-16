@@ -38,12 +38,7 @@ Located in:
 
 #### Simple Webpages
 
-Small, single‑page exercises:
-
-- Landing sections
-- Blog pages
-- Login pages
-- Mini layouts
+Small, single‑page exercises.
 
 `/projects/simple-webpages/`
 
