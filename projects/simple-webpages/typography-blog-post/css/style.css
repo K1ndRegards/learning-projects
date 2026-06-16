@@ -71,6 +71,10 @@ p {
   color: var(--secondary-color);
 }
 
+code.t-highlight {
+  font-family: monospace;
+}
+
 .t-upper {
   text-transform: uppercase;
 }
@@ -153,8 +157,10 @@ p {
 }
 
 .typography__quote-text--author {
+  display: block;
   margin-left: var(--space-3);
   font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 /* Heading section */
