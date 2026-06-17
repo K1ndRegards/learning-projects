@@ -1,0 +1,152 @@
+/* Variables */
+:root {
+  /* Colors */
+  --white: #fff;
+  --black: #000;
+
+  /* Spacing scale */
+  /* Spacing from layout: */
+  /* 8px 16px 32px 40px 48px 56px 64px 100px 200px*/
+  --space-1: 0.8rem;
+  --space-2: 1.6rem;
+  --space-3: 3.2rem;
+  --space-4: 4rem;
+  --space-5: 4.8rem;
+  --space-6: 5.6rem;
+  --space-7: 6.4rem;
+  --space-xxl: 10rem;
+  --space-xxxl: 20rem;
+
+  /* Typography scale */
+  /* Font-sizes from layout: */
+  /* 20px 24px 32px 40px*/
+  --font-sm: 2rem;
+  --font-base: 2.4rem;
+  --font-lg: 3.2rem;
+  --font-xl: 4rem;
+  --font-2xl: 4.8rem;
+}
+
+/* General styles */
+
+body {
+  margin: var(--space-1);
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
+}
+
+/* Utilities */
+.container {
+  margin-top: var(--space-xxl);
+  margin-left: var(--space-xxxl);
+  width: 40%;
+  min-width: 600px;
+}
+
+.u-underline {
+  border-bottom: 1px solid var(--black);
+}
+
+/* Main header styling */
+.main-header {
+  display: flex;
+  align-items: center;
+  margin: var(--space-3);
+}
+
+.main-header__logo {
+  margin-right: var(--space-3);
+  font-size: var(--font-lg);
+  font-weight: 300;
+}
+
+.main-header__nav-list {
+  display: flex;
+  margin: var(--space-2) 0;
+}
+
+.main-header__nav-link {
+  margin: 0 var(--space-1);
+  /* So that the links don't jump when hovered */
+  border-bottom: 1px solid transparent;
+  font-size: var(--font-sm);
+}
+
+.main-header__nav-link--current {
+  border-bottom: 1px solid var(--black);
+}
+
+.main-header__nav-link:hover {
+  border-bottom: 1px solid var(--black);
+}
+
+/* Index/Home page styling */
+/* Gallery section */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: var(--space-2);
+}
+
+.gallery__product-card {
+  padding: var(--space-2);
+}
+
+.gallery__product-image {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery__product-image:hover {
+  opacity: 0.9;
+}
+
+.gallery__product-name {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: var(--font-base);
+}
+
+/* About section */
+.about__heading {
+  font-size: var(--font-2xl);
+  margin-bottom: var(--space-7);
+}
+
+.about__text,
+.about__slogan {
+  font-size: var(--font-xl);
+  line-height: 1.4;
+}
+
+.about__text {
+  margin: var(--space-4) 0;
+}
+
+.about__slogan {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-1);
+}
+
+/* Main Footer Styling */
+.main-footer {
+  margin-bottom: var(--space-xxl);
+}
+
+.main-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: var(--font-sm);
+  line-height: normal;
+}
+
+.main-footer__link {
+  /* So that links don't jump when hovered */
+  border-bottom: 1px solid transparent;
+}
+
+.main-footer__link:hover {
+  border-bottom: 1px solid var(--black);
+}
