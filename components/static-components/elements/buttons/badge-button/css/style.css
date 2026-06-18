@@ -1,0 +1,53 @@
+body {
+  background: linear-gradient(45deg, #0271ae, #0288d1);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Floating shadow */
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  border: 2px solid #fff;
+  padding: 125px 0;
+  width: 500px;
+  background: radial-gradient(#0288d1, #0271ae);
+}
+
+/* Button */
+.badge-button {
+  position: relative;
+  display: inline-block;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 2px solid #fff;
+  padding: 1.5rem 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.badge-button__badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  width: 30px;
+  height: 30px;
+  background-color: #4caf50;
+}
