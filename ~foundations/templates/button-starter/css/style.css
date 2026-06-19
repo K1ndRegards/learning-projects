@@ -1,22 +1,22 @@
 /* Variables */
 :root {
   /* Colors */
-  --primary-color: #0288d1;
-  --secondary-color: #0271ae;
+  --primary-color: #0271ae;
+  --secondary-color: #0288d1;
   --white: #fff;
   --black: #000;
 
   /* Webpage main background */
   --main-background: linear-gradient(
     45deg,
-    var(--secondary-color),
-    var(--primary-color)
+    var(--primary-color),
+    var(--secondary-color)
   );
 
   /* Card background */
   --secondary-background: radial-gradient(
-    var(--primary-color),
-    var(--secondary-color)
+    var(--secondary-color),
+    var(--primary-color)
   );
 
   /* Shadow */

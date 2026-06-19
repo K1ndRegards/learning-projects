@@ -1,8 +1,8 @@
 /* Variables */
 :root {
   /* Colors */
-  --primary-color: #0271ae;
-  --secondary-color: #0288d1;
+  --primary-color: #3899ee;
+  --secondary-color: #38e2ee;
   --white: #fff;
   --black: #000;
 
@@ -14,10 +14,7 @@
   );
 
   /* Card background */
-  --secondary-background: radial-gradient(
-    var(--secondary-color),
-    var(--primary-color)
-  );
+  --secondary-background: transparent;
 
   /* Shadow */
   --shadow-default:
@@ -36,7 +33,7 @@
 
 body {
   background: var(--main-background);
-  font-family: 'DM Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero {
@@ -51,6 +48,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  column-gap: 3rem;
 
   box-shadow: var(--shadow-default);
   border-radius: var(--card-border-radius);
@@ -60,40 +58,40 @@ body {
   background: var(--secondary-background);
 }
 
-/* Button */
-.badge-button {
-  position: relative;
-  display: inline-block;
+/* Buttons */
+.button {
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
 
-  transition: background-color 0.3s;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
 
-  box-shadow: var(--shadow-default);
-  border-radius: 4px;
-  border: 2px solid var(--white);
-  padding: 1.5rem 3rem;
+  border-radius: 10px;
+  padding: 2.4rem 4.8rem;
 
-  background-color: rgba(0, 0, 0, 0.1);
-  font-size: 1.6rem;
-  color: #fff;
+  background: var(--white);
+  font-size: 4rem;
+  color: var(--primary-color);
 }
 
-.badge-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+.button-elevated:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18),
+    0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
-.badge-button__badge {
-  position: absolute;
-  top: -10px;
-  right: -10px;
+.button-lowered {
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18),
+    0 6px 12px rgba(0, 0, 0, 0.12);
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 50%;
-  border: 2px solid #fff;
-  width: 30px;
-  height: 30px;
-
-  background-color: #4caf50;
+.button-lowered:hover {
+  transform: scale(0.95);
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
 }
