@@ -36,7 +36,7 @@
 
 body {
   background: var(--main-background);
-  font-family: 'DM Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero {
@@ -61,39 +61,3 @@ body {
 }
 
 /* Button */
-.badge-button {
-  position: relative;
-  display: inline-block;
-
-  transition: background-color 0.3s;
-
-  box-shadow: var(--shadow-default);
-  border-radius: 4px;
-  border: 2px solid var(--white);
-  padding: 1.5rem 3rem;
-
-  background-color: rgba(0, 0, 0, 0.1);
-  font-size: 1.6rem;
-  color: #fff;
-}
-
-.badge-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.badge-button__badge {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 50%;
-  border: 2px solid #fff;
-  width: 30px;
-  height: 30px;
-
-  background-color: #4caf50;
-}
