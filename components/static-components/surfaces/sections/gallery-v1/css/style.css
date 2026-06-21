@@ -2,8 +2,8 @@
 :root {
   /* Colors */
   --font-color: #0e0e38;
-  --bg-color--primary: #d8dae2;
-  --bg-color--secondary: #eff0f1;
+  --bg-color-primary: #d8dae2;
+  --bg-color-secondary: #eff0f1;
   --circle-background: #e5e7f0;
   --white: #fff;
   --black: #000;
@@ -27,7 +27,7 @@
 /* General */
 
 body {
-  background-color: var(--bg-color--primary);
+  background-color: var(--bg-color-primary);
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-base);
   font-weight: 500;
@@ -44,6 +44,7 @@ h6 {
 }
 
 img {
+  display: block;
   width: 100%;
 }
 
@@ -81,7 +82,7 @@ img {
   border-radius: 26px;
   padding: var(--space-6);
   max-width: 1563px;
-  background-color: var(--bg-color--secondary);
+  background-color: var(--bg-color-secondary);
 }
 
 .gallery__heading {
@@ -109,13 +110,13 @@ img {
 /* Gallery cards */
 .gallery__cards {
   display: flex;
-  column-gap: var(--space-6);
+  gap: var(--space-6);
 }
 
 .gallery__card {
   border-radius: 32px;
   padding: var(--space-4);
-  max-width: 440px;
+  width: 440px;
   background-color: var(--white);
 }
 
@@ -135,6 +136,7 @@ img {
 }
 
 .gallery__category-icon {
+  flex-shrink: 0;
   margin-right: var(--space-1);
   width: 20px;
 }
