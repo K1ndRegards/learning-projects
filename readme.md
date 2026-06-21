@@ -4,52 +4,6 @@ A structured collection of practice components, simple webpages, and learning pr
 
 ---
 
-## 📁 Repository Structure
-
-The project is organized into two main areas: **components** and **projects**.
-
-### **Components**
-
-Small, focused UI elements built for practice where each component is an isolated exercise based on layouts, mockups, or personal ideas.
-
-Located in:  
-`/components/`
-
-#### Static Components
-
-Pure HTML/CSS components.
-
-`/components/static-components/`
-
-#### Dynamic Components
-
-Components that include JavaScript interactions or behavior.
-
-`/components/dynamic-components/`
-
----
-
-### **Projects**
-
-Standalone learning projects of different sizes and complexity.
-
-Located in:  
-`/projects/`
-
-#### Simple Webpages
-
-Small, single‑page exercises.
-
-`/projects/simple-webpages/`
-
-#### Websites
-
-Larger multi‑page or more structured practice projects.
-
-`/projects/websites/`
-
----
-
 ## 🎯 Purpose
 
 This repository serves as a personal learning environment where I:
