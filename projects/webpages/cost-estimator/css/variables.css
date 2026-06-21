@@ -1,0 +1,48 @@
+/* Variables */
+:root {
+  /* Colors */
+  --primary-color: #53319c;
+  --secondary-color: #c8afff;
+  --bg-primary: #e9dfff;
+  --bg-secondary: #faf7ff;
+  --white: #fff;
+  --black: #2c2c2c;
+  --gray: #e7e7e7;
+
+  --primary-gradient: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(53, 10, 74, 1) 36%,
+    rgba(83, 49, 156, 1) 100%
+  );
+
+  /* Spacing scale from layout */
+  /* 4px 8px 16px 32px 64px */
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.6rem;
+  --space-4: 3.2rem;
+  --space-5: 6.4rem;
+
+  /* Typography scale from layout */
+  /* 12px 16px 32px 42px 54px*/
+  --font-sm: 1.2rem;
+  --font-base: 1.6rem;
+  --font-lg: 3.2rem;
+  --font-xl: 4.2rem;
+  --font-2xl: 5.4rem;
+
+  /* Border radius scale from layout */
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* Box shadows from layout */
+  --shadow-elevation: 0px 3px 11px 1px rgba(0, 0, 0, 0.1);
+
+  /* Line heights from layout */
+  --lh-auto: normal;
+  --lh-loose: 2;
+
+  /* Container from layout */
+  --container-md: 900px;
+}
