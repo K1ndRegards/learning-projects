@@ -3,15 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS reset file -->
     <link rel="stylesheet" href="./css/reset.css" />
     <!-- CSS variables -->
     <link rel="stylesheet" href="./css/variables.css" />
     <!-- Main CSS file -->
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Document</title>
+    <title>Cost Estimator</title>
   </head>
   <body>
     <!-- Project from: https://www.udemy.com/course/html-and-css-bootcamp -->
+
+    <main class="main-page">
+      <h1 class="main-page__header">Estimate your cost</h1>
+
+      <div class="content-wrapper container">
+        <!-- Tab header -->
+        <header class="tabs">
+          <nav class="tabs__nav">
+            <ul class="tabs__list">
+              <li class="tabs__list-item">
+                <button class="tabs__plan-button">Free</button>
+              </li>
+              <li class="tabs__list-item">
+                <button class="tabs__plan-button tabs__plan-button--active">
+                  Team
+                </button>
+              </li>
+              <li class="tabs__list-item">
+                <button class="tabs__plan-button ta">Professional</button>
+              </li>
+              <li class="tabs__list-item">
+                <button class="tabs__plan-button">Enterprise</button>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Mobile or web switch -->
+        <div class="mode-switcher">
+          <div class="mode-switcher__icon">
+            <img src="./assets/icon1.png" alt="Icon 1" />
+          </div>
+
+          <div class="mode-switcher__switcher">
+            <span class="mode-switcher__option t-upper">Mobile</span>
+            <span
+              class="mode-switcher__option mode-switcher__option-current t-upper"
+              >Web</span
+            >
+          </div>
+
+          <div class="mode-switcher__icon">
+            <img src="./assets/icon2.png" alt="Icon 2" />
+          </div>
+        </div>
+
+        <!-- Number of sessions window -->
+        <section class="sessions">
+          <div class="sessions__window">
+            <p class="sessions__subheading t-upper">Monthly sessions</p>
+            <p class="sessions__number">20,000</p>
+          </div>
+
+          <p class="sessions__description">
+            A session is a continuous period of user activity on your web app or
+            website. Choose exactly how many sessions you wish to record and
+            discard the extras.
+          </p>
+        </section>
+      </div>
+    </main>
   </body>
 </html>
