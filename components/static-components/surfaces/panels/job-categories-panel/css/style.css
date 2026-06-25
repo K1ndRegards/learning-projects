@@ -1,0 +1,157 @@
+/* Variables */
+:root {
+  /* Colors */
+  --primary-color: #1e2246;
+  --bg-primary: #f3f6ff;
+  --white: #fff;
+  --black: #000;
+
+  /* Typography scale */
+  --font-xs: 1.2rem; /* 12px */
+  --font-sm: 1.4rem; /* 14px */
+  --font-base: 1.6rem; /* 16px */
+  --font-md: 2rem; /* 20px */
+  --font-lg: 2.5rem; /* 25px */
+  --font-xl: 3.2rem; /* 32px */
+  --font-2xl: 4rem; /* 40px */
+  --font-3xl: 5rem; /* 50px */
+  --font-4xl: 6.4rem; /* 64px */
+
+  /* Spacing scale */
+  --space-1: 0.4rem; /* 4px  */
+  --space-2: 0.8rem; /* 8px  */
+  --space-3: 1.2rem; /* 12px */
+  --space-4: 1.6rem; /* 16px */
+  --space-5: 2.4rem; /* 24px */
+  --space-6: 3.2rem; /* 32px */
+  --space-7: 4.8rem; /* 48px */
+  --space-8: 6.4rem; /* 64px */
+  --space-9: 9.6rem; /* 96px */
+
+  /* Corner radiuses */
+  --radius-sm: 0.4rem; /* 4px */
+  --radius-md: 0.8rem; /* 8px */
+  --radius-lg: 1.6rem; /* 16px */
+  --radius-xl: 3.2rem; /* 32px */
+  --radius-full: 9999px;
+
+  /* Container scale from Figma layout */
+  --container-md: 100rem;
+
+  /* Card box shadow from Figma layout */
+  --shadow-elevation: 0px 24px 44px rgba(180, 191, 225, 0.4);
+}
+
+/* General styles */
+
+body {
+  background-color: var(--bg-primary);
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-base);
+  color: var(--primary-color);
+}
+
+/* Utility classes */
+.container-md {
+  width: 100%;
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+/* Main styles */
+.category-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  gap: var(--space-8);
+}
+
+.category-panel__heading {
+  font-size: var(--font-xl);
+  font-family: Merriweather, serif;
+  font-weight: 900;
+}
+
+.category-panel__categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.category-panel__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  box-shadow: var(--shadow-elevation);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7) var(--space-6);
+  background-color: var(--white);
+}
+
+.category-panel__item .group {
+  display: flex;
+  align-items: center;
+  column-gap: var(--space-4);
+}
+
+.category-panel__image {
+  width: 64px;
+  aspect-ratio: 1 / 1;
+}
+
+.category-panel__title {
+  font-size: var(--font-lg);
+  font-weight: 500;
+}
+
+.category-panel__link {
+  display: inline-block;
+  align-self: stretch;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  border-radius: var(--radius-md);
+  border: 1px solid #c2c5e2;
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-base);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+
+.category-panel__link:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.category-panel__message {
+  opacity: 0.7;
+  text-align: center;
+  padding: 0 var(--space-9);
+}
+
+@media only screen and (width <= 1024px) {
+  .category-panel__categories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  .category-panel__message {
+    padding: 0 var(--space-7);
+  }
+}
+
+@media only screen and (width <= 768px) {
+  .category-panel__categories {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .category-panel__message {
+    padding: 0;
+  }
+}
