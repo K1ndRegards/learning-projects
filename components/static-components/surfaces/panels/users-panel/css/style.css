@@ -1,0 +1,65 @@
+/* Variables */
+
+:root {
+  /* Colors */
+  --primary-color: #849fff;
+  --secondary-color: #516fd4;
+  --bg-primary: #e6eaf8;
+  --dark: #151b32;
+  --white: #fff;
+  --black: #000;
+
+  /* Typography scale */
+  --font-xs: 1.2rem; /* 12px */
+  --font-sm: 1.4rem; /* 14px */
+  --font-base: 1.6rem; /* 16px */
+  --font-md: 2rem; /* 20px */
+  --font-lg: 2.5rem; /* 25px */
+  --font-xl: 3.2rem; /* 32px */
+  --font-2xl: 4rem; /* 40px */
+  --font-3xl: 5rem; /* 50px */
+  --font-4xl: 6.4rem; /* 64px */
+
+  /* Spacing scale */
+  --space-1: 0.4rem; /* 4px  */
+  --space-2: 0.8rem; /* 8px  */
+  --space-3: 1.2rem; /* 12px */
+  --space-4: 1.6rem; /* 16px */
+  --space-5: 2.4rem; /* 24px */
+  --space-6: 3.2rem; /* 32px */
+  --space-7: 4.8rem; /* 48px */
+  --space-8: 6.4rem; /* 64px */
+  --space-9: 9.6rem; /* 96px */
+
+  /* Corner radiuses */
+  --radius-sm: 0.4rem; /* 4px */
+  --radius-md: 0.8rem; /* 8px */
+  --radius-lg: 1.6rem; /* 16px */
+  --radius-xl: 3.2rem; /* 32px */
+  --radius-full: 9999px; /* Circle */
+
+  /* Container scale */
+  --container-xl: 120rem; /* 1200px */
+}
+
+/* General styles */
+/* body {
+} */
+
+/* Utility styles */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container-xl {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
