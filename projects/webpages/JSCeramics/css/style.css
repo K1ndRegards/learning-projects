@@ -150,3 +150,36 @@ body {
 .main-footer__link:hover {
   border-bottom: 1px solid var(--black);
 }
+
+@media (width <= 1000px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    margin: var(--space-3);
+    width: auto;
+    min-width: auto;
+  }
+
+  .about__heading {
+    margin-bottom: var(--space-3);
+  }
+}
+
+@media (width <= 768px) {
+  .main-header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-2);
+  }
+
+  .about__text,
+  .about__slogan {
+    font-size: var(--font-lg);
+  }
+
+  .about__text {
+    margin: var(--space-3) 0;
+  }
+}
