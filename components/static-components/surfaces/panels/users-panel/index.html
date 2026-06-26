@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS reset file -->
     <link rel="stylesheet" href="./css/reset.css" />
     <!-- Main CSS file -->
@@ -14,16 +21,51 @@
     <main>
       <section class="user-panel container-xl">
         <h1 class="user-panel__heading">Users</h1>
+
         <nav class="user-panel__nav">
           <!-- Search field -->
-          <div class="form-group">
-            <label for="search" class="visually-hidden">Search</label>
+          <div class="input-group">
+            <label for="search" class="user-panel__search-label visually-hidden"
+              >Search users</label
+            >
             <input
               type="search"
               name="search"
               id="search"
+              class="user-panel__search-input"
               placeholder="Search users"
             />
+            <!-- Search svg -->
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="user-panel__search-icon"
+            >
+              <g clip-path="url(#clip0_2_6)">
+                <path
+                  d="M13.3333 22.6667C18.488 22.6667 22.6667 18.488 22.6667 13.3333C22.6667 8.17868 18.488 4 13.3333 4C8.17868 4 4 8.17868 4 13.3333C4 18.488 8.17868 22.6667 13.3333 22.6667Z"
+                  stroke="#151B32"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M28 28L20 20"
+                  stroke="#151B32"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_6">
+                  <rect width="32" height="32" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
           </div>
 
           <!-- Navigation -->
@@ -34,7 +76,10 @@
               </button>
             </li>
             <li class="user-panel__nav-item">
-              <button type="button" class="user-panel__button">
+              <button
+                type="button"
+                class="user-panel__button user-panel__button--active"
+              >
                 New users
               </button>
             </li>
@@ -53,7 +98,7 @@
         </nav>
 
         <!-- User list -->
-        <ul class="user-panel__user-list">
+        <ul class="user-panel__users">
           <li class="user-panel__user">
             <div class="user-panel__image">
               <img src="./images/image-0.png" alt="Portrait of Lelah Nichols" />
