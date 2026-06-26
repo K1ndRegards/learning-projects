@@ -4,7 +4,9 @@
   --bg-primary: #f7f4ff;
   --bg-secondary: #efebfd;
   --dark-blue: #281a51;
-  --dark-blue-shade: rgb(40, 26, 81, 0.54) --white: #000;
+  --dark-blue-shade-1: rgba(40, 26, 81, 0.54);
+  --dark-blue-shade-2: rgba(40, 26, 81, 0.9);
+  --white: #000;
   --light-blue: #dbd5ec;
   --white: #fff;
 
@@ -129,6 +131,7 @@ main {
 .search-panel__search-field::placeholder {
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-base);
+  color: var(--dark-blue-shade-1);
 }
 
 .search-panel__search-icon {
@@ -142,12 +145,18 @@ main {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: background-color 0.3s;
   border-radius: var(--radius-sm);
   border: none;
   padding: var(--space-3);
   font-size: var(--font-base);
   background-color: var(--dark-blue);
+  cursor: pointer;
   color: var(--white);
+}
+
+.search-panel__map-button:hover {
+  background-color: var(--dark-blue-shade-2);
 }
 
 .search-panel__categories {
