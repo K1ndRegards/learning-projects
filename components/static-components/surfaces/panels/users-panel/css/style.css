@@ -50,6 +50,7 @@
 
 /* General styles */
 body {
+  padding: var(--space-4);
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-base);
   background-color: var(--bg-primary);
@@ -140,7 +141,9 @@ h2 {
 }
 
 .user-panel__button {
-  transition: color 0.15s;
+  transition:
+    color 0.15s,
+    background-color 0.3s;
   border-radius: var(--radius-md);
   border: none;
   padding: var(--space-4);
@@ -159,6 +162,11 @@ h2 {
 
 .user-panel__button--active {
   background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.user-panel__button--active:hover {
+  background-color: var(--secondary-color);
   color: var(--white);
 }
 
@@ -235,9 +243,47 @@ h2 {
 }
 
 @media (width <= 1200px) {
+  .user-panel {
+    padding: var(--space-7);
+  }
+}
+
+@media (width <= 1100px) {
   .user-panel__users {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
+  }
+}
+
+@media (width <= 1000px) {
+  .user-panel {
+    padding: var(--space-5);
+  }
+
+  .user-panel__heading {
+    text-align: center;
+  }
+
+  .user-panel__nav {
+    flex-direction: column;
+    gap: var(--space-5);
+    align-items: center;
+  }
+
+  .user-panel__nav .input-group {
+    order: 1;
+  }
+}
+
+@media (width <= 768px) {
+  .user-panel__users {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 650px) {
+  .user-panel__nav-list {
+    flex-direction: column;
+    align-items: center;
   }
 }
