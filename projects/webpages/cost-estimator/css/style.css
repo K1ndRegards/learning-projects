@@ -234,7 +234,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  /* gap: var(--space-4); */
 }
 
 .pricing-cards__card {
@@ -311,4 +310,58 @@ img {
 
 .pricing-cards__cta:hover {
   transform: scale(1.05);
+}
+
+@media (width <= 1000px) {
+  .content-wrapper {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+
+  .pricing-cards__list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .pricing-cards__card {
+    width: 100%;
+  }
+}
+@media (width <= 768px) {
+  .main-page {
+    padding: 0 var(--space-3);
+  }
+
+  .content-wrapper {
+    padding: 0 var(--space-3) var(--space-3);
+  }
+
+  .tabs__list-item {
+    padding: var(--space-2);
+  }
+
+  .tabs__plan-button--active::after {
+    bottom: -37px;
+    width: 115%;
+  }
+}
+
+@media (width <= 600px) {
+  .tabs__list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-wrapper::after {
+    top: 255px;
+  }
+
+  .tabs__plan-button--active::after {
+    bottom: -8px;
+    width: 30%;
+  }
+
+  .sessions__window {
+    width: 100%;
+  }
 }
