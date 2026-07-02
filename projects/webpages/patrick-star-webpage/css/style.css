@@ -33,11 +33,6 @@ body {
   font-size: var(--font-base);
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
-
 /* Utilities */
 .container {
   width: 100%;
@@ -53,7 +48,7 @@ img {
   padding: var(--space-8) var(--space-4);
 }
 
-.main-header__logo {
+.main-header__logo-heading {
   font-size: var(--font-xl);
   font-weight: 700;
 }
@@ -68,6 +63,7 @@ img {
   width: 2.4rem;
   aspect-ratio: 1 / 1;
 }
+
 .main-header__link:hover {
   text-decoration: underline;
 }
@@ -91,6 +87,7 @@ img {
 }
 
 .gallery__list-item img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -111,7 +108,7 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   text-transform: uppercase;
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   font-weight: 700;
   letter-spacing: 2px;
   color: #fff;
@@ -120,45 +117,46 @@ img {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+  text-align: center;
 }
 
 .gallery__list-item:hover::after {
   opacity: 1;
 }
 
-#eth {
+.gallery__list-item--eth {
   grid-area: eth;
 }
 
-#alphabet {
+.gallery__list-item--alphabet {
   grid-area: alphabet;
 }
 
-#traveler {
+.gallery__list-item--traveler {
   grid-area: traveler;
 }
 
-#astro {
+.gallery__list-item--astro {
   grid-area: astro;
 }
 
-#cube {
+.gallery__list-item--cube {
   grid-area: cube;
 }
 
-#cup {
+.gallery__list-item--cup {
   grid-area: cup;
 }
 
-#insta {
+.gallery__list-item--insta {
   grid-area: insta;
 }
 
-#foam {
+.gallery__list-item--foam {
   grid-area: foam;
 }
 
-#dimensional {
+.gallery__list-item--dimensional {
   grid-area: dimensional;
 }
 
@@ -178,14 +176,10 @@ img {
   .gallery__list {
     grid-template-areas:
       'eth eth'
-      'eth eth'
       'alphabet traveler'
       'astro cube'
-      'astro cube'
-      'insta insta'
       'insta insta'
       'cup foam'
-      'dimensional dimensional'
       'dimensional dimensional';
   }
 }
@@ -195,7 +189,7 @@ img {
     flex-direction: column;
   }
 
-  .main-header__logo {
+  .main-header__logo-heading {
     text-align: center;
     margin-bottom: var(--space-8);
   }
@@ -205,20 +199,19 @@ img {
     gap: var(--space-6);
   }
 
+  .gallery__list-item::after {
+    font-size: var(--font-lg);
+  }
+
   .gallery__list {
     grid-template-areas:
-      'eth eth'
       'eth eth'
       'alphabet alphabet'
       'traveler traveler'
       'astro cube'
-      'astro cube'
       'insta insta'
-      'insta insta'
-      'cup cup'
       'cup cup'
       'foam foam'
-      'dimensional dimensional'
       'dimensional dimensional';
   }
 
