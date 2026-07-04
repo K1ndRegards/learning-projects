@@ -1,5 +1,6 @@
-// import { createElement } from './utils/dom.js';
-import { toggleElement } from './utils/dom.js';
+function toggleElement(el) {
+  el.classList.toggle('hidden');
+}
 
 function fadeIn(el) {
   toggleElement(el);
@@ -20,7 +21,7 @@ function fadeOut(el) {
 }
 
 function toggleFade(el) {
-  const isVisible = getComputedStyle(el).display !== 'none';
+  const isVisible = !Array.from(el.classList).includes('hidden');
 
   if (isVisible) {
     fadeOut(el);
@@ -31,6 +32,8 @@ function toggleFade(el) {
 
 const btn = document.querySelector('.animation__btn');
 const items = Array.from(document.querySelector('.animation__list').children);
+
+Array.from(items).forEach((item) => item.classList.add('hidden'));
 
 btn.addEventListener('click', function () {
   items.forEach((item) => toggleFade(item));
