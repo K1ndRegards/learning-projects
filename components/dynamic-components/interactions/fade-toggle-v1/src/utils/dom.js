@@ -66,7 +66,7 @@ export function createElement(
  * @param {HTMLElement} el - The element whose display state should be toggled
  * @returns {void}
  */
-function toggleElement(el) {
+export function toggleElement(el) {
   // Get current display value
   const currentDisplay = getComputedStyle(el).display;
 

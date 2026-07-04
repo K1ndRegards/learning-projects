@@ -1,5 +1,9 @@
 /* Variables */
 :root {
+  /* Colors */
+  --primary-color: #9c27b0;
+  --bg-color: #e1bee7;
+
   /* Typography scale */
   --font-xs: 1.2rem; /* 12px */
   --font-sm: 1.4rem; /* 14px */
@@ -10,9 +14,6 @@
   --font-2xl: 4rem; /* 40px */
   --font-3xl: 5rem; /* 50px */
   --font-4xl: 6.4rem; /* 64px */
-
-  --font-5xl: 8rem; /* 80px */
-  --font-6xl: 10rem; /* 100px */
 
   /* Spacing scale */
   --space-1: 0.4rem; /* 4px  */
@@ -39,12 +40,88 @@
   --container-lg: 100rem; /* 1000px */
   --container-xl: 120rem; /* 1200px */
   --container-2xl: 144rem; /* 1440px */
+}
 
-  /* Line-height scale */
-  --lh-none: 1;
-  --lh-tight: 1.15;
-  --lh-snug: 1.3;
-  --lh-normal: 1.45;
-  --lh-relaxed: 1.6;
-  --lh-loose: 1.8;
+/* General */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+}
+
+/* Utility */
+.container-xl {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: var(--space-9) auto 0;
+}
+
+/* Main styles */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--space-9);
+  width: 100%;
+}
+
+.animation__btn {
+  display: inline-block;
+  transition:
+    background-color 0.15s,
+    transform 0.1s;
+  margin-bottom: var(--space-9);
+  border-radius: var(--radius-md);
+  border: none;
+  padding: 2.4rem 4.8rem;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-md);
+  color: #fff;
+}
+
+.animation__btn:hover {
+  background-color: #ab47bc;
+}
+
+.animation__btn:active {
+  transform: scale(0.9);
+}
+
+.animation__list {
+  display: flex;
+  gap: 50px;
+}
+
+.animation__item {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-md);
+  width: 20rem;
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary-color);
+  font-size: var(--font-base);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.fade--visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -10,6 +10,36 @@
     <title>Fade Toggle</title>
   </head>
   <body>
+    <main>
+      <div class="wrapper container-xl">
+        <div class="animation">
+          <!-- Button to initiate animation -->
+          <button type="button" class="animation__btn">Click Me!</button>
+
+          <!-- Animation objects -->
+          <ul class="animation__list">
+            <li
+              class="animation__item animation__item--1 fade"
+              data-display="flex"
+            >
+              Content 1
+            </li>
+            <li
+              class="animation__item animation__item--2 fade"
+              data-display="flex"
+            >
+              Content 2
+            </li>
+            <li
+              class="animation__item animation__item--3 fade"
+              data-display="flex"
+            >
+              Content 3
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
