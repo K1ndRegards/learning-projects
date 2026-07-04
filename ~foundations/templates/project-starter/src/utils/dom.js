@@ -28,7 +28,9 @@ export function createElement(
     typeof classes === 'string' ? classes.trim().split(/\s+/) : classes;
 
   // Adding classes to the element
-  classList.forEach((cls) => el.classList.add(cls));
+  classList.forEach((cls) => {
+    if (cls) el.classList.add(cls);
+  });
 
   // Setting attributes to the element
   for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);
@@ -40,7 +42,7 @@ export function createElement(
   children.forEach((child) => {
     // if child is a string, convert it to the text node
     if (typeof child === 'string') {
-      el.appendChild(createText(child));
+      el.appendChild(document.createTextNode(child));
     } else {
       el.appendChild(child);
     }
