@@ -1,0 +1,59 @@
+/* Variables */
+:root {
+  /* Colors */
+  --white: #fff;
+  --black: #000;
+  --bg-color: var(--black);
+
+  /* Spacing scale */
+  --space-1: 0.4rem; /* 4px  */
+  --space-2: 0.8rem; /* 8px  */
+  --space-3: 1.2rem; /* 12px */
+  --space-4: 1.6rem; /* 16px */
+  --space-5: 2.4rem; /* 24px */
+  --space-6: 3.2rem; /* 32px */
+  --space-7: 4.8rem; /* 48px */
+  --space-8: 6.4rem; /* 64px */
+  --space-9: 9.6rem; /* 96px */
+
+  /* Corner radiuses */
+  --radius-sm: 0.4rem; /* 4px */
+  --radius-md: 0.8rem; /* 8px */
+  --radius-lg: 1.6rem; /* 16px */
+  --radius-xl: 3.2rem; /* 32px */
+  --radius-full: 9999px; /* Circle */
+}
+
+/* General styles */
+
+body {
+  background-color: var(--bg-color);
+}
+
+/* Main styles */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+/* Circle-loader styles */
+.circle-loader {
+  animation: spin 1s ease-in-out infinite;
+  border-radius: var(--radius-full);
+  border: 15px solid #dedede;
+  border-top-color: #3f51b5;
+  width: 250px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--black);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
