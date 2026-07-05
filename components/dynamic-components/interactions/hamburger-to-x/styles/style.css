@@ -1,0 +1,57 @@
+/* Variables */
+:root {
+  /* Spacing scale */
+  --space-1: 0.4rem; /* 4px  */
+  --space-2: 0.8rem; /* 8px  */
+  --space-3: 1.2rem; /* 12px */
+  --space-4: 1.6rem; /* 16px */
+  --space-5: 2.4rem; /* 24px */
+  --space-6: 3.2rem; /* 32px */
+  --space-7: 4.8rem; /* 48px */
+  --space-8: 6.4rem; /* 64px */
+  --space-9: 9.6rem; /* 96px */
+
+  /* Corner radiuses */
+  --radius-sm: 0.4rem; /* 4px */
+  --radius-md: 0.8rem; /* 8px */
+  --radius-lg: 1.6rem; /* 16px */
+  --radius-xl: 3.2rem; /* 32px */
+  --radius-full: 9999px; /* Circle */
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger__bar {
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  border-radius: 10px;
+  width: 36px;
+  height: 4px;
+  background-color: #000;
+}
+
+.hamburger--active .hamburger__bar--first {
+  transform: rotate(45deg) translate(4px, 10px);
+}
+
+.hamburger--active .hamburger__bar--second {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger--active .hamburger__bar--third {
+  transform: rotate(-45deg) translate(4px, -10px);
+}
