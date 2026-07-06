@@ -11,13 +11,14 @@
       rel="stylesheet"
     />
     <!-- CSS reset file -->
-    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
     <!-- Main CSS file -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Patrick Star Gallery</title>
   </head>
   <body>
     <!-- Project from: https://www.udemy.com/course/html-and-css-bootcamp -->
+
     <header class="main-header">
       <div class="main-header__wrapper container">
         <h1 class="main-header__logo-heading">Patrick Star</h1>
@@ -52,6 +53,53 @@
                   src="./assets/v_icon.png"
                   alt="V logo"
                   class="main-header__icon"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="main-header__mobile-nav">
+          <div class="main-header__hamburger">
+            <div
+              class="main-header__hamburger-bar main-header__hamburger-bar--1"
+            ></div>
+            <div
+              class="main-header__hamburger-bar main-header__hamburger-bar--2"
+            ></div>
+            <div
+              class="main-header__hamburger-bar main-header__hamburger-bar--3"
+            ></div>
+          </div>
+
+          <ul class="main-header__mobile-list">
+            <li class="main-header__mobile-list-item">
+              <a href="#" class="main-header__mobile-link">Work</a>
+            </li>
+            <li class="main-header__mobile-list-item">
+              <a href="#" class="main-header__mobile-link">Contact</a>
+            </li>
+            <li class="main-header__mobile-list-item">
+              <a href="#" class="main-header__mobile-link"
+                ><img
+                  src="./assets/dribble_icon.png"
+                  alt="Dribble logo"
+                  class="main-header__mobile-icon"
+              /></a>
+            </li>
+            <li class="main-header__mobile-list-item">
+              <a href="#" class="main-header__mobile-link"
+                ><img
+                  src="./assets/insta_icon.png"
+                  alt="Instagram logo"
+                  class="main-header__mobile-icon"
+              /></a>
+            </li>
+            <li class="main-header__mobile-list-item">
+              <a href="#" class="main-header__mobile-link"
+                ><img
+                  src="./assets/v_icon.png"
+                  alt="V logo"
+                  class="main-header__mobile-icon"
               /></a>
             </li>
           </ul>
@@ -125,5 +173,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="src/main.js"></script>
   </body>
 </html>

@@ -45,6 +45,7 @@ body {
 .main-header__wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--space-8) var(--space-4);
 }
 
@@ -59,13 +60,74 @@ body {
   gap: var(--space-7);
 }
 
-.main-header__icon {
+.main-header__icon,
+.main-header__mobile-icon {
   width: 2.4rem;
   aspect-ratio: 1 / 1;
 }
 
-.main-header__link:hover {
+.main-header__link:hover,
+.main-header__mobile-link:hover {
   text-decoration: underline;
+}
+
+/* Mobile main-header navigation */
+.main-header__mobile-nav {
+  display: none;
+  z-index: 2;
+}
+
+.main-header__mobile-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-5);
+  transition: transform 0.3s;
+  transform: translateX(100%);
+  padding: 0 var(--space-4);
+  height: 100dvh;
+  background-color: #fff;
+}
+
+.main-header__mobile-list--active {
+  transform: translateX(0);
+}
+
+.main-header__hamburger {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-right: var(--space-3);
+  cursor: pointer;
+}
+
+.main-header__hamburger-bar {
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  border-radius: 10px;
+  width: 36px;
+  height: 4px;
+  background-color: #000;
+}
+
+.main-header__hamburger--active .main-header__hamburger-bar--1 {
+  transform: rotate(45deg) translate(4px, 10px);
+}
+
+.main-header__hamburger--active .main-header__hamburger-bar--2 {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.main-header__hamburger--active .main-header__hamburger-bar--3 {
+  transform: rotate(-45deg) translate(4px, -10px);
 }
 
 /* Gallery styling */
@@ -185,18 +247,29 @@ body {
 }
 
 @media (width <= 768px) {
+  main {
+    padding-top: var(--space-9);
+  }
+
   .main-header__wrapper {
-    flex-direction: column;
+    padding: var(--space-6) var(--space-4);
   }
 
-  .main-header__logo-heading {
-    text-align: center;
-    margin-bottom: var(--space-8);
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
   }
 
-  .main-header__nav-list {
-    flex-direction: column;
-    gap: var(--space-6);
+  .main-header__mobile-nav {
+    display: block;
+  }
+
+  .main-header__nav {
+    display: none;
   }
 
   .gallery__list-item::after {
@@ -216,6 +289,8 @@ body {
   }
 
   .main-footer {
+    position: relative;
+    z-index: 3;
     padding: var(--space-5) 0;
   }
 }
