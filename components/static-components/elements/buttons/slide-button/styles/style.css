@@ -2,7 +2,7 @@
 :root {
   /* Colors */
   --primary-color: #e91e63;
-  --secondary-color: #f23172;
+  --secondary-color: #f6427e;
   --white: #fff;
   --black: #000;
 
@@ -12,6 +12,7 @@
   --font-base: 1.6rem; /* 16px */
   --font-md: 2rem; /* 20px */
   --font-lg: 2.5rem; /* 25px */
+  --font-xl: 3.2rem; /* 32px */
 
   /* Spacing scale */
   --space-1: 0.4rem; /* 4px  */
@@ -39,21 +40,18 @@
   );
 
   /* Card background */
-  --secondary-background: radial-gradient(
-    var(--secondary-color),
-    var(--primary-color)
-  );
+  --secondary-background: var(--white);
 
   /* Shadow */
   --shadow-default:
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.05);
 
   /* Card paddings */
-  --card-Y-pad: 125px;
-  --card-X-pad: 180px;
+  --card-Y-pad: 12.5rem;
+  --card-X-pad: 18rem;
 
   /* Card border-radius */
-  --card-border-radius: 16px;
+  --card-border-radius: var(--radius-lg);
 
   /* Card border */
   --card-border: 2px solid var(--white);
@@ -72,7 +70,7 @@ body {
   height: 100dvh;
 }
 
-.hero__container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,10 +80,47 @@ body {
   border: var(--card-border);
   padding: var(--card-Y-pad) var(--card-X-pad);
 
-  background: var(--white);
+  background: var(--secondary-background);
 }
 
 /* Button */
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
 .button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s;
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--primary-color);
+  padding: var(--space-5) var(--space-7);
   font-size: var(--font-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  z-index: -1;
+  transition: transform 0.3s ease-in;
+  width: 120%;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.button:hover::before {
+  transform: translateX(90%);
+}
+
+.button:hover {
+  color: var(--white);
 }
