@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS reset file -->
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Current</title>
+  </head>
+  <body>
+    <main>
+      <section class="app">
+        <div class="container container-xs">
+          <!-- App header -->
+          <header class="app__header">
+            <div class="app__header-logo">
+              <img src="./assets/app-logo.png" alt="Shopping List App Logo" />
+            </div>
+            <h1 class="app__header-heading">Shopping list</h1>
+          </header>
+
+          <!-- Input form field -->
+          <div class="app__item-form">
+            <div class="form-group">
+              <label for="item-input" class="visually-hidden"
+                >Enter list item</label
+              >
+              <input
+                type="text"
+                name="item-input"
+                id="item-input"
+                class="app__item-input"
+                placeholder="Enter Item"
+              />
+            </div>
+
+            <button type="button" class="app__add-btn">
+              <i class="fa-solid fa-plus" aria-hidden="true"></i
+              ><span>Add Item</span>
+            </button>
+          </div>
+
+          <!-- Item list UI -->
+          <section class="app__interface">
+            <div class="app__sort-field">
+              <!-- Sorting field -->
+              <label for="sort" class="visually-hidden"
+                >Choose sorting order</label
+              >
+              <select name="sort" id="sort" class="app__sort">
+                <option value="" disabled selected>Sort Items</option>
+                <option value="alphaDesc">From a-z</option>
+                <option value="alphaAsc">From z-a</option>
+                <option value="new">Newest first</option>
+                <option value="old">Oldest first</option>
+              </select>
+            </div>
+
+            <!-- Filter field -->
+            <div class="app__filter-field">
+              <label for="filter" class="visually-hidden"
+                >Filter shopping list items</label
+              >
+              <input
+                type="text"
+                name="filter"
+                id="filter"
+                class="app__filter"
+                placeholder="Filter Items"
+              />
+            </div>
+
+            <!-- Item list -->
+            <ul class="app__item-list">
+              <li class="app__list-item">
+                <span class="app__list-item-date">2026.07.08 16:00:00</span>
+
+                <div class="app__list-item-content">
+                  <span class="app__list-item-text">Item 1</span>
+                </div>
+
+                <button
+                  class="app__list-item-remove-btn"
+                  aria-label="Remove item"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </li>
+
+              <li class="app__list-item">
+                <span class="app__list-item-date">2026.07.08 16:01:00</span>
+
+                <div class="app__list-item-content">
+                  <span class="app__list-item-text">Item 2</span>
+                </div>
+
+                <button
+                  class="app__list-item-remove-btn"
+                  aria-label="Remove item"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </li>
+
+              <li class="app__list-item">
+                <span class="app__list-item-date">2026.07.08 16:02:00</span>
+
+                <div class="app__list-item-content">
+                  <span class="app__list-item-text">Item 3</span>
+                </div>
+
+                <button
+                  class="app__list-item-remove-btn"
+                  aria-label="Remove item"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+
+            <button
+              type="button"
+              class="app__clear-btn"
+              aria-label="Clear all items"
+            >
+              <i class="fa-solid fa-broom" aria-hidden="true"></i
+              ><span>Clear All</span>
+            </button>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
