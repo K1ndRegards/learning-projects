@@ -91,7 +91,9 @@ body {
 }
 
 .key-codes__title {
-  font-size: var(--font-md);
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: #555;
 }
 
 .key-codes__key {

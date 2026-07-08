@@ -12,7 +12,7 @@ function initialize() {
   );
 }
 
-// Fire initializer and then remove event listener
+// Fire initializer once
 window.addEventListener('keydown', initialize, { once: true });
 
 window.addEventListener('keydown', function (e) {
