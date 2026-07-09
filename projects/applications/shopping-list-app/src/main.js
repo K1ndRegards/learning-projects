@@ -337,7 +337,7 @@ UI.sort.addEventListener('change', function () {
 // Event delegation
 UI.list.addEventListener('click', function (e) {
   const parent = e.target.closest('.app__list-item');
-  console.log(e.target);
+
   if (
     e.target.classList.contains('app__list-item-btn--remove') ||
     e.target.classList.contains('fa-xmark')
