@@ -1,0 +1,77 @@
+/* Variables */
+:root {
+  --gradient-v1: conic-gradient(#00c6ff, #9b00ff, #ff2e92, #ff8a00, #00c6ff);
+  --gradient-v2: conic-gradient(#f6d365, #fda085, #fbc2eb, #a6c1ee, #f6d365);
+  --gradient-aurora: conic-gradient(
+    #00ffcc,
+    #7b2ff7,
+    #ff00e0,
+    #00aaff,
+    #00ffcc
+  );
+  --background-v1: linear-gradient(180deg, #0b0f19, #111827);
+  --background-v2: linear-gradient(160deg, #0a0f24, #1a2a6c);
+  /* Spacing scale */
+  --space-1: 0.4rem; /* 4px  */
+  --space-2: 0.8rem; /* 8px  */
+  --space-3: 1.2rem; /* 12px */
+  --space-4: 1.6rem; /* 16px */
+  --space-5: 2.4rem; /* 24px */
+  --space-6: 3.2rem; /* 32px */
+  --space-7: 4.8rem; /* 48px */
+  --space-8: 6.4rem; /* 64px */
+  --space-9: 9.6rem; /* 96px */
+
+  /* Corner radiuses */
+  --radius-sm: 0.4rem; /* 4px */
+  --radius-md: 0.8rem; /* 8px */
+  --radius-lg: 1.6rem; /* 16px */
+  --radius-xl: 3.2rem; /* 32px */
+  --radius-full: 9999px; /* Circle */
+}
+
+/* General Styles */
+
+body {
+  background: var(--background-v1);
+}
+/* Main Styles */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100dvh;
+}
+
+/* Circle Loader Styles */
+.circle-loader {
+  position: relative;
+  animation: spin 1.2s linear infinite;
+  border-radius: var(--radius-full);
+  width: 20rem;
+  aspect-ratio: 1 / 1;
+  background: var(--gradient-v2);
+}
+
+.circle-loader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius-full);
+  width: 17rem;
+  aspect-ratio: 1 / 1;
+  background-color: #0b0f19;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
