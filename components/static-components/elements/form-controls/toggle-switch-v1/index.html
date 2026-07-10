@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS reset file -->
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Toggle Switch</title>
+  </head>
+  <body>
+    <!-- Project from: https://www.udemy.com/course/html-and-css-bootcamp/ -->
+
+    <main>
+      <div class="wrapper">
+        <form action="#" class="controls">
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="agree"
+              id="agree"
+              class="custom-checkbox hidden"
+            />
+            <label for="agree" class="toggle-label">Agree?</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="include"
+              id="include"
+              class="custom-checkbox hidden"
+            />
+            <label for="include" class="toggle-label">Include?</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="advice"
+              id="advice"
+              class="custom-checkbox hidden"
+            />
+            <label for="advice" class="toggle-label">Advice?</label>
+          </div>
+
+          <button type="submit" class="controls__submit-btn">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
