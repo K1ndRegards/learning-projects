@@ -69,6 +69,11 @@ function enableEditMode(id) {
 function saveEditedItem(id, newText) {
   const item = state.items.find((item) => item.id === id);
 
+  // If user is trying to save empty list item -> return previous text
+  if (!newText) {
+    newText = item.text;
+  }
+
   item.text = newText;
   item.editMode = false;
 

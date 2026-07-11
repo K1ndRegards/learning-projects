@@ -202,9 +202,10 @@ img {
 
 .app__item-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, calc(50% - (var(--space-3) / 2)));
   grid-gap: var(--space-6) var(--space-3);
   margin-bottom: var(--space-6);
+  width: 100%;
 }
 
 .app__list-item {
@@ -214,9 +215,9 @@ img {
   align-items: center;
   border-radius: var(--radius-sm);
   border: 1px solid var(--tertiary-dark);
+  padding: var(--space-4) var(--space-6) var(--space-4) var(--space-3);
   height: calc(1.9rem + var(--space-4) * 2);
   background-color: transparent;
-  padding: var(--space-4) var(--space-3);
   color: #000;
 }
 
@@ -258,10 +259,15 @@ img {
   color: #2c852c;
 }
 
+.app__list-item-content {
+  overflow: hidden;
+}
+
 .app__list-item-text {
   font-size: var(--font-base);
   line-height: 1.2;
   font-weight: 600;
+  white-space: nowrap;
   cursor: pointer;
   color: #000;
 }
