@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS reset file -->
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Personal Account</title>
+  </head>
+  <body>
+    <!-- Project from: https://www.uidesigndaily.com/posts/figma-billing-page-payment-day-1585 -->
+
+    <div class="account-window">
+      <!-- Account and navigation sidebar -->
+      <aside class="sidebar">
+        <!-- User profile information -->
+        <div class="sidebar__profile">
+          <div class="sidebar__profile-avatar">
+            <img src="./images/woman-pic.jpg" alt="User avatar" />
+          </div>
+          <p class="sidebar__profile-name">Sophia Darly</p>
+          <p class="sidebar__profile-tag">@sdarly</p>
+        </div>
+
+        <!-- Sidebar navigation -->
+        <nav class="sidebar__nav">
+          <ul class="sidebar__nav-list">
+            <li class="sidebar__nav-list-item">
+              <button type="button" class="sidebar__nav-btn">
+                <svg class="sidebar__btn-icon" aria-hidden="true">
+                  <use xlink:href="./assets/icons.svg#general"></use>
+                </svg>
+                <span class="sidebar__nav-btn-text">General</span>
+              </button>
+            </li>
+            <li class="sidebar__nav-list-item">
+              <button type="button" class="sidebar__nav-btn">
+                <svg class="sidebar__btn-icon" aria-hidden="true">
+                  <use xlink:href="./assets/icons.svg#password"></use>
+                </svg>
+                <span class="sidebar__nav-btn-text">Password</span>
+              </button>
+            </li>
+            <li class="sidebar__nav-list-item">
+              <button type="button" class="sidebar__nav-btn">
+                <svg class="sidebar__btn-icon" aria-hidden="true">
+                  <use xlink:href="./assets/icons.svg#invitations"></use>
+                </svg>
+                <span class="sidebar__nav-btn-text">Invitations</span>
+              </button>
+            </li>
+            <li class="sidebar__nav-list-item">
+              <button
+                type="button"
+                class="sidebar__nav-btn sidebar__nav-btn--current"
+              >
+                <svg class="sidebar__btn-icon" aria-hidden="true">
+                  <use xlink:href="./assets/icons.svg#billing"></use>
+                </svg>
+                <span class="sidebar__nav-btn-text">Billing</span>
+              </button>
+            </li>
+            <li class="sidebar__nav-list-item">
+              <button type="button" class="sidebar__nav-btn">
+                <svg class="sidebar__btn-icon" aria-hidden="true">
+                  <use xlink:href="./assets/icons.svg#apps"></use>
+                </svg>
+
+                <span class="sidebar__nav-btn-text">Apps</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Sidebar logout -->
+        <div class="sidebar__logout">
+          <button type="button" class="sidebar__nav-btn">
+            <svg class="sidebar__btn-icon" aria-hidden="true">
+              <use xlink:href="./assets/icons.svg#logout"></use>
+            </svg>
+            <span class="sidebar__nav-btn-text">Log out</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main app window content -->
+      <main class="app">
+        <section class="general app-content hidden"></section>
+
+        <section class="password app-content hidden"></section>
+
+        <section class="invitations app-content hidden"></section>
+
+        <!-- Billing content -->
+        <section class="billing app-content">
+          <header class="section-header">
+            <h1 class="section-header__title">Billing</h1>
+          </header>
+
+          <section class="billing__content">
+            <div class="billing__right">
+              <!-- Order history -->
+              <div class="billing__order-history">
+                <!-- Subtitle for order history -->
+                <div class="billing__subtitle">
+                  <h2 class="billing__subtitle-heading">Order history</h2>
+                  <p class="billing__subtitle-description">
+                    Manage billing information and view receipts
+                  </p>
+                </div>
+
+                <!-- Order history table -->
+                <table class="billing__history-table">
+                  <!-- Table head -->
+                  <thead class="billing__history-head">
+                    <tr class="billing__history-row billing__history-row-head">
+                      <th class="billing__history-cell">Date</th>
+                      <th class="billing__history-cell">Type</th>
+                      <th class="billing__history-cell">Receipt</th>
+                    </tr>
+                  </thead>
+
+                  <!-- Table body -->
+                  <tbody class="billing__history-body">
+                    <tr class="billing__history-row">
+                      <td class="billing__history-cell">Oct. 21, 2021</td>
+                      <td class="billing__history-cell">Pro Annual</td>
+                      <td class="billing__history-cell">
+                        <button class="billing__btn--download">Download</button>
+                      </td>
+                    </tr>
+                    <tr class="billing__history-row">
+                      <td class="billing__history-cell">Aug. 21, 2021</td>
+                      <td class="billing__history-cell">Pro Portfolio</td>
+                      <td class="billing__history-cell">
+                        <button class="billing__btn--download">Download</button>
+                      </td>
+                    </tr>
+                    <tr class="billing__history-row">
+                      <td class="billing__history-cell">July. 21, 2021</td>
+                      <td class="billing__history-cell">Sponsored Post</td>
+                      <td class="billing__history-cell">
+                        <button class="billing__btn--download">Download</button>
+                      </td>
+                    </tr>
+                    <tr class="billing__history-row">
+                      <td class="billing__history-cell">Jun. 21, 2021</td>
+                      <td class="billing__history-cell">Sponsored Post</td>
+                      <td class="billing__history-cell">
+                        <button class="billing__btn--download">Download</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Load more button -->
+                <div class="billing__history-more">
+                  <button type="button" class="billing__history-more-btn">
+                    Load more
+                  </button>
+                </div>
+              </div>
+
+              <!-- Payment methods -->
+              <div class="billing_payment">
+                <!-- Subtitle for payment methods -->
+                <div class="billing__subtitle">
+                  <h2 class="billing__subtitle-heading">Payment Method</h2>
+                  <p class="billing__subtitle-description">
+                    Manage billing payment methods
+                  </p>
+                </div>
+
+                <!-- Payment methods list -->
+                <ul class="billing__methods-list">
+                  <li class="billing__methods-item">
+                    <img
+                      src="./images/visa.png"
+                      alt="Visa"
+                      class="billing__methods-image"
+                    />
+                    <span class="billing__methods-item-text"
+                      >Visa ending in 2255</span
+                    >
+                    <button
+                      type="button"
+                      class="billing__methods-item-remove-btn"
+                    >
+                      Remove
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="billing__left">
+              <!-- Billing plan card -->
+              <div class="billing__plan">
+                <p class="billing__plan-title">Your plan</p>
+                <p class="billing__plan-type">Pro Annual</p>
+                <p class="billing__plan-renew">Renews on Nov. 2021</p>
+                <button type="button" class="billing__plan-cancel-btn">
+                  Cancel subscription
+                </button>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="apps app-content hidden"></section>
+      </main>
+    </div>
+  </body>
+</html>
