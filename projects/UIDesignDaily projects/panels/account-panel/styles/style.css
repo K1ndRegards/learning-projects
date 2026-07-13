@@ -113,7 +113,8 @@ img {
   display: flex;
   flex-direction: column;
   padding: var(--space-6) var(--space-4);
-  width: 26rem;
+  width: 100%;
+  max-width: 26rem;
   background-color: var(--sidebar-background-color);
 }
 
@@ -299,6 +300,7 @@ main.app {
 }
 
 .billing__history-more-btn {
+  transition: color 0.3s;
   border: none;
   padding: 0;
   background-color: transparent;
@@ -307,6 +309,10 @@ main.app {
   font-weight: 600;
   text-decoration: underline;
   color: var(--primary-color);
+}
+
+.billing__history-more-btn:hover {
+  color: var(--primary-darker);
 }
 
 /* Payment methods */
