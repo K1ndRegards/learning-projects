@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS reset file -->
     <link rel="stylesheet" href="./styles/reset.css" />
     <!-- Main CSS file -->
@@ -13,7 +20,7 @@
     <!-- Project from: https://www.uidesigndaily.com/posts/figma-buy-subscription-section-pricing-card-day-1574 -->
 
     <main>
-      <section class="subscriptions wrapper">
+      <section class="subscriptions container">
         <header class="subscriptions__header">
           <h1 class="subscriptions__header-heading">
             Get the most out of your mobile with the right subscription
@@ -27,9 +34,15 @@
 
         <div class="subscriptions__cards">
           <ul class="subscriptions__cards-list">
-            <li class="subscriptions__cards-list-item">
+            <li
+              class="subscriptions__cards-list-item subscriptions__cards-list-item--ice"
+            >
               <div class="subscriptions__cards-brand-logo">
-                <img src="./images/brad-ice.png" alt="Ice brand logo" />
+                <img
+                  src="./images/brad-ice.png"
+                  alt="Ice brand logo"
+                  class="subscriptions__cards-image"
+                />
               </div>
 
               <p class="subscriptions__cards-connection">Ice Mobile 10GB</p>
@@ -41,9 +54,15 @@
               <a href="#" class="subscriptions__cards-btn">Add subscription</a>
             </li>
 
-            <li class="subscriptions__cards-list-item">
+            <li
+              class="subscriptions__cards-list-item subscriptions__cards-list-item--telia"
+            >
               <div class="subscriptions__cards-brand-logo">
-                <img src="./images/brand-telia.png" alt="Telia brand logo" />
+                <img
+                  src="./images/brand-telia.png"
+                  alt="Telia brand logo"
+                  class="subscriptions__cards-image"
+                />
               </div>
 
               <p class="subscriptions__cards-connection">Telia Mobile 15GB</p>
@@ -57,11 +76,14 @@
               <a href="#" class="subscriptions__cards-btn">Add subscription</a>
             </li>
 
-            <li class="subscriptions__cards-list-item">
+            <li
+              class="subscriptions__cards-list-item subscriptions__cards-list-item--telenor"
+            >
               <div class="subscriptions__cards-brand-logo">
                 <img
                   src="./images/brand-telenor.png"
                   alt="Telenor brand logo"
+                  class="subscriptions__cards-image"
                 />
               </div>
 

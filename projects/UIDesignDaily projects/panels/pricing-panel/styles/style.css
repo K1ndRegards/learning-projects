@@ -1,5 +1,15 @@
 /* Variables */
 :root {
+  /* Colors */
+  --primary-color: #171435;
+  --page-background: #f1f1f6;
+  --section-background: #f4f5fa;
+  --white: #fff;
+  --black: #000;
+  --ice-brand-color: #fffbec;
+  --telia-brand-color: #f9ecff;
+  --telenor-brand-color: #eceeff;
+
   /* Typography scale */
   --font-xs: 1.2rem; /* 12px */
   --font-sm: 1.4rem; /* 14px */
@@ -24,6 +34,7 @@
   --space-7: 4.8rem; /* 48px */
   --space-8: 6.4rem; /* 64px */
   --space-9: 9.6rem; /* 96px */
+  --space-10: 16rem; /* 160px */
 
   /* Corner radiuses */
   --radius-sm: 0.4rem; /* 4px */
@@ -32,13 +43,8 @@
   --radius-xl: 3.2rem; /* 32px */
   --radius-full: 9999px; /* Circle */
 
-  /* Container scale */
-  --container-xs: 48rem; /* 480px  */
-  --container-sm: 64rem; /* 640px  */
-  --container-md: 80rem; /* 800px  */
-  --container-lg: 100rem; /* 1000px */
-  --container-xl: 120rem; /* 1200px */
-  --container-2xl: 144rem; /* 1440px */
+  /* Shadows */
+  --section-shadow: 0 47px 57px -26px rgba(83, 83, 144, 0.14);
 
   /* Line-height scale */
   --lh-none: 1;
@@ -47,4 +53,144 @@
   --lh-normal: 1.45;
   --lh-relaxed: 1.6;
   --lh-loose: 1.8;
+}
+
+/* General styles */
+body {
+  background-color: var(--page-background);
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-base);
+  color: var(--primary-color);
+}
+
+/* Main styles */
+
+.container {
+  width: 100%;
+  max-width: 130rem;
+  margin: 18rem auto;
+}
+
+.subscriptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  border-radius: var(--radius-xl);
+  background-color: var(--section-background);
+  box-shadow: var(--section-shadow);
+  padding: var(--space-9) var(--space-10);
+}
+
+/* Subscriptions header */
+.subscriptions__header {
+  padding: 0 var(--space-8);
+  text-align: center;
+}
+
+.subscriptions__header-heading {
+  margin-bottom: var(--space-6);
+  padding: 0 var(--space-10);
+  font-family: 'Merriweather', serif;
+  font-size: var(--font-xl);
+  font-weight: 700;
+}
+
+.subscriptions__header-details {
+  font-size: var(--font-md);
+  font-weight: 500;
+}
+
+/* Subscriptions cards */
+
+.subscriptions__cards-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.subscriptions__cards-list-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5) var(--space-6) var(--space-6);
+  background-color: var(--white);
+}
+
+.subscriptions__cards-list-item::before {
+  content: '';
+  position: absolute;
+  border-radius: var(--radius-lg);
+  top: -24px;
+  left: -24px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.subscriptions__cards-list-item--ice::before {
+  background-color: var(--ice-brand-color);
+}
+
+.subscriptions__cards-list-item--telia::before {
+  background-color: var(--telia-brand-color);
+}
+
+.subscriptions__cards-list-item--telenor::before {
+  background-color: var(--telenor-brand-color);
+}
+
+.subscriptions__cards-brand-logo {
+  margin-bottom: var(--space-4);
+}
+
+.subscriptions__cards-image {
+  display: block;
+  max-width: 100%;
+  height: 3rem;
+}
+
+.subscriptions__cards-connection {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-md);
+  font-weight: 600;
+}
+
+.subscriptions__cards-features {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-sm);
+}
+
+.subscriptions__cards-pricing {
+  margin-bottom: var(--space-7);
+  font-size: var(--font-sm);
+}
+
+.subscriptions__cards-price {
+  font-size: var(--font-lg);
+  font-weight: 700;
+}
+
+.subscriptions__cards-btn {
+  display: inline-block;
+  box-shadow: 0 4px 0 0 #e7e7fb;
+  border: 1px solid #f0f0f6;
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  background-color: #f4f5fa;
+  font-size: var(--font-base);
+  font-weight: 500;
+}
+
+.subscriptions__more-btn {
+  transition: opacity 0.3s;
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.subscriptions__more-btn:hover {
+  opacity: 0.9;
 }
