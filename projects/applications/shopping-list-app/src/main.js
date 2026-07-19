@@ -129,6 +129,8 @@ function createItemElement(item) {
     textInput.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') {
         saveEditedItem(item.id, textInput.value);
+      } else if (e.key === 'Escape') {
+        saveEditedItem(item.id, item.text);
       }
     });
     textInput.addEventListener('blur', function (e) {
@@ -304,11 +306,12 @@ renderList();
 // Input event listener
 UI.input.addEventListener('input', function () {
   // To prevent user from entering more than 17 characters
-  if (UI.input.value >= 17) {
+  if (UI.input.value.length >= 17) {
     UI.input.value = UI.input.value.slice(0, 17);
   }
 });
 
+// If user tries to add an item via 'Enter'
 UI.input.addEventListener('keydown', function (e) {
   if (e.key === 'Enter' && UI.input.value.trim()) {
     addItem(UI.input.value);
@@ -316,7 +319,7 @@ UI.input.addEventListener('keydown', function (e) {
   }
 });
 
-// Add item event listener
+// Add item button event listener
 UI.addBtn.addEventListener('click', function () {
   // Check if input isn't empty
   if (UI.input.value.trim()) {
@@ -334,7 +337,7 @@ UI.filter.addEventListener('input', function () {
 
 // Sort event listener to sort item list
 UI.sort.addEventListener('change', function () {
-  state.sort = sort.value;
+  state.sort = UI.sort.value;
   saveToStorage();
   renderList();
 });
@@ -343,10 +346,7 @@ UI.sort.addEventListener('change', function () {
 UI.list.addEventListener('click', function (e) {
   const parent = e.target.closest('.app__list-item');
 
-  if (
-    e.target.classList.contains('app__list-item-btn--remove') ||
-    e.target.classList.contains('fa-xmark')
-  ) {
+  if (e.target.closest('.app__list-item-btn--remove')) {
     // If "X" button is clicked -> remove item
     removeItem(+parent.dataset.id);
   } else if (
@@ -364,6 +364,7 @@ UI.list.addEventListener('click', function (e) {
   }
 });
 
+// Clear button event listener
 UI.clearBtn.addEventListener('click', function () {
   state.items = [];
   state.filter = '';

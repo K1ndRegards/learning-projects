@@ -222,7 +222,8 @@ img {
 }
 
 .app__list-item--active {
-  background-color: var(--tertiary-light);
+  background-color: #fff;
+  outline: 1px solid rgb(2, 164, 2);
 }
 
 .app__list-item:hover:not(.app__list-item--active) {
@@ -278,7 +279,7 @@ img {
   border: none;
   padding: 0;
   width: 100%;
-  background: transparent;
+  background: #fff;
   font-weight: 600;
   font-size: var(--font-base);
   line-height: 1.2;
