@@ -1,0 +1,10 @@
+{
+  "title": "Edit Availability UI",
+  "slug": "edit-availability-ui",
+  "description": "Custom availability selection interface. Includes modern UI styling and fully custom checkboxes.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/edit-availability",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

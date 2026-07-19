@@ -1,0 +1,10 @@
+{
+  "title": "keyCode Application",
+  "slug": "keyCode-app",
+  "description": "Interactive tool that displays detailed information about any pressed key using JavaScript keyboard events.",
+  "technologies": ["HTML", "CSS", "JavaScript"],
+  "sourceUrl": "https://www.udemy.com/course/modern-javascript-from-the-beginning/",
+  "sourceDescription": "Course: Modern JavaScript From The Beginning 2.0 by Brad Traversy (Udemy).",
+  "date": "2026-07-07",
+  "screenshot": "screenshot.webp"
+}

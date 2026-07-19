@@ -1,0 +1,10 @@
+{
+  "title": "Job Search Panel",
+  "slug": "job-search-panel",
+  "description": "Static HTML & CSS job search interface.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/figma-search-categories-day-1552",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

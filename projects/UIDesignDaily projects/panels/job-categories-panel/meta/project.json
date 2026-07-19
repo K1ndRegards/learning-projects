@@ -1,0 +1,10 @@
+{
+  "title": "Job Categories Panel",
+  "slug": "job-categories-panel",
+  "description": "Static HTML & CSS job listings layout with category cards.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/figma-job-cards-list-card-day-1524",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

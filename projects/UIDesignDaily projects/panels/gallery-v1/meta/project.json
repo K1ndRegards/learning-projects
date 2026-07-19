@@ -1,0 +1,10 @@
+{
+  "title": "Gallery",
+  "slug": "gallery",
+  "description": "Static HTML & CSS gallery layout",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/figma-collections-list-collection-card-day-1577",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

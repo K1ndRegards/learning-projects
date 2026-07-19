@@ -1,0 +1,10 @@
+{
+  "title": "Filter Panel",
+  "slug": "filter-panel",
+  "description": "Static HTML & CSS filter panel",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/filter",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

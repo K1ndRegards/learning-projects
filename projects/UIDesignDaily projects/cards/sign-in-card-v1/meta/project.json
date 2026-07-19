@@ -1,0 +1,10 @@
+{
+  "title": "Sign In Card",
+  "slug": "sign-in-card",
+  "description": "Static HTML & CSS sign‑in card with email and social login options.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/sign-in-ui-design",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

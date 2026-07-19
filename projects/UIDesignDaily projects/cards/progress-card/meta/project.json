@@ -1,0 +1,10 @@
+{
+  "title": "Progress Card",
+  "slug": "progress-card",
+  "description": "Static HTML & CSS progress card featuring a circular indicator, completion stats, and clean modern layout.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/progress",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

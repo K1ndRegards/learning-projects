@@ -1,0 +1,10 @@
+{
+  "title": "Users Panel",
+  "slug": "users-panel",
+  "description": "Static HTML & CSS user directory.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/figma-users-list-card-day-1542",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Account Panel",
+  "slug": "account-panel",
+  "description": "Static HTML & CSS billing dashboard.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/figma-billing-page-payment-day-1585",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-12",
+  "screenshot": "screenshot.webp"
+}

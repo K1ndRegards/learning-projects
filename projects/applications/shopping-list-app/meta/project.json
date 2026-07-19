@@ -1,0 +1,10 @@
+{
+  "title": "Shopping List",
+  "slug": "shopping-list",
+  "description": "Interactive shopping list app with add, edit, sort, filter and localStorage support.",
+  "technologies": ["HTML", "CSS", "JavaScript"],
+  "sourceUrl": "https://www.udemy.com/course/modern-javascript-from-the-beginning/",
+  "sourceDescription": "Course: Modern JavaScript From The Beginning 2.0 by Brad Traversy (Udemy).",
+  "date": "2026-07-08",
+  "screenshot": "screenshot.webp"
+}

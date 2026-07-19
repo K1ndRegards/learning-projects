@@ -1,0 +1,10 @@
+{
+  "title": "Community Card",
+  "slug": "community-card",
+  "description": "Static HTML & CSS info card featuring modern layout, custom buttons, and clean visual hierarchy.",
+  "technologies": ["HTML", "CSS"],
+  "sourceUrl": "https://www.uidesigndaily.com/posts/figma-details-card-day-1546",
+  "sourceDescription": "Design challenge from UIDesignDaily.",
+  "date": "2026-07-05",
+  "screenshot": "screenshot.webp"
+}
