@@ -7,7 +7,7 @@
     completed: false,
   }
 */
-let state = {
+const state = {
   items: [],
 };
 
@@ -77,7 +77,7 @@ function createListItem(item) {
   textField.textContent = item.text;
 
   const dateField = listItemClone.querySelector('.todo-app__item-date');
-  dateField.appendChild(document.createTextNode(item.date));
+  dateField.textContent = item.date;
 
   return listItemClone;
 }
@@ -104,10 +104,11 @@ function saveItems() {
   localStorage.setItem('listData', JSON.stringify(state));
 }
 
+// Load items from local storage
 function loadItems() {
   const savedData = JSON.parse(localStorage.getItem('listData'));
-  if (savedData) {
-    state = savedData;
+  if (savedData && Array.isArray(savedData.items)) {
+    state.items = savedData.items;
   }
 }
 
@@ -128,8 +129,10 @@ function removeItem(id) {
   state.items = state.items.filter((item) => item.id !== id);
 }
 
+// Toggle complete state on individual list item
 function toggleComplete(id) {
   const completedItem = state.items.find((item) => item.id === id);
+  if (!completedItem) return;
 
   completedItem.completed = !completedItem.completed;
 }
