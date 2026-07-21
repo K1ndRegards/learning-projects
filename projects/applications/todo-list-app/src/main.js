@@ -65,6 +65,14 @@ function createListItem(item) {
   const newListItem = listItemClone.querySelector('.todo-app__list-item');
   newListItem.dataset.id = item.id;
 
+  if (item.completed) {
+    const inputCheckbox = listItemClone.querySelector(
+      '.todo-app__input-checkbox',
+    );
+
+    inputCheckbox.checked = true;
+  }
+
   const textField = listItemClone.querySelector('.todo-app__item-text');
   textField.textContent = item.text;
 
@@ -120,6 +128,12 @@ function removeItem(id) {
   state.items = state.items.filter((item) => item.id !== id);
 }
 
+function toggleComplete(id) {
+  const completedItem = state.items.find((item) => item.id === id);
+
+  completedItem.completed = !completedItem.completed;
+}
+
 // Events
 // Add list item on submit
 UI.inputForm.addEventListener('submit', function (e) {
@@ -130,12 +144,19 @@ UI.inputForm.addEventListener('submit', function (e) {
   UI.inputField.value = '';
 });
 
-// Event delegation to remove list items
 UI.itemList.addEventListener('click', function (e) {
+  // Event delegation to remove list items
   if (e.target.closest('.todo-app__remove-btn')) {
     const listItem = e.target.closest('.todo-app__list-item');
 
     removeItem(Number(listItem.dataset.id));
+    saveItems();
+    render();
+    // Event delegation to mark completed tasks
+  } else if (e.target.closest('.todo-app__item-label')) {
+    const listItem = e.target.closest('.todo-app__list-item');
+
+    toggleComplete(Number(listItem.dataset.id));
     saveItems();
     render();
   }
