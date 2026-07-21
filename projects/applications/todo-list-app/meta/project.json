@@ -1,0 +1,10 @@
+{
+  "title": "Todo List App",
+  "slug": "todo-list-app",
+  "description": "Simple todo list built with HTML, CSS and vanilla JavaScript.",
+  "technologies": ["HTML", "CSS", "JavaScript"],
+  "sourceUrl": null,
+  "sourceDescription": "This project was created during my learning journey.",
+  "date": "2026-07-21",
+  "screenshot": "screenshot.webp"
+}
