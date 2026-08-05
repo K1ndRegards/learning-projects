@@ -1,0 +1,9 @@
+{
+  "title": "Custom Switch Toggle",
+  "slug": "11-custom-toggle",
+  "description": "Custom switch toggle created with Tailwind CSS and JavaScript",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 2,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

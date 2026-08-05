@@ -1,0 +1,9 @@
+{
+  "title": "Pricing Cards",
+  "slug": "10-pricing-cards",
+  "description": "Pricing cards page created with Tailwind CSS",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 2,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

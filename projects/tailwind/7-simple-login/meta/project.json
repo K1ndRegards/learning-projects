@@ -1,0 +1,9 @@
+{
+  "title": "Simple Login",
+  "slug": "7-simple-login",
+  "description": "Simple login created with Tailwind CSS with dark mode switch via custom toggle",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 2.5,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

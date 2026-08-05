@@ -1,0 +1,9 @@
+{
+  "title": "Simple Blockquote",
+  "slug": "1-simple-Blockquote",
+  "description": "Simple blockquote created with Tailwind CSS",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 0.5,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

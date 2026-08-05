@@ -1,0 +1,9 @@
+{
+  "title": "Simple Info Box",
+  "slug": "2-simple-info-box",
+  "description": "Simple info-box created with Tailwind CSS",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 0.5,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

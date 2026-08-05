@@ -1,0 +1,9 @@
+{
+  "title": "Simple Form",
+  "slug": "6-simple-form",
+  "description": "Simple form created with Tailwind CSS",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 1,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

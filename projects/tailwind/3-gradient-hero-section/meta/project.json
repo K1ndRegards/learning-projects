@@ -1,0 +1,9 @@
+{
+  "title": "Gradient Hero Section",
+  "slug": "3-gradient-hero-section",
+  "description": "Gradient hero section created with Tailwind CSS",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 0.5,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

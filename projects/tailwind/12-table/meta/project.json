@@ -1,0 +1,9 @@
+{
+  "title": "Simple Table",
+  "slug": "12-table",
+  "description": "Simple table created with Tailwind CSS",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 1,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}

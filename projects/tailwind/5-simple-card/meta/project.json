@@ -1,0 +1,9 @@
+{
+  "title": "Simple Card",
+  "slug": "5-simple-card",
+  "description": "Simple card created with Tailwind CSS",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 1,
+  "date": "2026-08-05",
+  "screenshot": "screenshot.webp"
+}
