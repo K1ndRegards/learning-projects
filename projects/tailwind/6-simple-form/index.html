@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Tailwind CSS</title>
+  </head>
+  <body>
+    <main>
+      <form
+        action="#"
+        class="flex flex-col gap-y-6 transition duration-200 p-8 border-2 rounded-lg focus-within:scale-105 focus-within:shadow-lg focus-within:shadow-slate-300"
+      >
+        <!-- Form group -->
+        <div class="flex flex-col gap-y-2">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter name"
+            class="px-6 py-2 outline-none rounded-lg w-96 bg-white text-2xl text-slate-900"
+          />
+        </div>
+
+        <!-- Form group -->
+        <div class="flex flex-col gap-y-2">
+          <label for="name">Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            class="px-6 py-2 outline-none rounded-lg w-96 bg-white text-2xl text-slate-900 disabled:bg-rose-400"
+            disabled
+          />
+        </div>
+
+        <!-- Form group -->
+        <div class="flex flex-col gap-y-2">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter email"
+            class="px-6 py-2 outline-none rounded-lg w-96 bg-white text-2xl text-slate-900 peer"
+          />
+          <span class="invisible text-lg text-red-300 peer-invalid:visible"
+            >Invalid email</span
+          >
+        </div>
+
+        <button type="button" class="btn">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>

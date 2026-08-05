@@ -1,6 +1,6 @@
 # Learning Projects
 
-A structured collection of practice components, simple webpages, and learning projects created while studying frontend development.
+A collection of hands‑on practice projects that I recreated from various courses, tutorials, and challenge platforms to strengthen my web development skills.
 
 ---
 
@@ -8,7 +8,7 @@ A structured collection of practice components, simple webpages, and learning pr
 
 This repository serves as a personal learning environment where I:
 
-- Practice frontend fundamentals
+- Practice essential web development concepts and techniques
 - Build UI components from scratch
 - Recreate layouts from mockups
 - Explore HTML, CSS, and JavaScript
@@ -23,6 +23,7 @@ It grows over time as I complete new exercises and experiment with new ideas.
 
 - **HTML5**
 - **CSS3** (BEM, utilities, custom properties)
+- **Tailwind CSS**
 - **JavaScript**
 - Additional tools and technologies as I continue learning
 

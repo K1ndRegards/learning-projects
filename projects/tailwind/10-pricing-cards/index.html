@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Tailwind CSS</title>
+  </head>
+  <body class="bg-slate-900 text-white">
+    <main>
+      <section class="py-16 px-8">
+        <!-- Section header -->
+        <header class="mb-16 mx-auto max-w-lg text-center">
+          <h1 class="mb-6 text-4xl font-bold">Choose your plan</h1>
+          <p class="text-lg text-gray-300">
+            Find the plan that matches your needs today and supports your
+            ambitions for tomorrow.
+          </p>
+        </header>
+
+        <!-- Card list -->
+        <ul
+          class="flex flex-col md:flex-row md:flex-wrap gap-10 items-center md:items-stretch md:justify-center"
+        >
+          <!-- First card -->
+          <li
+            class="flex flex-col p-8 w-full md:max-w-78 items-start rounded-xl bg-slate-800"
+          >
+            <h2 class="mb-2 text-2xl font-semibold">Free</h2>
+            <p class="mb-4 text-sm rounded-full px-2 py-1 bg-blue-500">
+              Current Plan
+            </p>
+            <p class="mb-6 text-gray-300">For small teams</p>
+            <p class="mb-6 text-xl">
+              <span class="mr-2 text-4xl font-bold">$0</span> /Month
+            </p>
+
+            <ul class="mb-6">
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">10 members</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Integration support</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Figma support</span>
+              </li>
+            </ul>
+
+            <button
+              type="button"
+              class="transition-colors duration-200 w-full mt-auto px-4 py-2 rounded-xl bg-blue-500 hover:bg-blue-600 cursor-pointer"
+            >
+              Get Started →
+            </button>
+          </li>
+
+          <!-- Second card -->
+          <li
+            class="flex flex-col w-full md:max-w-78 p-8 items-start rounded-xl bg-slate-800"
+          >
+            <h2 class="mb-2 text-2xl font-semibold">Starter</h2>
+            <p class="mb-4 text-sm rounded-full px-2 py-1 bg-green-600">
+              Recommended
+            </p>
+            <p class="mb-6 text-gray-300">For a broad set of teams</p>
+            <p class="mb-6 text-xl">
+              <span class="mr-2 text-4xl font-bold">$1,000</span> /Month
+            </p>
+
+            <ul class="mb-6">
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Unlimited members</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Integration support</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Figma support</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Storybook support</span>
+              </li>
+            </ul>
+
+            <button
+              type="button"
+              class="transition-colors duration-200 w-full mt-auto px-4 py-2 rounded-xl bg-blue-500 hover:bg-blue-600 cursor-pointer"
+            >
+              Get Started →
+            </button>
+          </li>
+
+          <!-- Third card -->
+          <li
+            class="flex flex-col w-full md:max-w-78 p-8 items-start rounded-xl bg-slate-800"
+          >
+            <h2 class="mb-2 text-2xl font-semibold">Enterprise</h2>
+            <p class="mb-4 text-sm rounded-full px-2 py-1 bg-blue-500">
+              Current Plan
+            </p>
+            <p class="mb-6 text-gray-300">For all custom needs</p>
+            <p class="mb-6 text-xl">
+              <span class="mr-2 text-4xl font-bold">Custom</span>
+            </p>
+
+            <ul class="mb-6">
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Unlimited members</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Integration support</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Figma support</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Storybook support</span>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  class="w-6 h-6 text-purple-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.7 5.3a1 1 0 0 0-1.4-1.4L8 11.17 4.7 7.88a1 1 0 1 0-1.4 1.42l4 4a1 1 0 0 0 1.4 0l8-8Z"
+                  />
+                </svg>
+                <span class="text-lg text-gray-200">Everything else</span>
+              </li>
+            </ul>
+
+            <button
+              type="button"
+              class="transition-colors duration-200 w-full mt-auto px-4 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 cursor-pointer"
+            >
+              Contact Sales →
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

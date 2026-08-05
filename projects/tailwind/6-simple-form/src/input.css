@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply flex flex-col justify-center items-center  gap-y-6 h-screen bg-slate-700 text-white;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block self-center mt-6 rounded-lg border-2 px-6 py-3 cursor-pointer text-2xl text-white transition duration-100 hover:bg-slate-800 active:scale-95;
+  }
+}
