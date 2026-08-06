@@ -1,10 +1,9 @@
 {
   "title": "Designer Gallery",
-  "slug": "designer-gallery",
+  "slug": "3-designer-webpage",
   "description": "Responsive HTML/CSS grid-based page with a small JS dropdown side menu.",
   "technologies": ["HTML", "CSS", "JavaScript"],
-  "sourceUrl": "https://www.udemy.com/course/html-and-css-bootcamp",
-  "sourceDescription": "Project from the HTML & CSS Bootcamp 2026 Edition by Colt Steele (Udemy).",
+  "difficulty": 1.5,
   "date": "30-06-2026",
   "screenshot": "screenshot.webp"
 }

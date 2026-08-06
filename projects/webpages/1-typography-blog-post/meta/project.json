@@ -1,10 +1,9 @@
 {
   "title": "Typography Blog Post",
-  "slug": "typography-blog-post",
+  "slug": "1-typography-blog-post",
   "description": "HTML/CSS blog-style page focused on typography and text styling.",
   "technologies": ["HTML", "CSS"],
-  "sourceUrl": "https://www.udemy.com/course/html-and-css-bootcamp",
-  "sourceDescription": "Project from the HTML & CSS Bootcamp 2026 Edition by Colt Steele (Udemy).",
+  "difficulty": 1,
   "date": "21-06-2026",
   "screenshot": "screenshot.webp"
 }

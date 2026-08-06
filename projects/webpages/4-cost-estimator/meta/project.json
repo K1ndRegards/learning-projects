@@ -1,10 +1,9 @@
 {
   "title": "Cost Estimator",
-  "slug": "cost-estimator",
+  "slug": "4-cost-estimator",
   "description": "Clean and modern pricing page built with HTML and CSS.",
   "technologies": ["HTML", "CSS"],
-  "sourceUrl": "https://www.udemy.com/course/html-and-css-bootcamp",
-  "sourceDescription": "Project from the HTML & CSS Bootcamp 2026 Edition by Colt Steele (Udemy).",
+  "difficulty": 2,
   "date": "27-06-2026",
   "screenshot": "screenshot.webp"
 }
