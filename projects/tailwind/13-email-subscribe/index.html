@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Email Subscribe</title>
+  </head>
+  <body class="bg-zinc-700 text-white">
+    <main class="flex justify-center items-center h-screen">
+      <!-- Card container -->
+      <article
+        class="flex flex-col md:flex-row justify-center mx-6 max-w-md md:max-w-3xl rounded-2xl p-2 bg-zinc-800"
+      >
+        <!-- Image -->
+        <div
+          class="rounded-2xl md:rounded-r-none aspect-19/16 md:aspect-17/26 md:max-w-42 overflow-hidden"
+        >
+          <img
+            src="./images/image.jpg"
+            alt="Seasoning bowl of vegetables"
+            class="transition-transform duration-300 object-fill w-full h-full hover:scale-105"
+          />
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 md:p-12 flex flex-col gap-4 text-center md:text-left">
+          <h2 class="text-xl font-serif">
+            Get diet and fitness tips in your inbox
+          </h2>
+          <p class="text-sm max-w-xs mx-auto md:m-0 tracking-wide">
+            Eat better and exercise better. Sign up for the Diet&Fitness
+            newsletter.
+          </p>
+
+          <!-- Email input form -->
+          <form action="#" class="flex flex-col md:flex-row gap-4">
+            <div>
+              <label for="email" class="sr-only">Enter your email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email address"
+                class="w-full px-4 py-3 border border-zinc-600 text-center md:text-left text-sm text-white focus:outline-none placeholder:text-zinc-400"
+              />
+            </div>
+
+            <button type="button" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

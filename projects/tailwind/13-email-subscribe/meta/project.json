@@ -1,0 +1,9 @@
+{
+  "title": "Email Subscribe Card",
+  "slug": "13-email-subscribe",
+  "description": "Simple responsive email subscribe form with hover effects.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 1,
+  "date": "2026-08-06",
+  "screenshot": "screenshot.webp"
+}
