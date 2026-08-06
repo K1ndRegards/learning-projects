@@ -1,0 +1,9 @@
+{
+  "title": "Pricing Cards",
+  "slug": "14-pricing-cards",
+  "description": "Responsible pricing card project with couple hover effects.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 1.5,
+  "date": "2026-08-06",
+  "screenshot": "screenshot.webp"
+}

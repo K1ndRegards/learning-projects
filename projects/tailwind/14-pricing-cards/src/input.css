@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@layer components {
+  .pricing-wrapper {
+    @apply relative;
+  }
+
+  .pricing-wrapper::before {
+    content: '';
+    @apply absolute -z-1 w-[calc(100%+24px)] h-[calc(100%+24px)] -top-3 -left-3 rounded-xl bg-slate-700;
+  }
+
+  .pricing-card {
+    @apply rounded-xl bg-slate-800;
+  }
+
+  .pricing-card__content,
+  .pricing-card__list {
+    @apply p-8 text-center;
+  }
+
+  .pricing-card__content {
+    @apply border-b pb-12 border-slate-700;
+  }
+
+  .pricing-card__plan {
+    @apply mb-12 uppercase text-lg;
+  }
+
+  .pricing-card__storage {
+    @apply mb-3 text-5xl font-serif;
+  }
+
+  .pricing-card__price {
+    @apply mb-6;
+  }
+
+  .pricing-card__list {
+    @apply text-left;
+  }
+
+  .pricing-card__list-item {
+    @apply flex items-center;
+  }
+
+  .pricing-card__list-item svg {
+    @apply mr-1;
+  }
+
+  .btn {
+    @apply transition-colors duration-300 px-9 py-3 rounded-lg border border-violet-700 hover:bg-violet-700 hover:text-white cursor-pointer;
+  }
+}
