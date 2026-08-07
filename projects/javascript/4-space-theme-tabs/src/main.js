@@ -3,23 +3,23 @@ const state = {
   current: 'astronaut',
   data: {
     astronaut: {
-      image: './images/astronaut.jpg',
+      image: './images/astronaut.webp',
       index: 0,
     },
     earth: {
-      image: './images/earth.jpg',
+      image: './images/earth.webp',
       index: 1,
     },
     galaxy: {
-      image: './images/galaxy.jpg',
+      image: './images/galaxy.webp',
       index: 2,
     },
     'black-hole': {
-      image: './images/black-hole.jpg',
+      image: './images/black-hole.webp',
       index: 3,
     },
     nebula: {
-      image: './images/nebula.jpg',
+      image: './images/nebula.webp',
       index: 4,
     },
   },
@@ -27,7 +27,7 @@ const state = {
 
 // UI elements
 const UI = {
-  images: document.querySelector('#images'),
+  image: document.querySelector('#image'),
   tabsList: document.querySelector('#tabs-list'),
   descriptions: document.querySelector('#descriptions'),
 };
@@ -46,12 +46,7 @@ function setCurrentTab() {
 
 // Function to change image
 function setCurrentImage() {
-  // Hide all images
-  Array.from(UI.images.children).forEach((img) => img.classList.add('hidden'));
-
-  UI.images
-    .querySelector(`img[data-image-name="${state.current}"]`)
-    .classList.remove('hidden');
+  UI.image.src = state.data[state.current].image;
 }
 
 // Function to change description to current topics one
