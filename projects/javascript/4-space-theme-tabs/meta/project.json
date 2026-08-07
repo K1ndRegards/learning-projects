@@ -1,7 +1,7 @@
 {
   "title": "Space Theme Tabs",
   "slug": "4-space-theme-tabs",
-  "description": "Interactive tabs project.",
+  "description": "Interactive tabs project with simple animations.",
   "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
   "difficulty": 3,
   "date": "2026-08-07",

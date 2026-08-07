@@ -9,4 +9,36 @@
   .highlight {
     @apply font-bold scale-105 translate-x-2 text-shadow-md text-shadow-slate-700;
   }
+
+  .fade-in-image {
+    animation-name: fade-in-image;
+    animation-duration: 1.5s;
+  }
+
+  .fade-in-text {
+    animation-name: fade-in-text;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade-in-image {
+    from {
+      transform: translateY(-10px);
+      opacity: 0.1;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-text {
+    from {
+      transform: translateX(30px);
+      opacity: 0.1;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }

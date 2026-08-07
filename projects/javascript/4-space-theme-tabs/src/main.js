@@ -14,7 +14,7 @@ const state = {
       image: './images/galaxy.webp',
       index: 2,
     },
-    'black-hole': {
+    'black-holes': {
       image: './images/black-hole.webp',
       index: 3,
     },
@@ -27,7 +27,7 @@ const state = {
 
 // UI elements
 const UI = {
-  image: document.querySelector('#image'),
+  images: document.querySelector('#images'),
   tabsList: document.querySelector('#tabs-list'),
   descriptions: document.querySelector('#descriptions'),
 };
@@ -46,18 +46,36 @@ function setCurrentTab() {
 
 // Function to change image
 function setCurrentImage() {
-  UI.image.src = state.data[state.current].image;
+  // Hide all images
+  Array.from(UI.images.children).forEach((img) => {
+    img.classList.add('hidden');
+    // Remove animation class so that it could occur multiple times
+    img.classList.remove('fade-in-image');
+  });
+
+  const img = UI.images.querySelector(`img[data-image="${state.current}"]`);
+  // Show current topic image
+  img.classList.remove('hidden');
+  // Add animation class
+  img.classList.add('fade-in-image');
 }
 
 // Function to change description to current topics one
 function setDescription() {
-  Array.from(UI.descriptions.children).forEach((descr) =>
-    descr.classList.add('hidden'),
+  // Hide all descriptions
+  Array.from(UI.descriptions.children).forEach((description) => {
+    description.classList.add('hidden');
+    // Remove animation class so that it could occur multiple times
+    description.classList.remove('fade-in-text');
+  });
+
+  const description = UI.descriptions.querySelector(
+    `div[data-description="${state.current}"]`,
   );
 
-  UI.descriptions
-    .querySelector(`p[data-description=${state.current}]`)
-    .classList.remove('hidden');
+  description.classList.remove('hidden');
+  // add animation class
+  description.classList.add('fade-in-text');
 }
 
 // Main render function
