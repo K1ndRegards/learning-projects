@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Space</title>
+  </head>
+  <body class="font-poppins">
+    <main class="pt-36">
+      <!-- Space background -->
+      <div
+        class="fixed -z-10 top-0 left-0 flex justify-center items-center bg-[url('../images/space.jpg')] bg-cover bg-center bg-no-repeat brightness-10 w-screen h-screen"
+      ></div>
+
+      <section
+        class="relative flex mx-auto max-w-7xl rounded p-4 shadow-lg shadow-slate-900 bg-slate-900"
+      >
+        <!-- Image -->
+        <div class="bg-slate-900 rounded">
+          <div class="overflow-hidden aspect-video w-full max-w-4xl rounded">
+            <img
+              src="./images/astronaut.jpg"
+              alt=""
+              class="transition-transform duration-300 object-cover w-full h-full hover:scale-105"
+              id="image"
+            />
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="bg-slate-900 text-gray-200 px-4">
+          <p class="text-lg mb-8 mt-2">Select the topic that interests you:</p>
+          <ul
+            class="border-l-2 border-white pl-8 text-xl space-y-2"
+            id="tabs-list"
+          >
+            <li
+              class="list-item transition-all duration-300 cursor-pointer hover:text-gray-300 highlight"
+              data-tab="astronaut"
+            >
+              Astronaut
+            </li>
+            <li
+              class="list-item transition-all duration-300 cursor-pointer hover:text-gray-300"
+              data-tab="earth"
+            >
+              Earth
+            </li>
+            <li
+              class="list-item transition-all duration-300 cursor-pointer hover:text-gray-300"
+              data-tab="galaxy"
+            >
+              Galaxy
+            </li>
+            <li
+              class="list-item transition-all duration-300 cursor-pointer hover:text-gray-300"
+              data-tab="black-hole"
+            >
+              Black Hole
+            </li>
+            <li
+              class="list-item transition-all duration-300 cursor-pointer hover:text-gray-300"
+              data-tab="nebula"
+            >
+              Nebula
+            </li>
+          </ul>
+        </div>
+
+        <!-- Comment -->
+        <div
+          class="absolute -bottom-48 right-48 p-12 border border-white aspect-video w-full max-w-2xl bg-slate-900/80 text-xl text-gray-200 tracking-wide"
+          id="descriptions-container"
+        >
+          <!-- Astronaut description -->
+          <p data-description="astronaut">
+            Astronauts push the boundaries of human exploration, venturing into
+            the unknown to expand our understanding of the universe. Their
+            missions rely on the dedication of countless specialists on Earth
+            who monitor systems, analyze data, and guide every step from afar.
+            Together, these teams form a single force that drives scientific
+            discovery, advances technology, and brings humanity closer to the
+            mysteries of space.
+          </p>
+          <!-- Earth description -->
+          <p class="hidden" data-description="earth">
+            Earth is the cradle of humanity, the place where our journey into
+            the cosmos begins. From this vibrant world, scientists, engineers,
+            and explorers work together to study distant galaxies, monitor
+            spacecraft, and decode the mysteries of the universe. Every mission
+            launched into space is rooted in the knowledge, creativity, and
+            determination found here on Earth, making our home planet an
+            essential foundation for all cosmic discovery.
+          </p>
+          <!-- Galaxy description -->
+          <p class="hidden" data-description="galaxy">
+            A galaxy is a vast island of stars, gas, and dark matter, shaping
+            the evolution of the universe across billions of years. Within its
+            swirling arms, new stars are born, ancient systems fade, and cosmic
+            forces sculpt the space we seek to understand. As humanity looks
+            outward from Earth, galaxies become both destinations and guides,
+            revealing the history of creation and inspiring our ongoing journey
+            into the depths of the cosmos.
+          </p>
+          <!-- Black holes description -->
+          <p class="hidden" data-description="black-hole">
+            Black holes are among the universe’s most enigmatic phenomena,
+            formed when gravity becomes so intense that not even light can
+            escape. Their immense pull shapes the motion of stars, fuels
+            energetic cosmic jets, and influences the evolution of entire
+            galaxies. By studying these invisible giants, scientists uncover
+            clues about space, time, and the limits of physics, bringing
+            humanity closer to understanding the deepest mysteries of the
+            cosmos.
+          </p>
+          <p class="hidden" data-description="nebula">
+            Nebulae are vast clouds of gas and dust where stars are born and old
+            ones fade, shaping the cosmic landscape with color and light. Within
+            these luminous regions, gravity, radiation, and time work together
+            to forge new systems that will one day illuminate the galaxy. By
+            studying nebulae, scientists gain insight into stellar evolution and
+            the origins of planets, tracing the processes that ultimately led to
+            the formation of our own home in the universe.
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
