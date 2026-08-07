@@ -7,16 +7,6 @@
 
 @layer utilities {
   .highlight {
-    @apply font-bold text-2xl text-shadow-slate-700 text-shadow-md;
-  }
-
-  .fade-out {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .fade-in {
-    opacity: 1;
-    transition: opacity 0.4s ease;
+    @apply font-bold scale-105 translate-x-2 text-shadow-md text-shadow-slate-700;
   }
 }

@@ -27,9 +27,9 @@ const state = {
 
 // UI elements
 const UI = {
-  image: document.querySelector('#image'),
+  images: document.querySelector('#images'),
   tabsList: document.querySelector('#tabs-list'),
-  descriptions: document.querySelector('#descriptions-container'),
+  descriptions: document.querySelector('#descriptions'),
 };
 
 // Function to remove highlight class from every tab
@@ -46,9 +46,12 @@ function setCurrentTab() {
 
 // Function to change image
 function setCurrentImage() {
-  const currentTopic = state.data[state.current];
+  // Hide all images
+  Array.from(UI.images.children).forEach((img) => img.classList.add('hidden'));
 
-  UI.image.src = currentTopic.image;
+  UI.images
+    .querySelector(`img[data-image-name="${state.current}"]`)
+    .classList.remove('hidden');
 }
 
 // Function to change description to current topics one

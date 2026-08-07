@@ -19,12 +19,39 @@
       >
         <!-- Image -->
         <div class="bg-slate-900 rounded">
-          <div class="overflow-hidden aspect-video w-full max-w-4xl rounded">
+          <div
+            class="overflow-hidden aspect-video w-full max-w-4xl rounded"
+            id="images"
+          >
             <img
               src="./images/astronaut.jpg"
               alt=""
               class="transition-transform duration-300 object-cover w-full h-full hover:scale-105"
-              id="image"
+              data-image-name="astronaut"
+            />
+            <img
+              src="./images/black-hole.jpg"
+              alt=""
+              class="transition-transform duration-300 object-cover w-full h-full hover:scale-105 hidden"
+              data-image-name="black-hole"
+            />
+            <img
+              src="./images/earth.jpg"
+              alt=""
+              class="transition-transform duration-300 object-cover w-full h-full hover:scale-105 hidden"
+              data-image-name="earth"
+            />
+            <img
+              src="./images/galaxy.jpg"
+              alt=""
+              class="transition-transform duration-300 object-cover w-full h-full hover:scale-105 hidden"
+              data-image-name="galaxy"
+            />
+            <img
+              src="./images/nebula.jpg"
+              alt=""
+              class="transition-transform duration-300 object-cover w-full h-full hover:scale-105 hidden"
+              data-image-name="nebula"
             />
           </div>
         </div>
@@ -72,7 +99,7 @@
         <!-- Comment -->
         <div
           class="absolute -bottom-48 right-48 p-12 border border-white aspect-video w-full max-w-2xl bg-slate-900/80 text-xl text-gray-200 tracking-wide"
-          id="descriptions-container"
+          id="descriptions"
         >
           <!-- Astronaut description -->
           <p data-description="astronaut">
