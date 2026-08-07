@@ -1,0 +1,9 @@
+{
+  "title": "Product Modal",
+  "slug": "15-product-modal",
+  "description": "Simple modal window featuring some product with animated buttons.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 1.5,
+  "date": "2026-08-07",
+  "screenshot": "screenshot.webp"
+}

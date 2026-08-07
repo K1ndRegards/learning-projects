@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Product Modal</title>
+  </head>
+  <body>
+    <main class="flex justify-center items-center h-screen bg-slate-100">
+      <!-- Product card -->
+      <article
+        class="flex flex-col md:flex-row items-center p-6 mx-6 md:p-12 md:gap-8 max-w-sm md:max-w-3xl shadow-2xl rounded-xl overflow-hidden bg-white"
+      >
+        <!-- Image -->
+        <div class="w-64 md:w-80 aspect-square md:self-start">
+          <img
+            src="./images/headphone.png"
+            alt="Pink headphones with horns"
+            class="transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+
+        <!-- Content -->
+        <div class="flex flex-col gap-4 items-center md:items-start">
+          <!-- Shipping tag -->
+          <p class="px-3 py-1 bg-black text-white rounded-xl text-sm">
+            Free Shipping
+          </p>
+          <!-- Product name -->
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-center md:text-left"
+          >
+            Razer Kraken Kitty Edt Gaming Headset Quartz
+          </h2>
+          <!-- Special offer -->
+          <p class="line-through">$799</p>
+          <p class="text-5xl font-bold">$599</p>
+          <p class="text-xs md:text-sm text-gray-400 text-center">
+            This offer is valid until April 3rd or as long as stock lasts!
+          </p>
+
+          <!-- Button -->
+          <div class="mt-2 w-full bg-blue-700 rounded-lg">
+            <button
+              type="button"
+              class="transition duration-200 py-4 w-full rounded-lg bg-blue-500 hover:bg-blue-600 cursor-pointer text-white -translate-y-2 active:translate-y-0"
+            >
+              Add to cart
+            </button>
+          </div>
+          <!-- Animated dot -->
+          <p
+            class="relative self-start text-sm pl-6 before:absolute before:top-[calc(50%-6px)] before:left-0 before:w-3 before:aspect-square before:rounded-full before:bg-green-500 before:animate-pulse"
+          >
+            50+ pcs. in stock
+          </p>
+          <!-- Two buttons at the bottom -->
+          <div class="flex flex-col gap-4 w-full md:flex-row">
+            <button
+              type="button"
+              class="transition duration-100 flex items-center justify-center gap-2 px-6 py-3 rounded-lg w-full border-2 border-gray-300 cursor-pointer hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-none"
+            >
+              <img
+                src="./images/weight.png"
+                alt=""
+                class="aspect-square w-8"
+              />Add to cart
+            </button>
+            <button
+              type="button"
+              class="transition duration-100 flex items-center justify-center gap-2 px-6 py-3 rounded-lg w-full border-2 border-gray-300 cursor-pointer hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-none"
+            >
+              <img
+                src="./images/heart.png"
+                alt=""
+                class="aspect-square w-8"
+              />Add to wishlist
+            </button>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
