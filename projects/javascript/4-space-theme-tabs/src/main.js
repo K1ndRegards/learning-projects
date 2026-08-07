@@ -27,7 +27,7 @@ const state = {
 
 // UI elements
 const UI = {
-  images: document.querySelector('#images'),
+  image: document.querySelector('#image'),
   tabsList: document.querySelector('#tabs-list'),
   descriptions: document.querySelector('#descriptions'),
 };
@@ -46,18 +46,12 @@ function setCurrentTab() {
 
 // Function to change image
 function setCurrentImage() {
-  // Hide all images
-  Array.from(UI.images.children).forEach((img) => {
-    img.classList.add('hidden');
-    // Remove animation class so that it could occur multiple times
-    img.classList.remove('fade-in-image');
-  });
+  UI.image.src = state.data[state.current].image;
 
-  const img = UI.images.querySelector(`img[data-image="${state.current}"]`);
-  // Show current topic image
-  img.classList.remove('hidden');
-  // Add animation class
-  img.classList.add('fade-in-image');
+  UI.image.classList.remove('fade-in-image');
+  // Forced reflow so that animation restarts at fast tab switching
+  void UI.image.offsetWidth;
+  UI.image.classList.add('fade-in-image');
 }
 
 // Function to change description to current topics one
@@ -85,9 +79,30 @@ function render() {
   setDescription();
 }
 
+// Save current tab to local storage
+function saveToStorage() {
+  localStorage.setItem('current', state.current);
+}
+
+// Load current tab from local storage
+function loadFromStorage() {
+  const current = localStorage.getItem('current');
+  if (!current) return;
+
+  state.current = current;
+}
+
+loadFromStorage();
+render();
+
 UI.tabsList.addEventListener('click', function (e) {
   if (e.target && e.target.closest('.list-item')) {
+    // If users clicks at current tab
+    // ignore it so that the animations don't start again.
+    if (state.current === e.target.dataset.tab) return;
+
     state.current = e.target.dataset.tab;
+    saveToStorage();
     render();
   }
 });
