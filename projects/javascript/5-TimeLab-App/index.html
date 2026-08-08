@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>TimeLab App</title>
+  </head>
+  <body class="bg-slate-900 text-white font-inter">
+    <!-- Main - app container -->
+    <main class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="p-6 w-full max-w-80 bg-slate-800">
+        <ul class="flex flex-col gap-2 text-lg" id="tabs-container">
+          <!-- Stopwatch tab -->
+          <li data-tab="stopwatch" class="tab current-tab">
+            <i class="fa-regular fa-clock"></i><span>Stopwatch</span>
+          </li>
+
+          <!-- Timer tab -->
+          <li data-tab="timer" class="tab">
+            <i class="fa-regular fa-hourglass"></i><span>Timer</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Sections container -->
+      <div
+        class="flex justify-center items-center w-full"
+        id="sections-container"
+      >
+        <!-- Stopwatch section -->
+        <section
+          id="stopwatch"
+          class="stopwatch flex flex-col justify-center items-center"
+        >
+          <!-- Time numbers and titles -->
+          <div
+            class="stopwatch__time-display transition-colors duration-200 mb-16 text-7xl text-gray-400"
+          >
+            <div class="font-roboto" id="stopwatch-hours">00</div>
+            <div class="stopwatch__colon--1">:</div>
+            <div class="font-roboto" id="stopwatch-minutes">00</div>
+            <div class="stopwatch__colon--2">:</div>
+            <div class="font-roboto" id="stopwatch-seconds">00</div>
+            <div class="stopwatch__dot">.</div>
+            <div id="stopwatch-milliseconds" class="font-roboto text-5xl">
+              00
+            </div>
+            <div class="stopwatch__hours-label text-3xl">hr</div>
+            <div class="stopwatch__minutes-label text-3xl">min</div>
+            <div class="stopwatch__seconds-label text-3xl">sec</div>
+          </div>
+
+          <!-- Stopwatch controls -->
+          <div class="flex gap-6">
+            <!-- Start button -->
+            <div
+              class="control-btn bg-cyan-500 hover:bg-cyan-600"
+              id="stopwatch-start"
+              title="Start"
+            >
+              <i class="fa-solid fa-play"></i>
+            </div>
+
+            <!-- Pause button -->
+            <div
+              class="control-btn bg-cyan-500 hover:bg-cyan-600 hidden"
+              id="stopwatch-pause"
+              title="Pause"
+            >
+              <i class="fa-solid fa-pause"></i>
+            </div>
+
+            <!-- Reset button -->
+            <div
+              class="control-btn hover:text-cyan-500"
+              id="stopwatch-reset"
+              title="Reset"
+            >
+              <i class="fa-solid fa-rotate-left"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Timer section -->
+        <section id="timer"></section>
+      </div>
+    </main>
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "title": "TimeLab App",
+  "slug": "5-timelab-app",
+  "description": "Stopwatch and timer application.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 4,
+  "date": "2026-08-08",
+  "screenshot": "screenshot.webp"
+}

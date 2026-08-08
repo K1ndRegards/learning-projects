@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto Mono', monospace;
+}
+
+@layer components {
+  /* Circle on stopwatch window */
+  #stopwatch {
+    @apply relative;
+  }
+
+  #stopwatch::before {
+    @apply content-[''] absolute top-[50%] left-[50%] translate-[-50%] w-[150%] aspect-square rounded-full bg-transparent border-8 border-cyan-500 -z-10;
+  }
+
+  #stopwatch.pulse-effect::before {
+    @apply animate-pulse;
+  }
+
+  /* Tabs */
+  .tab {
+    @apply flex gap-4 items-center px-4 pl-8 py-2  w-full rounded-lg cursor-pointer;
+  }
+
+  .current-tab {
+    @apply relative bg-slate-700 font-bold;
+  }
+
+  .current-tab::before {
+    @apply content-[''] absolute top-[50%] translate-y-[-50%] left-0 w-1 h-6 rounded-lg bg-cyan-500;
+  }
+
+  .tab i {
+    @apply inline-block w-4 aspect-square;
+  }
+
+  .control-btn {
+    @apply transition duration-100 flex justify-center items-center w-16 aspect-square rounded-full bg-slate-800 cursor-pointer;
+  }
+
+  .control-btn i {
+    @apply transition duration-200 text-3xl;
+  }
+
+  .control-btn.inactive {
+    @apply cursor-auto;
+  }
+
+  .control-btn.inactive i {
+    @apply text-gray-400 hover:text-gray-400;
+  }
+}
+
+@layer utilities {
+  /* Grid for stopwatch */
+  .stopwatch__time-display {
+    display: grid;
+    grid-template-areas:
+      'hours colon-1 minutes colon-2 seconds dot-1 milliseconds'
+      'hours-label . minutes-label . seconds-label . .';
+    align-items: end;
+    justify-items: center;
+  }
+
+  .stopwatch__time-display.active {
+    @apply text-white;
+  }
+
+  #stopwatch-hours {
+    grid-area: hours;
+  }
+  #stopwatch-minutes {
+    grid-area: minutes;
+  }
+  #stopwatch-seconds {
+    grid-area: seconds;
+  }
+  #stopwatch-milliseconds {
+    grid-area: milliseconds;
+  }
+
+  .stopwatch__hours-label {
+    grid-area: hours-label;
+  }
+  .stopwatch__minutes-label {
+    grid-area: minutes-label;
+  }
+  .stopwatch__seconds-label {
+    grid-area: seconds-label;
+  }
+
+  .stopwatch__colon--1 {
+    grid-area: colon-1;
+  }
+  .stopwatch__colon--2 {
+    grid-area: colon-2;
+  }
+  .stopwatch__dot {
+    grid-area: dot-1;
+  }
+
+  .fade-in--section {
+    animation-name: fade-in--section;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes fade-in--section {
+    from {
+      opacity: 0.1;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
