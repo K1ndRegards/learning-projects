@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Countdown Timer</title>
+  </head>
+  <body class="bg-slate-800 text-white">
+    <main class="flex justify-center items-center min-h-screen">
+      <!-- Countdown timer section -->
+      <section class="flex flex-col items-center">
+        <!-- Cosmetic section header -->
+        <header class="mb-6 text-center space-y-24">
+          <h1 class="text-5xl font-bold">Countdown Timer</h1>
+          <p class="text-lg font-semibold">Time left:</p>
+        </header>
+
+        <!-- Countdown timer fields and corresponding labels -->
+        <ul class="grid grid-cols-4 gap-6">
+          <li class="time-card">
+            <span class="time-field" id="days">00</span>
+            <span class="time-label">days</span>
+          </li>
+          <li class="time-card">
+            <span class="time-field" id="hours">00</span>
+            <span class="time-label">hours</span>
+          </li>
+          <li class="time-card">
+            <span class="time-field" id="minutes">00</span>
+            <span class="time-label">minutes</span>
+          </li>
+          <li class="time-card">
+            <span class="time-field" id="seconds">00</span>
+            <span class="time-label">seconds</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>

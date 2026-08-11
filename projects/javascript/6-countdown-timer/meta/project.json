@@ -1,0 +1,9 @@
+{
+  "title": "Countdown Timer",
+  "slug": "6-countdown-timer",
+  "description": "Simple countdown timer.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 2,
+  "date": "2026-08-11",
+  "screenshot": "screenshot.webp"
+}

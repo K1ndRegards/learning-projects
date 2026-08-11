@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@layer components {
+  .time-card {
+    @apply flex flex-col items-center gap-2 flex-1 p-4 aspect-square bg-white/80 rounded-xl shadow-lg shadow-black/20 border border-white/10 text-slate-700;
+  }
+
+  .time-card .time-field {
+    @apply text-7xl font-bold font-mono;
+  }
+
+  .time-card .time-label {
+    @apply text-xl font-semibold text-slate-800;
+  }
+}
