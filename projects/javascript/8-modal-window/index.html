@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Modal Window</title>
+  </head>
+  <body class="bg-slate-900 text-white">
+    <!-- Website navigation header -->
+    <header
+      class="sticky z-10 top-0 left-0 right-0 p-4 bg-slate-800/60 backdrop-blur-sm"
+    >
+      <div class="container">
+        <nav>
+          <ul class="flex gap-4 justify-end text-lg font-semibold">
+            <li>
+              <a
+                href="#"
+                class="transition-color duration-300 inline-block p-2 hover:text-slate-300"
+                >link</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="transition-color duration-300 inline-block p-2 hover:text-slate-300"
+                >link</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="transition-color duration-300 inline-block p-2 hover:text-slate-300"
+                >link</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="transition-color duration-300 inline-block ml-8 p-2 hover:text-slate-300"
+                id="header-open-modal"
+                >open modal</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Modal Window -->
+      <div
+        class="absolute z-20 content-[''] flex justify-center items-center top-0 left-0 w-full h-full bg-black/40 hidden"
+        id="modal"
+      >
+        <article class="relative w-full max-w-md p-10 pt-12 bg-slate-800">
+          <!-- Close modal button -->
+          <div
+            class="absolute top-2 right-2 cursor-pointer"
+            id="close-modal-btn"
+          >
+            <i class="fa-solid fa-xmark fa-3x text-slate-900"></i>
+          </div>
+
+          <!-- Modal header -->
+          <header class="flex flex-col gap-6">
+            <h2 class="text-4xl font-bold text-center">Contact</h2>
+            <p class="text-lg font-semibold text-center">
+              We'll contact you as soon as possible!
+            </p>
+          </header>
+
+          <!-- Modal form -->
+          <form action="#" class="flex flex-col gap-4 p-6">
+            <div class="w-full">
+              <label for="name" class="sr-only">Enter your full name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                class="w-full border border-slate-400 px-4 py-2 rounded-sm text-lg outline-none placeholder:text-slate-400"
+              />
+            </div>
+            <div class="w-full">
+              <label for="email" class="sr-only">Enter email address:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                class="w-full border border-slate-400 px-4 py-2 rounded-sm text-lg outline-none placeholder:text-slate-400"
+              />
+            </div>
+
+            <button
+              type="button"
+              class="transition duration-300 inline-block w-full px-4 py-2 rounded-sm bg-slate-900 cursor-pointer hover:bg-slate-950 text-lg font-semibold"
+            >
+              Submit
+            </button>
+          </form>
+        </article>
+      </div>
+
+      <!-- Content -->
+      <section class="flex justify-center items-center h-200">
+        <button
+          class="inline-block transition duration-300 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 hover:scale-105 cursor-pointer text-xl font-semibold"
+          id="main-open-modal"
+        >
+          Open Modal
+        </button>
+      </section>
+    </main>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>
