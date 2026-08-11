@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Space Theme Slider</title>
+  </head>
+  <body class="bg-slate-900 text-white">
+    <main
+      class="relative flex justify-center items-center min-h-screen bg-[url('../images/space.webp')] bg-center bg-fit"
+    >
+      <!-- Dark Overlay -->
+      <div
+        class="absolute content-[''] top-0 left-0 w-full h-full bg-black/80"
+      ></div>
+
+      <!-- Main slider section -->
+      <section
+        class="relative z-10 bg-slate-800 p-4 rounded-xl shadow-xl shadow-black/20"
+      >
+        <!-- Left Arrow -->
+        <div
+          class="move-left absolute transition-colors duration-200 top-[50%] -left-24 translate-y-[-50%] text-slate-800 cursor-pointer text-7xl hover:text-slate-700"
+          id="left-arrow"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <!-- Right Arrow -->
+        <div
+          class="move-right absolute transition-colors duration-200 top-[50%] -right-24 translate-y-[-50%] text-slate-800 cursor-pointer text-7xl hover:text-slate-700"
+          id="right-arrow"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <!-- Dots -->
+        <div
+          class="flex gap-2 absolute -bottom-12 left-[50%] translate-x-[-50%] bg-slate-800 rounded-xl px-2 py-1"
+          id="dots"
+        >
+          <span class="dot"></span>
+          <span class="dot current"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <!-- Slider / Image container -->
+        <div
+          class="flex overflow-hidden bg-slate-900 max-w-5xl aspect-video"
+          id="slider"
+        >
+          <img
+            src="./images/astronaut.webp"
+            alt="Astronaut on the Moon"
+            class="transition-transform duration-1000 flex-none object-cover w-full h-full"
+          />
+          <img
+            src="./images/earth.webp"
+            alt="Earth from the space"
+            class="transition-transform duration-1000 flex-none object-cover w-full h-full"
+          />
+          <img
+            src="./images/galaxy.webp"
+            alt="Galaxy"
+            class="transition-transform duration-1000 flex-none object-cover w-full h-full"
+          />
+          <img
+            src="./images/black-hole.webp"
+            alt="Black hole"
+            class="transition-transform duration-1000 flex-none object-cover w-full h-full"
+          />
+
+          <img
+            src="./images/nebula.webp"
+            alt="Nebula"
+            class="transition-transform duration-1000 flex-none object-cover w-full h-full"
+          />
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  .dot {
+    @apply relative w-4 h-4 rounded-full bg-slate-400 cursor-pointer;
+  }
+
+  .dot.current::before {
+    content: '';
+    @apply absolute top-[50%] left-[50%] translate-[-50%] rounded-full w-3 h-3 bg-slate-800;
+  }
+
+  .move-left:hover {
+    animation-name: move-left;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+  }
+
+  .move-right:hover {
+    animation-name: move-right;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes move-left {
+    0%,
+    50%,
+    100% {
+      transform: translateX(0);
+    }
+
+    25%,
+    75% {
+      transform: translateX(-10px);
+    }
+  }
+
+  @keyframes move-right {
+    0%,
+    50%,
+    100% {
+      transform: translateX(0);
+    }
+
+    25%,
+    75% {
+      transform: translateX(10px);
+    }
+  }
+}

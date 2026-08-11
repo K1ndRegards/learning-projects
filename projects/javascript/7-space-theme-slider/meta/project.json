@@ -1,0 +1,9 @@
+{
+  "title": "Space Theme Slider",
+  "slug": "7-space-theme-slider",
+  "description": "Simple interactive JavaScript slider.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 2,
+  "date": "2026-08-11",
+  "screenshot": "screenshot.webp"
+}
