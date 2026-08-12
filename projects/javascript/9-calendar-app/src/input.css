@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  .custom-arrow-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .day {
+    @apply flex justify-center items-center rounded aspect-square opacity-0;
+  }
+
+  .day.gray {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+
+  .day.current {
+    @apply bg-blue-500 text-white;
+  }
+
+  .day-show-up {
+    animation-name: day-show-up;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+  }
+
+  .date-show-up {
+    animation-name: date-show-up;
+    animation-duration: 300ms;
+  }
+
+  .date-hide {
+    animation-name: date-hide;
+    animation-duration: 300ms;
+  }
+
+  @keyframes day-show-up {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes date-hide {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  @keyframes date-show-up {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Calendar App",
+  "slug": "9-calendar-app",
+  "description": "Vanilla JavaScript interactive calendar application with dark mode and animations.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 3,
+  "date": "2026-08-12",
+  "screenshot": "screenshot.webp"
+}

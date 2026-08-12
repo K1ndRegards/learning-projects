@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Calendar App</title>
+  </head>
+  <body
+    class="bg-slate-200 text-slate-900 dark:bg-slate-900 dark:text-slate-100"
+  >
+    <!-- Global container/main -->
+    <main class="flex justify-center items-center min-h-screen">
+      <!-- Dark mode toggle -->
+      <div
+        class="flex gap-2 flex-row-reverse items-center absolute top-4 left-4"
+      >
+        <label
+          class="flex items-center gap-2 cursor-pointer"
+          for="darkModeToggle"
+        >
+          <span class="font-semibold text-lg dark:">Dark Mode</span>
+        </label>
+        <input
+          type="checkbox"
+          name="darkModeToggle"
+          id="darkModeToggle"
+          class="appearance-none relative transition duration-300 rounded-xl w-12 h-6 bg-slate-700 cursor-pointer before:absolute before:content-[''] before:transition before-duration-200 before:top-[50%] before:left-0.5 before:translate-y-[-50%] before:w-5 before:aspect-square before:rounded-full before:bg-slate-200 checked:before:translate-x-[120%]"
+        />
+      </div>
+
+      <!-- Calendar -->
+      <div
+        class="w-full max-w-lg rounded-xl p-8 bg-slate-100 dark:bg-slate-700"
+      >
+        <header class="flex justify-between items-center mb-8">
+          <!-- Left arrow -->
+          <div
+            class="flex justify-center items-center transition duration-200 w-10 rounded-full aspect-square custom-arrow-shadow cursor-pointer hover:scale-105 active:scale-90"
+            id="left-arrow"
+          >
+            <i class="fa-solid fa-chevron-left text-2xl"></i>
+          </div>
+          <!-- Month and year -->
+          <h2 class="text-xl font-bold" id="date">
+            <span id="date-month">August</span>
+            <span id="date-year">2026</span>
+          </h2>
+          <!-- Right arrow -->
+          <div
+            class="flex justify-center items-center transition duration-200 w-10 rounded-full aspect-square custom-arrow-shadow cursor-pointer hover:scale-105 active:scale-90"
+            id="right-arrow"
+          >
+            <i class="fa-solid fa-chevron-right text-2xl"></i>
+          </div>
+        </header>
+
+        <!-- Calendar weekdays -->
+        <div
+          class="grid grid-cols-7 gap-2 mb-4 place-items-center text-gray-500 dark:text-gray-400 font-semibold text-lg"
+          id="weekdays"
+        >
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thur</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
+        </div>
+
+        <!-- Calendar days -->
+        <div
+          class="grid grid-cols-7 gap-4 font-semibold text-lg"
+          id="days"
+        ></div>
+      </div>
+    </main>
+
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
+</html>
