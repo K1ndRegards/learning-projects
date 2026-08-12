@@ -1,9 +1,9 @@
 {
   "title": "Modal Window",
   "slug": "8-modal-window",
-  "description": "Simple JavaScript modal window.",
+  "description": "Simple JavaScript modal window with animations.",
   "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
-  "difficulty": 1.5,
+  "difficulty": 2,
   "date": "2026-08-11",
   "screenshot": "screenshot.webp"
 }

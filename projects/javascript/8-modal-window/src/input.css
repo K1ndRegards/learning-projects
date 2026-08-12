@@ -1,1 +1,44 @@
 @import 'tailwindcss';
+
+@layer utilities {
+  .modal-move-in {
+    animation-name: modal-move-in;
+    animation-duration: 300ms;
+  }
+
+  .modal-move-out {
+    animation-name: modal-move-in;
+    animation-duration: 300ms;
+    animation-direction: reverse;
+  }
+
+  .modal-opacity-in {
+    animation-name: modal-opacity-in;
+    animation-duration: 300ms;
+  }
+
+  .modal-opacity-out {
+    animation-name: modal-opacity-in;
+    animation-duration: 300ms;
+    animation-direction: reverse;
+  }
+
+  @keyframes modal-move-in {
+    from {
+      transform: translateY(-30px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes modal-opacity-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
