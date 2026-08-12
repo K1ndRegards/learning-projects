@@ -7,8 +7,7 @@ const state = {
 const UI = {
   modalWindow: null,
   modalCloseBtn: null,
-  openModalHeader: null,
-  openModalMain: null,
+  openModalBtns: null,
 };
 
 // Function to open modal window
@@ -64,13 +63,14 @@ function modalWindowHandler(e) {
 // Main initializer
 function init() {
   UI.modalWindow = document.querySelector('#modal');
-  UI.modalCloseBtn = document.querySelector('#close-modal-btn');
-  UI.openModalHeader = document.querySelector('#header-open-modal');
-  UI.openModalMain = document.querySelector('#main-open-modal');
+  UI.modalCloseBtn = document.querySelector('[data-modal-close]');
+  UI.openModalBtns = document.querySelectorAll('[data-modal-open]');
 
   UI.modalCloseBtn.addEventListener('click', closeBtnHandler);
-  UI.openModalHeader.addEventListener('click', openModalHandler);
-  UI.openModalMain.addEventListener('click', openModalHandler);
+
+  UI.openModalBtns.forEach((btn) =>
+    btn.addEventListener('click', openModalHandler),
+  );
 
   window.addEventListener('keydown', windowKeydownHandler);
 

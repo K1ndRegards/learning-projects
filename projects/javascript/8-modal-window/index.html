@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="./dist/output.css" />
     <title>Modal Window</title>
   </head>
-  <body class="bg-slate-900 text-white">
+  <body class="bg-slate-800 text-white">
     <!-- Website navigation header -->
     <header
-      class="sticky z-10 top-0 left-0 right-0 p-4 bg-slate-800/60 backdrop-blur-sm"
+      class="sticky z-10 top-0 left-0 right-0 p-4 bg-slate-700/60 backdrop-blur-sm"
     >
       <div class="container">
         <nav>
@@ -46,7 +46,7 @@
               <a
                 href="#"
                 class="transition-color duration-300 inline-block ml-8 p-2 hover:text-slate-300"
-                id="header-open-modal"
+                data-modal-open
                 >open modal</a
               >
             </li>
@@ -58,16 +58,15 @@
     <main>
       <!-- Modal Window -->
       <div
-        class="absolute z-20 content-[''] flex justify-center items-center top-0 left-0 w-full h-full bg-black/40 hidden"
+        class="absolute z-20 content-[''] flex justify-center items-center top-0 left-0 w-full h-full bg-black/30"
         id="modal"
       >
-        <article class="relative w-full max-w-md p-10 pt-12 bg-slate-800">
+        <article
+          class="relative w-full max-w-md rounded border-2 border-slate-600 p-10 pt-12 bg-slate-800"
+        >
           <!-- Close modal button -->
-          <div
-            class="absolute top-2 right-2 cursor-pointer"
-            id="close-modal-btn"
-          >
-            <i class="fa-solid fa-xmark fa-3x text-slate-900"></i>
+          <div class="absolute top-2 right-3 cursor-pointer" data-modal-close>
+            <i class="fa-solid fa-xmark fa-2x text-slate-400"></i>
           </div>
 
           <!-- Modal header -->
@@ -87,7 +86,7 @@
                 name="name"
                 id="name"
                 placeholder="Enter your name"
-                class="w-full border border-slate-400 px-4 py-2 rounded-sm text-lg outline-none placeholder:text-slate-400"
+                class="w-full border border-slate-400 px-4 py-2 rounded-sm text-lg outline-none placeholder:text-slate-400 shadow-sm shadow-slate-500"
               />
             </div>
             <div class="w-full">
@@ -97,7 +96,7 @@
                 name="email"
                 id="email"
                 placeholder="Enter your email"
-                class="w-full border border-slate-400 px-4 py-2 rounded-sm text-lg outline-none placeholder:text-slate-400"
+                class="w-full border border-slate-400 px-4 py-2 rounded-sm text-lg outline-none placeholder:text-slate-400 shadow-sm shadow-slate-500"
               />
             </div>
 
@@ -114,8 +113,8 @@
       <!-- Content -->
       <section class="flex justify-center items-center h-200">
         <button
-          class="inline-block transition duration-300 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 hover:scale-105 cursor-pointer text-xl font-semibold"
-          id="main-open-modal"
+          class="inline-block transition duration-300 px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 hover:scale-105 cursor-pointer text-xl font-semibold"
+          data-modal-open
         >
           Open Modal
         </button>
