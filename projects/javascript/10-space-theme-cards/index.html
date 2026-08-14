@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Tailwind CSS</title>
+  </head>
+  <body class="bg-black font-poppins">
+    <!-- Space background -->
+    <div
+      class="fixed -z-100 top-0 left-0 bg-[url('../images/space.webp')] object-cover bg-center bg-no-repeat brightness-10 w-full h-full"
+    ></div>
+
+    <main class="py-10 px-10">
+      <!-- Cards container -->
+      <section
+        class="flex justify-center gap-6 flex-wrap max-w-7xl mx-auto"
+        id="cards"
+      >
+        <!-- Card sample -->
+        <article
+          class="w-full flex flex-col max-w-sm p-2 pb-6 rounded bg-slate-800 text-slate-300"
+        >
+          <!-- Image -->
+          <div class="aspect-video rounded overflow-hidden">
+            <img
+              src="./images/astronaut.webp"
+              alt="Astronaut on the moon"
+              class="object-cover w-full h-full transition duration-300 hover:scale-105"
+            />
+          </div>
+          <!-- Content -->
+          <div class="flex flex-col p-4">
+            <h2 class="mb-4 text-2xl font-semibold">Astronaut</h2>
+            <div class="mb-6 text-base space-y-3">
+              <p>
+                Astronauts push the boundaries of human exploration, venturing
+                into the unknown to expand our understanding of the universe.
+              </p>
+            </div>
+          </div>
+          <div class="px-4 mt-auto">
+            <button
+              type="button"
+              class="transition duration-200 mt-auto px-4 py-2 w-full bg-slate-900 hover:bg-slate-950 cursor-pointer"
+            >
+              Learn more
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

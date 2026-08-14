@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Astronaut",
+    "img": "./images/astronaut.webp",
+    "alt": "Astronaut on the moon",
+    "description": [
+      "Astronauts push the boundaries of human exploration, venturing into the unknown to expand our understanding of the universe.",
+      "Their missions rely on the dedication of countless specialists on Earth who monitor systems, analyze data, and guide every step from afar."
+    ],
+    "btnText": "Learn more"
+  },
+  {
+    "id": 2,
+    "title": "Earth",
+    "img": "./images/earth.webp",
+    "alt": "Earth from the space",
+    "description": [
+      "Earth is the cradle of humanity, the place where our journey into the cosmos begins.",
+      "From this vibrant world, scientists, engineers, and explorers work together to study distant galaxies, monitor spacecraft, and decode the mysteries of the universe."
+    ],
+    "btnText": "Learn more"
+  },
+  {
+    "id": 3,
+    "title": "Galaxy",
+    "img": "./images/galaxy.webp",
+    "alt": "Galaxy",
+    "description": [
+      "A galaxy is a vast island of stars, gas, and dark matter, shaping the evolution of the universe across billions of years."
+    ],
+    "btnText": "Learn more"
+  },
+  {
+    "id": 4,
+    "title": "Black Holes",
+    "img": "./images/black-hole.webp",
+    "alt": "Black hole",
+    "description": [
+      "Black holes are among the universe’s most enigmatic phenomena, formed when gravity becomes so intense that not even light can escape.",
+      "Their immense pull shapes the motion of stars, fuels energetic cosmic jets, and influences the evolution of entire galaxies."
+    ],
+    "btnText": "Learn more"
+  },
+  {
+    "id": 5,
+    "title": "Nebula",
+    "img": "./images/nebula.webp",
+    "alt": "Nebula",
+    "description": [
+      "Nebulae are vast clouds of gas and dust where stars are born and old ones fade, shaping the cosmic landscape with color and light.",
+      "Within these luminous regions, gravity, radiation, and time work together to forge new systems that will one day illuminate the galaxy."
+    ],
+    "btnText": "Learn more"
+  }
+]

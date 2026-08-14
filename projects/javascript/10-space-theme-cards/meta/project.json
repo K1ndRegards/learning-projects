@@ -1,0 +1,9 @@
+{
+  "title": "Space Theme Cards",
+  "slug": "10-space-theme-cards",
+  "description": "Space theme cards built with vanilla JavaScript using classes and fetch. Pure learning project.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 3,
+  "date": "2026-08-14",
+  "screenshot": "screenshot.webp"
+}
