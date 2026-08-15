@@ -1,0 +1,9 @@
+{
+  "title": "Image Gallery",
+  "slug": "16-image-gallery",
+  "description": "Image gallery built with Tailwind CSS.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 2,
+  "date": "2026-08-15",
+  "screenshot": "screenshot.webp"
+}

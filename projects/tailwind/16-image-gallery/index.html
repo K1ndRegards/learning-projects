@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Image Gallery</title>
+  </head>
+  <body class="bg-cyan-50">
+    <main class="p-4">
+      <section
+        class="w-full max-w-sm md:max-w-5xl p-6 md:p-24 mx-auto rounded-xl bg-white shadow-lg shadow-black/10"
+      >
+        <!-- Navigation -->
+        <nav class="mb-12">
+          <ul
+            class="flex flex-col md:flex-row md:justify-end gap-6 items-center"
+          >
+            <li
+              class="relative cursor-pointer before:transition before:duration-300 before:content-[''] before:absolute before:-bottom-2 before:left-[50%] before:translate-x-[-50%] before:h-0.5 before:w-[70%] before:bg-black before:opacity-0 hover:before:opacity-100"
+            >
+              Vector
+            </li>
+            <li
+              class="relative cursor-pointer before:transition before:duration-300 before:content-[''] before:absolute before:-bottom-2 before:left-[50%] before:translate-x-[-50%] before:h-0.5 before:w-[70%] before:bg-black before:opacity-0 hover:before:opacity-100"
+            >
+              Illustrations
+            </li>
+            <li
+              class="relative cursor-pointer before:transition before:duration-300 before:content-[''] before:absolute before:-bottom-2 before:left-[50%] before:translate-x-[-50%] before:h-0.5 before:w-[70%] before:bg-black before:opacity-0 hover:before:opacity-100"
+            >
+              Images
+            </li>
+            <li
+              class="relative cursor-pointer before:transition before:duration-300 before:content-[''] before:absolute before:-bottom-2 before:left-[50%] before:translate-x-[-50%] before:h-0.5 before:w-[70%] before:bg-black before:opacity-0 hover:before:opacity-100"
+            >
+              Icons
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Search and upload -->
+        <div
+          class="flex flex-col mx-auto mb-12 space-y-6 md:max-w-none md:flex-row md:items-start md:space-x-6"
+        >
+          <!-- Search field -->
+          <div class="relative w-full md:max-w-sm">
+            <input
+              type="text"
+              placeholder="Search"
+              class="border-b border-gray-300 px-6 py-2 w-full focus:outline-none"
+            />
+            <i
+              class="fa-brands fa-sistrix fa-2x absolute right-0 bottom-1 transition-transform duration-200 text-gray-300 hover:scale-110 cursor-pointer"
+            ></i>
+          </div>
+
+          <!-- Upload button -->
+          <button
+            type="button"
+            class="transition duration-200 rounded-md px-4 md:px-12 py-2 w-full md:w-auto md:ml-auto border border-black bg-black hover:bg-white cursor-pointer text-white hover:text-black text-lg"
+          >
+            Upload
+          </button>
+        </div>
+
+        <!-- Gallery -->
+        <div
+          class="grid grod-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-4"
+        >
+          <!-- Image 1 -->
+          <figure class="relative group">
+            <img
+              src="./images/image1.jpg"
+              alt=""
+              class="object-cover w-full h-full"
+            />
+            <figcaption
+              class="flex items-center transition duration-200 absolute bottom-0 left-0 right-0 px-6 py-4 text-white bg-black/30 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-sm">
+                <p>Abstract Painting</p>
+                <p>245 likes - 35 Shares</p>
+              </div>
+
+              <i class="fa-regular fa-bookmark fa-2x ml-auto"></i>
+            </figcaption>
+          </figure>
+
+          <!-- Image 2 -->
+          <figure class="relative group">
+            <img
+              src="./images/image2.jpg"
+              alt=""
+              class="object-cover w-full h-full"
+            />
+            <figcaption
+              class="flex items-center transition duration-200 absolute bottom-0 left-0 right-0 px-6 py-4 text-white bg-black/30 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-sm">
+                <p>Abstract Painting</p>
+                <p>245 likes - 35 Shares</p>
+              </div>
+
+              <button>
+                <i class="fa-regular fa-bookmark fa-2x ml-auto"></i>
+              </button>
+            </figcaption>
+          </figure>
+
+          <!-- Image 3 -->
+          <figure class="relative group">
+            <img
+              src="./images/image3.jpg"
+              alt=""
+              class="object-cover w-full h-full"
+            />
+            <figcaption
+              class="flex items-center transition duration-200 absolute bottom-0 left-0 right-0 px-6 py-4 text-white bg-black/30 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-sm">
+                <p>Abstract Painting</p>
+                <p>245 likes - 35 Shares</p>
+              </div>
+
+              <i class="fa-regular fa-bookmark fa-2x ml-auto"></i>
+            </figcaption>
+          </figure>
+
+          <!-- Image 4 -->
+          <figure class="relative group">
+            <img
+              src="./images/image4.jpg"
+              alt=""
+              class="object-cover w-full h-full"
+            />
+            <figcaption
+              class="flex items-center transition duration-200 absolute bottom-0 left-0 right-0 px-6 py-4 text-white bg-black/30 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-sm">
+                <p>Abstract Painting</p>
+                <p>245 likes - 35 Shares</p>
+              </div>
+
+              <i class="fa-regular fa-bookmark fa-2x ml-auto"></i>
+            </figcaption>
+          </figure>
+
+          <!-- Image 5 -->
+          <figure class="relative group">
+            <img
+              src="./images/image5.jpg"
+              alt=""
+              class="object-cover w-full h-full"
+            />
+            <figcaption
+              class="flex items-center transition duration-200 absolute bottom-0 left-0 right-0 px-6 py-4 text-white bg-black/30 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-sm">
+                <p>Abstract Painting</p>
+                <p>245 likes - 35 Shares</p>
+              </div>
+
+              <i class="fa-regular fa-bookmark fa-2x ml-auto"></i>
+            </figcaption>
+          </figure>
+
+          <!-- Image 6 -->
+          <figure class="relative group">
+            <img
+              src="./images/image6.jpg"
+              alt=""
+              class="object-cover w-full h-full"
+            />
+            <figcaption
+              class="flex items-center transition duration-200 absolute bottom-0 left-0 right-0 px-6 py-4 text-white bg-black/30 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-sm">
+                <p>Abstract Painting</p>
+                <p>245 likes - 35 Shares</p>
+              </div>
+
+              <i class="fa-regular fa-bookmark fa-2x ml-auto"></i>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
