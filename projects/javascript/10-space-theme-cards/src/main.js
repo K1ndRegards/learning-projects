@@ -5,20 +5,21 @@ const UI = {
 };
 
 class Card {
-  constructor(id, img, alt, title, descriptions, btnText) {
+  constructor(id, img, alt, title, descriptions, btnText, parentSelector) {
     this.id = id;
     this.img = img;
     this.alt = alt;
     this.title = title;
     this.descriptions = descriptions;
     this.btnText = btnText;
+    this.parent = document.querySelector(parentSelector);
   }
 
   createCard() {
     // Card container
     const card = createElement('article', {
       classes:
-        'w-full flex flex-col max-w-sm p-2 pb-6 rounded bg-slate-800 text-slate-300',
+        'w-full flex flex-col max-w-sm p-2 pb-6 rounded bg-slate-800 text-slate-300 opacity-0',
     });
 
     // div with image
@@ -83,7 +84,13 @@ class Card {
   }
 
   render() {
-    return this.createCard();
+    const card = this.createCard();
+
+    this.parent.appendChild(card);
+
+    setTimeout(() => {
+      card.classList.add('show-up');
+    }, 400 * this.id);
   }
 }
 
@@ -95,18 +102,19 @@ function init() {
   fetch('./src/data/cards.json')
     .then((res) => res.json())
     .then((cards) => {
-      cards.forEach((card) => {
-        const DOMCard = new Card(
-          card.id,
-          card.img,
-          card.alt,
-          card.title,
-          card.description,
-          card.btnText,
-        ).render();
-
-        UI.cardsContainer.appendChild(DOMCard);
-      });
+      cards
+        .sort((a, b) => a.id - b.id)
+        .forEach((card) => {
+          new Card(
+            card.id,
+            card.img,
+            card.alt,
+            card.title,
+            card.description,
+            card.btnText,
+            '#cards',
+          ).render();
+        });
     });
 }
 

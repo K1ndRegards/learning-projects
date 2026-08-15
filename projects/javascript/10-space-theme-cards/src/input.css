@@ -4,3 +4,23 @@
 @theme {
   --font-poppins: 'Poppins', sans-serif;
 }
+
+@layer utilities {
+  .show-up {
+    animation-name: show-up;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes show-up {
+    from {
+      opacity: 0.1;
+      transform: translateY(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
