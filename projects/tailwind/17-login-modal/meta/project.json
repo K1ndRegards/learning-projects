@@ -1,0 +1,9 @@
+{
+  "title": "Login Modal",
+  "slug": "17-login-modal",
+  "description": "Responsive login modal window.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 2,
+  "date": "2026-08-19",
+  "screenshot": "screenshot.webp"
+}
