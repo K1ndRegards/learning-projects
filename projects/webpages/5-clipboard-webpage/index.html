@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Clipboard Website</title>
+  </head>
+  <body
+    class="font-sans bg-[url(../images/bg-header-mobile.png)] md:bg-[url(../images/bg-header-desktop.png)] bg-no-repeat bg-cover md:bg-contain"
+  >
+    <main>
+      <!-- Hero section -->
+      <section id="hero">
+        <div class="section-container">
+          <!-- Logo -->
+          <div class="mb-20">
+            <svg width="125" height="125" xmlns="http://www.w3.org/2000/svg">
+              <g
+                stroke="#26BBA4"
+                stroke-width="10"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <circle cx="62.5" cy="62.5" r="57.5" />
+                <path
+                  d="M85.481 85.481c-12.692 12.692-33.27 12.692-45.962 0s-12.692-33.27 0-45.962 33.27-12.692 45.962 0"
+                  stroke-linecap="round"
+                />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Main heading -->
+          <h1 class="section-heading">A history of everything you copy</h1>
+
+          <!-- Subheading -->
+          <p class="section-subheading md:text-2xl">
+            Clipboard allows you to track and organize everything you copy.
+            Instantly access your clipboard on all your devices.
+          </p>
+
+          <div class="button-container">
+            <a href="#" class="cta-btn bg-strongCyan">Download for iOS</a>
+
+            <a href="#" class="cta-btn bg-lightBlue">Download for Mac</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Snippets section -->
+      <section id="snippets">
+        <div class="section-container">
+          <!-- Heading -->
+          <h2 class="section-heading">Keep track of your snippets</h2>
+
+          <!-- Subheading -->
+          <p class="section-subheading mb-20">
+            Clipboard instantly stores any item you copy in the cloud, meaning
+            you can access your snippets immediately on all your devices. Our
+            Mac and iOS apps will help you organize everything.
+          </p>
+
+          <!-- Snippet features -->
+          <div class="relative flex flex-col md:flex-row md:w-full">
+            <!-- Image -->
+            <div class="mb-10 md:mb-0 md:w-1/2">
+              <img
+                src="./images/image-computer.png"
+                alt="Computer"
+                class="md:absolute top-0 right-[50%]"
+              />
+            </div>
+
+            <!-- Features -->
+            <div class="flex flex-col gap-12 md:ml-56 md:w-1/2 md:pt-10">
+              <!-- Feature one -->
+              <div class="snippets-feature">
+                <h3 class="snippets-feature__heading">Quick Search</h3>
+                <p class="snippets-feature__text">
+                  Easily search your snippets by content, category, web address,
+                  application, and more.
+                </p>
+              </div>
+
+              <!-- Feature two -->
+              <div class="snippets-feature">
+                <h3 class="snippets-feature__heading">iCloud Sync</h3>
+                <p class="snippets-feature__text">
+                  Instantly saves and syncs snippets across all your devices.
+                </p>
+              </div>
+
+              <!-- Feature three -->
+              <div class="snippets-feature">
+                <h3 class="snippets-feature__heading">Completely History</h3>
+                <p class="snippets-feature__text">
+                  Retrieve any snippets from the first moment you started using
+                  the app.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
