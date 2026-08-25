@@ -2,7 +2,7 @@
   "title": "Joke Generator",
   "slug": "11-joke-generator",
   "description": "Learning challenge to practice XMLHttpRequest.",
-  "technologies": ["HTML", "CSS", "Tailwind", "JavaScript"],
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
   "difficulty": 2,
   "date": "2026-08-24",
   "screenshot": "screenshot.webp"
