@@ -2,8 +2,8 @@
   "title": "Clipboard Website",
   "slug": "5-clipboard-webpage",
   "description": "Simple clipboard landing page.",
-  "technologies": ["HTML", "CSS", "Tailwind CSS"],
-  "difficulty": 2.5,
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 3,
   "date": "2026-08-19",
   "screenshot": "screenshot.webp"
 }

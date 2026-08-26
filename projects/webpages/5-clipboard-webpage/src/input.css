@@ -21,7 +21,7 @@
 
 @layer components {
   .section-heading {
-    @apply mb-10 text-4xl md:text-5xl font-semibold text-darkGrayishBlue text-center;
+    @apply mb-8 text-4xl md:text-5xl font-semibold text-darkGrayishBlue text-center;
   }
 
   .section-subheading {
@@ -32,6 +32,7 @@
     @apply inline-block transition duration-200 px-8 py-4 rounded-full cursor-pointer text-xl text-white text-center shadow-sm shadow-black/10 hover:-translate-y-1 hover:shadow-md hover:shadow-black/20;
   }
 
+  /* Snippets features */
   .snippets-feature {
     @apply flex flex-col items-center md:items-start;
   }
@@ -43,11 +44,36 @@
   .snippets-feature__text {
     @apply max-w-md text-grayishBlue text-xl text-center md:text-left;
   }
+
+  /* Supercharge features */
+  .supercharge-feature {
+    @apply flex flex-col items-center text-center;
+  }
+
+  .supercharge-feature__icon {
+    @apply mb-10;
+  }
+
+  .supercharge-feature__title {
+    @apply mb-6 text-2xl font-semibold text-darkGrayishBlue;
+  }
+
+  .supercharge-feature__text {
+    @apply max-w-md text-base text-grayishBlue;
+  }
 }
 
 @layer utilities {
+  .section-hide {
+    @apply transition-all duration-700 opacity-0 translate-y-10;
+  }
+
+  .animate-in {
+    @apply opacity-100 translate-y-0;
+  }
+
   .section-container {
-    @apply flex flex-col items-center max-w-6xl mx-auto p-10 pt-30;
+    @apply flex flex-col items-center max-w-6xl mx-auto p-10;
   }
 
   .button-container {
