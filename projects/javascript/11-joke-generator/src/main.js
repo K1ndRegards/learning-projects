@@ -58,7 +58,7 @@ function fetchJoke() {
   xhr.send();
 }
 
-function getJokeBtnHandler() {
+function getJoke() {
   state.loading = true;
   state.error = null;
   render();
@@ -70,7 +70,9 @@ function init() {
   UI.jokeField = document.querySelector('#joke');
   UI.getJokeBtn = document.querySelector('#get-joke-btn');
 
-  UI.getJokeBtn.addEventListener('click', getJokeBtnHandler);
+  UI.getJokeBtn.addEventListener('click', getJoke);
+
+  getJoke();
 }
 
 init();
