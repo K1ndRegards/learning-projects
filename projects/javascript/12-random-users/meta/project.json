@@ -1,0 +1,9 @@
+{
+  "title": "Random Users",
+  "slug": "12-random-users",
+  "description": "Small Fetch API practice project with random users API",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 2,
+  "date": "2026-08-27",
+  "screenshot": "screenshot.webp"
+}

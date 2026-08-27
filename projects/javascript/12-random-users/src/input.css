@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  .bg-female {
+    @apply bg-pink-600;
+  }
+
+  .bg-male {
+    @apply bg-blue-600;
+  }
+}

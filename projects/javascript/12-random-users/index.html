@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Random Users</title>
+  </head>
+  <body>
+    <!-- Global container -->
+    <main
+      class="flex flex-col justify-start items-center pt-40 min-h-screen bg-female"
+      id="global-container"
+    >
+      <!-- User card -->
+      <article class="relative rounded-xl shadow-xl shadow-black/20 bg-white">
+        <!-- Image and status message container -->
+        <div class="pt-10">
+          <!-- Status message -->
+          <p
+            class="flex items-center justify-center min-h-48 text-3xl font-semibold text-gray-600 hidden"
+            id="status-message"
+          >
+            Loading...
+          </p>
+
+          <!-- User image -->
+          <div class="mx-auto w-full max-w-48 rounded-full overflow-hidden">
+            <img
+              src="./images/placeholder.png"
+              alt="User avatar"
+              class="w-full h-full object-cover"
+              id="user-image"
+            />
+          </div>
+
+          <!-- Separator -->
+          <div class="mt-10 w-full h-0.5 bg-gray-300"></div>
+        </div>
+
+        <!-- User information -->
+        <ul class="grid grid-cols-3 gap-6 p-10" id="user-information">
+          <li class="flex flex-col items-center">
+            <span class="font-bold text-lg">Name</span>
+            <span class="text-xl">Jane Doe</span>
+          </li>
+
+          <li class="flex flex-col items-center">
+            <span class="font-bold text-lg">Email</span>
+            <span class="text-xl">janeDoe@gmail.com</span>
+          </li>
+
+          <li class="flex flex-col items-center">
+            <span class="font-bold text-lg">Username</span>
+            <span class="text-xl">janedoe7</span>
+          </li>
+
+          <li class="flex flex-col items-center">
+            <span class="font-bold text-lg">Age</span>
+            <span class="text-xl">24</span>
+          </li>
+
+          <li class="flex flex-col items-center">
+            <span class="font-bold text-lg">Location</span>
+            <span class="text-xl">US</span>
+          </li>
+
+          <li class="flex flex-col items-center">
+            <span class="font-bold text-lg">Phone</span>
+            <span class="text-xl">(773) 343-9751</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Generate new user button -->
+      <button
+        type="button"
+        class="transition duration-100 my-20 px-6 py-3 text-lg rounded-lg shadow-lg shadow-black/20 bg-inherit border border-white text-white cursor-pointer hover:scale-105 active:scale-100"
+        id="generate-button"
+      >
+        Generate Another One
+      </button>
+    </main>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>
