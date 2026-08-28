@@ -1,0 +1,9 @@
+{
+  "title": "Loopstudios Website",
+  "slug": "6-loopstudios-webpage",
+  "description": "Tailwind CSS practice project on building webpages",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 3,
+  "date": "2026-08-29",
+  "screenshot": "screenshot.webp"
+}
