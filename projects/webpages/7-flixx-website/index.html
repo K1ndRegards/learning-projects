@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/film.png" type="image/png" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Flixx Website</title>
+  </head>
+  <body class="font-sans text-body bg-background">
+    <!-- Website header -->
+    <header class="bg-black/80 text-body" id="main-header">
+      <div class="section-container flex justify-between items-center py-5">
+        <!-- Logo -->
+        <h1 class="text-2xl text-heading font-bold uppercase">
+          <a href="#">Flixx</a>
+        </h1>
+
+        <!-- Navigation -->
+        <ul class="flex gap-6">
+          <li>
+            <a href="#" class="link link-active">Movies</a>
+          </li>
+          <li>
+            <a href="./shows.html" class="link">TV Shows</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- Now playing -->
+      <section
+        class="p-15 bg-[url('../images/showcase-bg.jpg')] bg-no-repeat bg-cover"
+        id="now-playing"
+      >
+        <!-- Heading -->
+        <h2 class="section-heading">Now playing</h2>
+
+        <!-- Swiper -->
+        <!-- Todo: write swiper -->
+        <div class="swiper"></div>
+      </section>
+
+      <!-- Search -->
+      <section class="my-10 p-15" id="search">
+        <div class="max-w-xl mx-auto">
+          <form action="#">
+            <!-- Radio groups -->
+            <div class="flex gap-4">
+              <!-- Radio group -->
+              <div class="flex gap-2">
+                <label class="flex items-center">
+                  <input
+                    type="radio"
+                    name="search-type"
+                    id="movie"
+                    value="movie"
+                    class="peer hidden"
+                  />
+                  <!-- custom radio button -->
+                  <span class="custom-checkbox peer-checked:bg-accent"></span>
+                  <!-- Label text -->
+                  <span class="ml-2">Movies</span>
+                </label>
+              </div>
+
+              <!-- Radio group -->
+              <div class="flex gap-2">
+                <label class="flex items-center">
+                  <input
+                    type="radio"
+                    name="search-type"
+                    id="tv-show"
+                    value="tv-show"
+                    class="peer hidden"
+                  />
+                  <!-- custom radio button -->
+                  <span class="custom-checkbox peer-checked:bg-accent"></span>
+                  <!-- Label text -->
+                  <span class="ml-2">TV Shows</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Input and button -->
+            <div class="flex gap-2 mt-2">
+              <!-- Form group -->
+              <div class="flex-6">
+                <label for="search-input" class="sr-only"
+                  >Enter search term</label
+                >
+                <input
+                  type="text"
+                  name="search-input"
+                  id="search-input"
+                  placeholder="Enter search term"
+                  class="px-4 w-full h-full border border-white rounded placeholder:text-body"
+                />
+              </div>
+              <!-- Button -->
+              <button
+                type="submit"
+                class="flex-1 transition duration-300 p-3 rounded cursor-pointer bg-accent hover:bg-black text-black hover:text-white border border-accent"
+              >
+                <i class="fa-solid fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Popular movies -->
+      <section class="mt-10" id="popular-movies">
+        <div class="section-container">
+          <!-- Heading -->
+          <h2 class="section-heading mb-10">Popular movies</h2>
+
+          <!-- Movie cards -->
+          <div
+            class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          >
+            <figure class="poster-card">
+              <a href="./movie-details.html"
+                ><img
+                  src="./images/no-image.jpg"
+                  alt=""
+                  class="poster-card__image"
+              /></a>
+              <figcaption class="poster-card__caption">
+                <h3 class="poster-card__title">Movie Name</h3>
+                <p class="poster-card__release">
+                  Release: <span>XXXX-XX-XX</span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Website footer -->
+    <footer id="main-footer">
+      <div
+        class="section-container flex justify-between items-center py-5 mt-5"
+      >
+        <!-- Logo -->
+        <h2 class="text-2xl text-heading font-bold uppercase">
+          <a href="#">Flixx</a>
+        </h2>
+
+        <!-- Socials -->
+        <ul class="flex gap-2 text-xl">
+          <li class="socials-link">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li class="socials-link">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li class="socials-link">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

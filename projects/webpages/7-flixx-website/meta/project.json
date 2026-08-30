@@ -1,0 +1,9 @@
+{
+  "title": "Flixx Website",
+  "slug": "7-flixx-website",
+  "description": "Multi‑page movie site showcasing dynamic data loading with Fetch API",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 4,
+  "date": "2026-08-30",
+  "screenshot": "screenshot.webp"
+}

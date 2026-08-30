@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  /* Screen breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+
+  /* Font */
+  --font-sans: 'Poppins', sans-serif;
+
+  /* Colors */
+  --color-accent: #f1c40f;
+  --color-background: #020d18;
+  --color-surface: #04376b;
+  --color-surface-light: #0a4b8f;
+  --color-heading: #fff;
+  --color-body: #fff;
+}
+
+@layer components {
+  /* Movie cards */
+  .poster-card {
+    @apply transition duration-300 p-1 bg-surface hover:scale-105 hover:bg-surface-light;
+  }
+
+  /* .poster-card__image {
+    @apply;
+  } */
+
+  .poster-card__caption {
+    @apply p-2;
+  }
+
+  .poster-card__title {
+    @apply font-bold;
+  }
+
+  /* .poster-card__release {
+    @apply:
+  } */
+}
+
+@layer utilities {
+  /* Link classes */
+  .link {
+    @apply transition duration-200;
+  }
+
+  .link:hover {
+    @apply text-accent;
+  }
+
+  .link-active {
+    @apply text-accent font-bold;
+  }
+
+  .socials-link {
+    @apply transition-colors duration-200 text-body hover:text-accent;
+  }
+
+  /* Custom radio button */
+  .custom-checkbox {
+    @apply block transition duration-200 w-3 h-3 rounded-full bg-white;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-block transition duration-200 px-4 py-2 border border-accent rounded text-white hover:text-black bg-transparent hover:bg-accent cursor-pointer;
+  }
+
+  .btn:disabled {
+    @apply border border-gray-500 hover:text-white hover:bg-transparent cursor-not-allowed;
+  }
+
+  /* Section classes */
+  .section-container {
+    @apply max-w-300 mx-auto px-5;
+  }
+
+  .section-heading {
+    @apply text-2xl font-bold uppercase text-center text-heading;
+  }
+}

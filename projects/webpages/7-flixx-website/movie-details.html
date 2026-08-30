@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/film.png" type="image/png" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ee80a239bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Flixx Website</title>
+  </head>
+  <body class="font-sans text-body bg-background">
+    <!-- Website header -->
+    <header class="bg-black/80 text-body" id="main-header">
+      <div class="section-container flex justify-between items-center py-5">
+        <!-- Logo -->
+        <h1 class="text-2xl text-heading font-bold uppercase">
+          <a href="./index.html">Flixx</a>
+        </h1>
+
+        <!-- Navigation -->
+        <ul class="flex gap-6">
+          <li>
+            <a href="./index.html" class="link">Movies</a>
+          </li>
+          <li>
+            <a href="./shows.html" class="link">TV Shows</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- Background image -->
+      <div
+        class="absolute -z-1000 top-0 left-0 right-0 h-screen bg-[url('../images/showcase-bg.jpg')] bg-no-repeat bg-cover opacity-[0.1]"
+      ></div>
+
+      <!-- Back button -->
+      <div class="section-container my-10">
+        <a href="./index.html" class="btn">Back To Movies</a>
+      </div>
+
+      <!-- Movie data -->
+      <section id="movie-details">
+        <div class="section-container">
+          <!-- Details -->
+          <div
+            class="flex flex-col items-center gap-y-10 gap-x-15 md:flex-row md:items-start"
+          >
+            <!-- Poster -->
+            <div class="w-full max-w-100">
+              <img src="./images/no-image.jpg" alt="" id="poster" />
+            </div>
+
+            <!-- Details content -->
+            <div
+              class="flex flex-col items-start w-full gap-y-5 pb-10 border-b border-gray-300 md:border-none md:pt-30"
+            >
+              <!-- Movie title -->
+              <h2 class="section-heading self-center" id="title">
+                Movie title
+              </h2>
+              <!-- Rating -->
+              <p>
+                <i class="fa-solid fa-star text-accent"></i>
+                <span id="rating">0</span> / 10
+              </p>
+              <!-- Release date -->
+              <p>Release Date: <span id="release-date">XXXX-XX-XX</span></p>
+              <!-- Description -->
+              <p id="description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
+                natus quo eveniet inventore eos, id amet, animi nesciunt,
+                commodi provident dicta neque quisquam perspiciatis modi
+                sapiente est dolor. Eius, modi!
+              </p>
+              <!-- Genres -->
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">Genres</span>
+                <ul class="flex flex-col" id="genres-list">
+                  <li>Something</li>
+                  <li>Something else</li>
+                </ul>
+              </div>
+              <!-- Movie homepage link -->
+              <a href="#" class="btn" id="homepage-link"
+                >Visit Movie Homepage</a
+              >
+            </div>
+          </div>
+
+          <!-- Even more details -->
+          <div class="mt-30">
+            <h2 class="section-heading">Movie info</h2>
+
+            <ul class="flex flex-col gap-4 divide-y divide-gray-800">
+              <li class="py-2">
+                <span class="text-accent">Budget:</span>
+                <span id="budget">0$</span>
+              </li>
+              <li class="py-2">
+                <span class="text-accent">Revenue:</span>
+                <span id="revenue">0$</span>
+              </li>
+              <li class="py-2">
+                <span class="text-accent">Runtime:</span>
+                <span id="runtime">90</span> minutes
+              </li>
+              <li class="py-2">
+                <span class="text-accent">Status:</span>
+                <span id="status">Released</span>
+              </li>
+              <li class="py-2">
+                <p class="font-bold">Production Companies</p>
+                <p id="companies">Company1 Company2 Company3 ... etc.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Website footer -->
+    <footer id="main-footer">
+      <div
+        class="section-container flex justify-between items-center py-5 mt-5"
+      >
+        <!-- Logo -->
+        <h2 class="text-2xl text-heading font-bold uppercase">
+          <a href="./index.html">Flixx</a>
+        </h2>
+
+        <!-- Socials -->
+        <ul class="flex gap-2 text-xl">
+          <li class="socials-link">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li class="socials-link">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li class="socials-link">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
