@@ -1,1 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 @import 'tailwindcss';
+
+@theme {
+  /* Screen breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+
+  /* Font families */
+  --font-sans: 'Josefin Sans', sans-serif;
+  --font-alata: 'Alata';
+}
+
+@layer utilities {
+  .nav-link {
+    @apply relative inline-block font-alata text-white;
+  }
+
+  .nav-link:hover::before {
+    @apply content-[''] absolute -bottom-1 left-1/2 -translate-x-1/2 w-4/5 h-px bg-blue-50;
+  }
+
+  .mobile-nav-link {
+    @apply transition duration-200 uppercase text-lg font-light hover:text-pink-500;
+  }
+
+  /* Hamburger menu */
+  .line {
+    @apply block transition duration-400 rounded h-0.5 w-full bg-white;
+  }
+
+  .hamburger-active .top-line {
+    @apply translate-y-2 rotate-45;
+  }
+
+  .hamburger-active .middle-line {
+    @apply opacity-0;
+  }
+
+  .hamburger-active .bottom-line {
+    @apply -translate-y-2 -rotate-45;
+  }
+
+  /* Creations images */
+  .creation {
+    @apply relative overflow-hidden;
+  }
+
+  .creation__image {
+    @apply transition duration-300 object-cover w-full h-full;
+  }
+
+  .creation__caption {
+    @apply absolute flex p-6 bottom-0 right-0 left-0 top-0 text-white uppercase;
+  }
+
+  .creation__text {
+    @apply text-left mt-auto max-w-40 text-2xl font-light;
+  }
+
+  .item-gradient {
+    background: linear-gradient(to top, #111827, transparent);
+  }
+
+  /* Utilities */
+  .section-container {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .btn {
+    @apply transition duration-200 px-10 py-2 border-2 border-gray-900 text-center uppercase font-bold tracking-[4px] hover:bg-black hover:text-white;
+  }
+}
