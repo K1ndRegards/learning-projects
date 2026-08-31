@@ -22,7 +22,7 @@
 }
 
 @layer components {
-  /* Movie cards */
+  /* Poster cards */
   .poster-card {
     @apply transition duration-300 p-1 bg-surface hover:scale-105 hover:bg-surface-light;
   }
