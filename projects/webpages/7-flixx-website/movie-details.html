@@ -37,7 +37,7 @@
     <main>
       <!-- Background image -->
       <div
-        class="absolute -z-1000 top-0 left-0 right-0 h-screen bg-[url('../images/showcase-bg.jpg')] bg-no-repeat bg-cover opacity-[0.1]"
+        class="absolute -z-1000 top-0 left-0 right-0 h-screen bg-no-repeat bg-center bg-cover opacity-[0.1]"
         id="bg-image"
       ></div>
 
@@ -96,29 +96,29 @@
           </div>
 
           <!-- Even more details -->
-          <div class="mt-30">
-            <h2 class="section-heading">Movie info</h2>
+          <div class="mt-20 md:mt-30">
+            <h2 class="section-heading mb-12">Movie info</h2>
 
             <ul class="flex flex-col gap-4 divide-y divide-gray-800">
-              <li class="py-2">
+              <li class="pb-2">
                 <span class="text-accent">Budget:</span>
-                <span id="budget">0$</span>
+                $<span id="budget"></span>
               </li>
-              <li class="py-2">
+              <li class="pb-2">
                 <span class="text-accent">Revenue:</span>
-                <span id="revenue">0$</span>
+                $<span id="revenue"></span>
               </li>
-              <li class="py-2">
+              <li class="pb-2">
                 <span class="text-accent">Runtime:</span>
-                <span id="runtime">90</span> minutes
+                <span id="runtime"></span> minutes
               </li>
-              <li class="py-2">
+              <li class="pb-2">
                 <span class="text-accent">Status:</span>
-                <span id="status">Released</span>
+                <span id="status"></span>
               </li>
-              <li class="py-2">
+              <li class="pb-2">
                 <p class="font-bold">Production Companies</p>
-                <p id="companies">Company1 Company2 Company3 ... etc.</p>
+                <p id="companies"></p>
               </li>
             </ul>
           </div>
@@ -150,5 +150,7 @@
         </ul>
       </div>
     </footer>
+
+    <script type="module" src="./src/router.js"></script>
   </body>
 </html>

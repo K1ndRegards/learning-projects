@@ -2,35 +2,35 @@ import { fetchAPIData } from '../utils/api.js';
 import { createElement } from '../utils/dom.js';
 
 const UI = {
-  movieContainer: null,
+  showContainer: null,
 };
 
 function cacheDOM() {
-  UI.movieContainer = document.querySelector('#movie-container');
+  UI.showContainer = document.querySelector('#show-container');
 }
 
-function createMoviePoster(movieData) {
+function createShowPoster(showData) {
   const poster = createElement('figure', {
     classes: 'poster-card',
   });
 
   let imgPath;
-  if (movieData.poster_path) {
-    imgPath = `https://image.tmdb.org/t/p/w500${movieData.poster_path}`;
+  if (showData.poster_path) {
+    imgPath = `https://image.tmdb.org/t/p/w500${showData.poster_path}`;
   } else {
     imgPath = './images/no-image.jpg';
   }
 
   const img = createElement('a', {
     attrs: {
-      href: `./movie-details.html?id=${movieData.id}`,
+      href: `./show-details.html?id=${showData.id}`,
     },
     children: [
       createElement('img', {
         classes: 'poster-card__image',
         attrs: {
           src: imgPath,
-          alt: movieData.title,
+          alt: showData.name,
         },
       }),
     ],
@@ -41,13 +41,13 @@ function createMoviePoster(movieData) {
   });
   const title = createElement('h3', {
     classes: 'poster-card__title',
-    text: movieData.title,
+    text: showData.name,
   });
   const release = createElement('p', {
     classes: 'poster-card__release',
     children: [
-      'Release: ',
-      createElement('span', { text: movieData.release_date }),
+      'Air date: ',
+      createElement('span', { text: showData.first_air_date }),
     ],
   });
 
@@ -60,19 +60,19 @@ function createMoviePoster(movieData) {
   return poster;
 }
 
-async function displayPopularMovies() {
-  const { results } = await fetchAPIData('movie/popular');
+async function displayPopularShows() {
+  const { results } = await fetchAPIData('tv/popular');
 
-  UI.movieContainer.replaceChildren();
+  UI.showContainer.replaceChildren();
 
-  results.forEach((movie) => {
-    const moviePoster = createMoviePoster(movie);
+  results.forEach((show) => {
+    const poster = createShowPoster(show);
 
-    UI.movieContainer.appendChild(moviePoster);
+    UI.showContainer.appendChild(poster);
   });
 }
 
-export default function home() {
+export default function shows() {
   cacheDOM();
-  displayPopularMovies();
+  displayPopularShows();
 }

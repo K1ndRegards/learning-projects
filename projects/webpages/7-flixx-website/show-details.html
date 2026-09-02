@@ -37,7 +37,7 @@
     <main>
       <!-- Background image -->
       <div
-        class="absolute -z-1000 top-0 left-0 right-0 h-screen bg-[url('../images/showcase-bg.jpg')] bg-no-repeat bg-cover opacity-[0.1]"
+        class="absolute -z-1000 top-0 left-0 right-0 h-screen bg-no-repeat bg-center bg-cover opacity-[0.1]"
         id="bg-image"
       ></div>
 
@@ -92,25 +92,25 @@
           </div>
 
           <!-- Even more details -->
-          <div class="mt-30">
-            <h2 class="section-heading">Show info</h2>
+          <div class="mt-20 md:mt-30">
+            <h2 class="section-heading mb-12">Show info</h2>
 
             <ul class="flex flex-col gap-4 divide-y divide-gray-800">
-              <li class="py-2">
+              <li class="pb-2">
                 <span class="text-accent">Number of Episodes:</span>
-                <span id="episodes">32</span>
+                <span id="episodes"></span>
               </li>
-              <li class="py-2">
-                <span class="text-accent">Last Episode to Ait:</span>
-                <span id="last-episode">Something</span>
+              <li class="pb-2">
+                <span class="text-accent">Last Episode To Air:</span>
+                <span id="last-episode"></span>
               </li>
-              <li class="py-2">
+              <li class="pb-2">
                 <span class="text-accent">Status:</span>
-                <span id="status">Returning series</span>
+                <span id="status"></span>
               </li>
-              <li class="py-2">
+              <li class="pb-2">
                 <p class="font-bold">Production Companies</p>
-                <p id="companies">Company1 Company2 Company3 ... etc.</p>
+                <p id="companies"></p>
               </li>
             </ul>
           </div>
@@ -142,5 +142,7 @@
         </ul>
       </div>
     </footer>
+
+    <script type="module" src="./src/router.js"></script>
   </body>
 </html>
