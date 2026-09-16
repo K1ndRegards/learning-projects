@@ -9,10 +9,16 @@
       src="https://kit.fontawesome.com/ee80a239bd.js"
       crossorigin="anonymous"
     ></script>
+
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css" />
+
     <title>Flixx Website</title>
   </head>
+
   <body class="font-sans text-body bg-background">
     <!-- Website header -->
     <header class="bg-black/80 text-body" id="main-header">
@@ -41,11 +47,22 @@
         id="now-playing"
       >
         <!-- Heading -->
-        <h2 class="section-heading">Now playing</h2>
+        <h2 class="section-heading mb-16">Now playing</h2>
 
         <!-- Swiper -->
-        <!-- Todo: write swiper -->
-        <div class="swiper"></div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="movie-details.html">
+                <img src="./images/no-image.jpg" alt="Movie Title" />
+              </a>
+              <h3 class="p-4 text-center bg-background">
+                <i class="fa-solid fa-star text-accent"></i>
+                <span>8</span> / 10
+              </h3>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Search -->
@@ -171,6 +188,7 @@
       </div>
     </footer>
 
+    <script src="./lib/swiper-bundle.min.js"></script>
     <script type="module" src="./src/router.js"></script>
   </body>
 </html>

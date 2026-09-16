@@ -1,5 +1,11 @@
 import { fetchAPIData } from '../utils/api.js';
-import { createElement } from '../utils/dom.js';
+import {
+  applyBackdrop,
+  applyPoster,
+  renderGenres,
+  renderCompanies,
+  getIdFromURL,
+} from '../utils/helpers.js';
 
 const UI = {
   bgImage: null,
@@ -34,27 +40,15 @@ function cacheDOM() {
 }
 
 function fillMovieData(movieData) {
-  if (movieData.backdrop_path) {
-    UI.bgImage.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${movieData.backdrop_path}")`;
-  } else {
-    UI.bgImage.style.backgroundImage = 'url("./images/showcase-bg.jpg")';
-  }
-
-  if (movieData.poster_path) {
-    UI.poster.src = `https://image.tmdb.org/t/p/w500${movieData.poster_path}`;
-  }
+  applyBackdrop(UI.bgImage, movieData.backdrop_path);
+  applyPoster(UI.poster, movieData.poster_path);
 
   UI.title.textContent = movieData.title;
   UI.rating.textContent = Number(movieData.vote_average).toFixed(1);
   UI.releaseDate.textContent = movieData.release_date;
   UI.description.textContent = movieData.overview;
 
-  UI.genresList.replaceChildren();
-  movieData.genres.forEach((genInfo) => {
-    const genreItem = createElement('li', { text: genInfo.name });
-
-    UI.genresList.appendChild(genreItem);
-  });
+  renderGenres(UI.genresList, movieData.genres);
 
   UI.homepageLink.href = movieData.homepage;
   UI.budget.textContent = movieData.budget.toLocaleString('en-US');
@@ -62,16 +56,11 @@ function fillMovieData(movieData) {
   UI.runtime.textContent = movieData.runtime;
   UI.status.textContent = movieData.status;
 
-  UI.companies.textContent = movieData.production_companies
-    .map((comp) => comp.name)
-    .join(', ');
+  renderCompanies(UI.companies, movieData.production_companies);
 }
 
 async function getMovieData() {
-  const params = new URLSearchParams(window.location.search);
-  const movieId = params.get('id');
-
-  const movieData = await fetchAPIData(`movie/${movieId}`);
+  const movieData = await fetchAPIData(`movie/${getIdFromURL()}`);
 
   return movieData;
 }

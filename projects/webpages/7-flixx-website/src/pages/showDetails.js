@@ -1,5 +1,11 @@
 import { fetchAPIData } from '../utils/api.js';
-import { createElement } from '../utils/dom.js';
+import {
+  applyBackdrop,
+  applyPoster,
+  renderGenres,
+  renderCompanies,
+  getIdFromURL,
+} from '../utils/helpers.js';
 
 const UI = {
   bgImage: null,
@@ -32,43 +38,26 @@ function cacheDOM() {
 }
 
 function fillShowData(showData) {
-  if (showData.backdrop_path) {
-    UI.bgImage.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${showData.backdrop_path}")`;
-  } else {
-    UI.bgImage.style.backgroundImage = 'url("./images/showcase-bg.jpg")';
-  }
-
-  if (showData.poster_path) {
-    UI.poster.src = `https://image.tmdb.org/t/p/w500${showData.poster_path}`;
-  }
+  applyBackdrop(UI.bgImage, showData.backdrop_path);
+  applyPoster(UI.poster, showData.poster_path);
 
   UI.title.textContent = showData.name;
   UI.rating.textContent = Number(showData.vote_average).toFixed(1);
   UI.airDate.textContent = showData.last_air_date;
   UI.description.textContent = showData.overview;
 
-  UI.genresList.replaceChildren();
-  showData.genres.forEach((genInfo) => {
-    const genreItem = createElement('li', { text: genInfo.name });
-
-    UI.genresList.appendChild(genreItem);
-  });
+  renderGenres(UI.genresList, showData.genres);
 
   UI.homepageLink.href = showData.homepage;
   UI.episodes.textContent = showData.number_of_episodes;
   UI.lastEpisode.textContent = showData.last_episode_to_air.name;
   UI.status.textContent = showData.status;
 
-  UI.companies.textContent = showData.production_companies
-    .map((comp) => comp.name)
-    .join(', ');
+  renderCompanies(UI.companies, showData.production_companies);
 }
 
 async function getShowData() {
-  const params = new URLSearchParams(window.location.search);
-  const showId = params.get('id');
-
-  const showData = await fetchAPIData(`tv/${showId}`);
+  const showData = await fetchAPIData(`tv/${getIdFromURL()}`);
 
   return showData;
 }
