@@ -1,5 +1,5 @@
 import { fetchAPIData } from '../utils/api.js';
-import { createElement } from '../utils/dom.js';
+import { createSwiperPoster, createMoviePoster } from '../components/poster.js';
 
 const UI = {
   movieContainer: null,
@@ -9,57 +9,6 @@ const UI = {
 function cacheDOM() {
   UI.movieContainer = document.querySelector('#movie-container');
   UI.swiper = document.querySelector('.swiper-wrapper');
-}
-
-function createMoviePoster(movieData) {
-  const poster = createElement('figure', {
-    classes: 'poster-card',
-  });
-
-  let imgPath;
-  if (movieData.poster_path) {
-    imgPath = `https://image.tmdb.org/t/p/w500${movieData.poster_path}`;
-  } else {
-    imgPath = './images/no-image.jpg';
-  }
-
-  const img = createElement('a', {
-    attrs: {
-      href: `./movie-details.html?id=${movieData.id}`,
-    },
-    children: [
-      createElement('img', {
-        classes: 'poster-card__image',
-        attrs: {
-          src: imgPath,
-          alt: movieData.title,
-        },
-      }),
-    ],
-  });
-
-  const caption = createElement('figcaption', {
-    classes: 'poster-card__caption',
-  });
-  const title = createElement('h3', {
-    classes: 'poster-card__title',
-    text: movieData.title,
-  });
-  const release = createElement('p', {
-    classes: 'poster-card__release',
-    children: [
-      'Release: ',
-      createElement('span', { text: movieData.release_date }),
-    ],
-  });
-
-  caption.appendChild(title);
-  caption.appendChild(release);
-
-  poster.appendChild(img);
-  poster.appendChild(caption);
-
-  return poster;
 }
 
 async function displayPopularMovies() {
@@ -72,40 +21,6 @@ async function displayPopularMovies() {
 
     UI.movieContainer.appendChild(moviePoster);
   });
-}
-
-function createSwiperPoster(movieData) {
-  const swiperSlide = createElement('div', {
-    classes: ['swiper-slide'],
-  });
-
-  const link = createElement('a', {
-    attrs: {
-      href: `movie-details.html?id=${movieData.id}`,
-    },
-    children: [
-      createElement('img', {
-        attrs: {
-          src: `https://image.tmdb.org/t/p/w500${movieData.poster_path}`,
-          alt: movieData.title,
-        },
-      }),
-    ],
-  });
-
-  const rating = createElement('h3', {
-    classes: ['p-4', 'text-center', 'text-lg', 'font-bold', 'bg-background'],
-    children: [
-      createElement('i', { classes: ['fa-solid', 'fa-star', 'text-accent'] }),
-      createElement('span', { text: ' ' + movieData.vote_average.toFixed(1) }),
-      ' / 10',
-    ],
-  });
-
-  swiperSlide.appendChild(link);
-  swiperSlide.appendChild(rating);
-
-  return swiperSlide;
 }
 
 function initSwiper() {

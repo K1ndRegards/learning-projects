@@ -2,13 +2,14 @@ import home from './pages/home.js';
 import shows from './pages/shows.js';
 import movieDetails from './pages/movieDetails.js';
 import showDetails from './pages/showDetails.js';
+import search from './pages/search.js';
 
 const routes = {
   'index.html': home,
   'shows.html': shows,
   'movie-details.html': movieDetails,
   'show-details.html': showDetails,
-  // '/search.html': search,
+  'search.html': search,
 };
 
 function init() {

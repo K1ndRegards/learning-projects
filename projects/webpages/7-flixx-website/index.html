@@ -68,7 +68,7 @@
       <!-- Search -->
       <section class="my-10 p-15" id="search">
         <div class="max-w-xl mx-auto">
-          <form action="#">
+          <form action="search.html">
             <!-- Radio groups -->
             <div class="flex gap-4">
               <!-- Radio group -->
@@ -80,6 +80,8 @@
                     id="movie"
                     value="movie"
                     class="peer hidden"
+                    required
+                    checked
                   />
                   <!-- custom radio button -->
                   <span class="custom-checkbox peer-checked:bg-accent"></span>
@@ -94,8 +96,8 @@
                   <input
                     type="radio"
                     name="search-type"
-                    id="tv-show"
-                    value="tv-show"
+                    id="tv"
+                    value="tv"
                     class="peer hidden"
                   />
                   <!-- custom radio button -->
@@ -110,13 +112,13 @@
             <div class="flex gap-2 mt-2">
               <!-- Form group -->
               <div class="flex-6">
-                <label for="search-input" class="sr-only"
+                <label for="search-term" class="sr-only"
                   >Enter search term</label
                 >
                 <input
                   type="text"
-                  name="search-input"
-                  id="search-input"
+                  name="search-term"
+                  id="search-term"
                   placeholder="Enter search term"
                   class="px-4 w-full h-full border border-white rounded placeholder:text-body"
                 />

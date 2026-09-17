@@ -10,3 +10,13 @@ export async function fetchAPIData(endpoint) {
 
   return data;
 }
+
+export async function searchAPIData(searchType, searchTerm, page = 1) {
+  const response = await fetch(
+    `${API_URL}/search/${searchType}?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=${page}`,
+  );
+
+  const data = await response.json();
+
+  return data;
+}
