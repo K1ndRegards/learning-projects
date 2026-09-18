@@ -1,0 +1,9 @@
+{
+  "title": "Location Map",
+  "slug": "13-location-map",
+  "description": "Small project to practice browser geolocation and leaflet API.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 1,
+  "date": "2026-09-18",
+  "screenshot": "screenshot.webp"
+}
