@@ -18,9 +18,14 @@
       <!-- Sidebar -->
       <aside class="p-6 w-full max-w-80 bg-slate-800">
         <ul class="flex flex-col gap-2 text-lg" id="tabs-container">
+          <!-- Clock tab -->
+          <li data-tab="clock" class="tab">
+            <i class="fa-regular fa-clock"></i><span>Clock</span>
+          </li>
+
           <!-- Stopwatch tab -->
-          <li data-tab="stopwatch" class="tab current-tab">
-            <i class="fa-regular fa-clock"></i><span>Stopwatch</span>
+          <li data-tab="stopwatch" class="tab">
+            <i class="fa-solid fa-stopwatch"></i><span>Stopwatch</span>
           </li>
 
           <!-- Timer tab -->
@@ -35,6 +40,20 @@
         class="flex justify-center items-center w-full"
         id="sections-container"
       >
+        <!-- Clock section -->
+        <section id="clock">
+          <!-- Clock canvas -->
+          <canvas
+            id="clock-canvas"
+            width="600"
+            height="600"
+            class="bg-white"
+          ></canvas>
+
+          <!-- Clock time -->
+          <div id="clock-time"></div>
+        </section>
+
         <!-- Stopwatch section -->
         <section
           id="stopwatch"
@@ -44,11 +63,17 @@
           <div
             class="stopwatch__time-display transition-colors duration-200 mb-16 text-7xl text-gray-400"
           >
-            <div class="font-roboto" id="stopwatch-hours">00</div>
+            <div class="stopwatch-hours font-roboto" id="stopwatch-hours">
+              00
+            </div>
             <div class="stopwatch__colon--1">:</div>
-            <div class="font-roboto" id="stopwatch-minutes">00</div>
+            <div class="stopwatch-minutes font-roboto" id="stopwatch-minutes">
+              00
+            </div>
             <div class="stopwatch__colon--2">:</div>
-            <div class="font-roboto" id="stopwatch-seconds">00</div>
+            <div class="stopwatch-seconds font-roboto" id="stopwatch-seconds">
+              00
+            </div>
             <div class="stopwatch__dot">.</div>
             <div id="stopwatch-milliseconds" class="font-roboto text-5xl">
               00

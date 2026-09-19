@@ -38,6 +38,17 @@ function setCurrentSection() {
   });
 }
 
+function saveCurrentTabToLocalStorage() {
+  localStorage.setItem('currentTab', state.currentTab);
+}
+
+function getCurrentTabFromLocalStorage() {
+  const saved = localStorage.getItem('currentTab');
+  if (!saved) return;
+
+  state.currentTab = saved;
+}
+
 function render() {
   setCurrentTab();
   setCurrentSection();
@@ -51,6 +62,7 @@ function tabClickHandler(e) {
   // then render tabs
   if (tab && tab.dataset.tab !== state.currentTab) {
     state.currentTab = tab.dataset.tab;
+    saveCurrentTabToLocalStorage();
     render();
   }
 }
@@ -62,5 +74,6 @@ export function initTabs() {
 
   UI.tabsContainer.addEventListener('click', tabClickHandler);
 
+  getCurrentTabFromLocalStorage();
   render();
 }
