@@ -41,46 +41,64 @@
         id="sections-container"
       >
         <!-- Clock section -->
-        <section id="clock">
+        <section id="clock" class="flex flex-col justify-center items-center">
           <!-- Clock canvas -->
-          <canvas
-            id="clock-canvas"
-            width="600"
-            height="600"
-            class="bg-white"
-          ></canvas>
+          <canvas id="clock-canvas" width="500" height="500"></canvas>
 
           <!-- Clock time -->
-          <div id="clock-time"></div>
+          <div id="clock-time" class="mt-4">
+            <!-- Time numbers and titles -->
+            <div
+              class="time-display time-display__clock transition-colors duration-200 mb-16 text-7xl text-gray-400"
+            >
+              <div class="time-display__hours font-roboto" id="clock-hours">
+                00
+              </div>
+              <div class="time-display__colon--1">:</div>
+              <div class="time-display__minutes font-roboto" id="clock-minutes">
+                00
+              </div>
+              <div class="time-display__colon--2">:</div>
+              <div class="time-display__seconds font-roboto" id="clock-seconds">
+                00
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- Stopwatch section -->
         <section
           id="stopwatch"
-          class="stopwatch flex flex-col justify-center items-center"
+          class="flex flex-col justify-center items-center"
         >
           <!-- Time numbers and titles -->
           <div
-            class="stopwatch__time-display transition-colors duration-200 mb-16 text-7xl text-gray-400"
+            class="time-display time-display__stopwatch transition-colors duration-200 mb-16 text-7xl text-gray-400"
           >
-            <div class="stopwatch-hours font-roboto" id="stopwatch-hours">
+            <div class="time-display__hours font-roboto" id="stopwatch-hours">
               00
             </div>
-            <div class="stopwatch__colon--1">:</div>
-            <div class="stopwatch-minutes font-roboto" id="stopwatch-minutes">
+            <div class="time-display__colon--1">:</div>
+            <div
+              class="time-display__minutes font-roboto"
+              id="stopwatch-minutes"
+            >
               00
             </div>
-            <div class="stopwatch__colon--2">:</div>
-            <div class="stopwatch-seconds font-roboto" id="stopwatch-seconds">
+            <div class="time-display__colon--2">:</div>
+            <div
+              class="time-display__seconds font-roboto"
+              id="stopwatch-seconds"
+            >
               00
             </div>
-            <div class="stopwatch__dot">.</div>
-            <div id="stopwatch-milliseconds" class="font-roboto text-5xl">
+            <div class="time-display__dot">.</div>
+            <div class="font-roboto text-5xl" id="stopwatch-milliseconds">
               00
             </div>
-            <div class="stopwatch__hours-label text-3xl">hr</div>
-            <div class="stopwatch__minutes-label text-3xl">min</div>
-            <div class="stopwatch__seconds-label text-3xl">sec</div>
+            <div class="time-display__hours-label text-3xl">hr</div>
+            <div class="time-display__minutes-label text-3xl">min</div>
+            <div class="time-display__seconds-label text-3xl">sec</div>
           </div>
 
           <!-- Stopwatch controls -->

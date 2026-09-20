@@ -56,50 +56,58 @@
 }
 
 @layer utilities {
-  /* Grid for stopwatch */
-  .stopwatch__time-display {
+  .time-display {
     display: grid;
-    grid-template-areas:
-      'hours colon-1 minutes colon-2 seconds dot-1 milliseconds'
-      'hours-label . minutes-label . seconds-label . .';
     align-items: end;
     justify-items: center;
   }
 
-  .stopwatch__time-display.active {
+  /* Grid for stopwatch */
+  .time-display__stopwatch {
+    grid-template-areas:
+      'hours colon-1 minutes colon-2 seconds dot-1 milliseconds'
+      'hours-label . minutes-label . seconds-label . .';
+  }
+
+  /* Grid for clock */
+  .time-display__clock {
+    grid-template-areas: 'hours colon-1 minutes colon-2 seconds';
+  }
+
+  .time-display.active {
     @apply text-white;
   }
 
-  #stopwatch-hours {
+  .time-display__hours {
     grid-area: hours;
   }
-  #stopwatch-minutes {
+  .time-display__minutes {
     grid-area: minutes;
   }
-  #stopwatch-seconds {
+  .time-display__seconds {
     grid-area: seconds;
   }
-  #stopwatch-milliseconds {
+  .time-display__milliseconds {
     grid-area: milliseconds;
   }
 
-  .stopwatch__hours-label {
+  .time-display__hours-label {
     grid-area: hours-label;
   }
-  .stopwatch__minutes-label {
+  .time-display__minutes-label {
     grid-area: minutes-label;
   }
-  .stopwatch__seconds-label {
+  .time-display__seconds-label {
     grid-area: seconds-label;
   }
 
-  .stopwatch__colon--1 {
+  .time-display__colon--1 {
     grid-area: colon-1;
   }
-  .stopwatch__colon--2 {
+  .time-display__colon--2 {
     grid-area: colon-2;
   }
-  .stopwatch__dot {
+  .time-display__dot {
     grid-area: dot-1;
   }
 

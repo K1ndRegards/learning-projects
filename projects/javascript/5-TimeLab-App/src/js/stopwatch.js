@@ -123,7 +123,7 @@ export function initStopwatch() {
   UI.startBtn = document.querySelector('#stopwatch-start');
   UI.pauseBtn = document.querySelector('#stopwatch-pause');
   UI.resetBtn = document.querySelector('#stopwatch-reset');
-  UI.display = document.querySelector('.stopwatch__time-display');
+  UI.display = document.querySelector('.time-display__stopwatch');
   UI.section = document.querySelector('#stopwatch');
 
   UI.startBtn.addEventListener('click', startHandler);
