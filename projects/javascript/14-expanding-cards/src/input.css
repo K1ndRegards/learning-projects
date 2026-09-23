@@ -18,6 +18,12 @@
     flex: 5;
   }
 
+  .card-panel h3 {
+    transition: opacity;
+    transition-delay: 0.4s;
+    transition-duration: 0.3s;
+  }
+
   .card-panel.active h3 {
     @apply opacity-100;
   }
