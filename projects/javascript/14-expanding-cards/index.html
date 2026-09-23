@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Space Themed Expanding Cards</title>
+  </head>
+  <body class="bg-slate-900 text-white">
+    <!-- Card template -->
+    <template id="card-panel-template">
+      <div
+        class="card-panel relative h-full flex-[0.7] cursor-pointer rounded-4xl overflow-hidden"
+      >
+        <img src="" alt="" class="object-cover w-full h-full" />
+        <h3
+          class="absolute bottom-4 left-4 font-bold text-2xl text-shadow-2xs text-shadow-black opacity-0 transition-opacity duration-400"
+        ></h3>
+      </div>
+    </template>
+
+    <main class="flex justify-center items-center min-h-screen">
+      <!-- Space background -->
+      <div
+        class="fixed top-0 left-0 right-0 -z-100 h-screen bg-[url('../images/space.webp')] bg-cover bg-no-repeat bg-center brightness-10"
+      ></div>
+
+      <!-- Cards section -->
+      <section class="flex justify-center px-4 mt-20" id="cards">
+        <div
+          class="flex gap-4 h-[80dvh] md:max-w-[90dvw]"
+          id="cards-container"
+        ></div>
+      </section>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
