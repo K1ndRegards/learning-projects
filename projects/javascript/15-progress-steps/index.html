@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Progress Steps</title>
+  </head>
+  <body class="bg-slate-200">
+    <main class="flex flex-col items-center justify-center h-screen">
+      <!-- Progress steps -->
+      <div class="relative flex justify-between max-w-full w-100">
+        <!-- Gray line -->
+        <div
+          class="absolute w-full h-1 top-[50%] translate-y-[-50%] bg-gray-700 -z-20"
+        ></div>
+
+        <!-- Progress line -->
+        <div
+          class="absolute h-1 top-[50%] translate-y-[-50%] bg-cyan-500 -z-10 transition-all duration-400"
+          id="progress-line"
+        ></div>
+
+        <!-- Circles -->
+        <div class="flex justify-between w-full" id="circle-container">
+          <div class="circle" data-circle-id="1">1</div>
+          <div class="circle" data-circle-id="2">2</div>
+          <div class="circle" data-circle-id="3">3</div>
+          <div class="circle" data-circle-id="4">4</div>
+        </div>
+      </div>
+
+      <!-- Next/Prev Controls -->
+      <div class="controls mt-10 space-x-5">
+        <button type="button" class="control-button" id="prev-button">
+          Prev
+        </button>
+        <button type="button" class="control-button" id="next-button">
+          Next
+        </button>
+
+        <button type="button" class="control-button" id="decrement-button">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <button type="button" class="control-button" id="increment-button">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </main>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>

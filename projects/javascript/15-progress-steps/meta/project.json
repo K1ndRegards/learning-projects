@@ -1,0 +1,9 @@
+{
+  "title": "Progress Steps",
+  "slug": "15-progress-steps",
+  "description": "Simple animated progress steps project.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 3,
+  "date": "2026-09-24",
+  "screenshot": "screenshot.webp"
+}

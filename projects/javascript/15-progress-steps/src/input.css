@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  .circle {
+    transition: all;
+    transition-duration: 700ms;
+    @apply flex justify-center items-center w-8 h-8 rounded-full  border-3 border-gray-700 transition duration-400 bg-slate-200 font-bold text-gray-700 cursor-pointer;
+  }
+
+  .circle.active {
+    @apply border-cyan-500 text-cyan-500;
+  }
+
+  .control-button {
+    @apply px-8 py-2 rounded-lg bg-cyan-500 cursor-pointer text-white hover:-translate-y-0.5 transition duration-200 active:scale-95;
+  }
+
+  .control-button:disabled {
+    @apply hover:translate-y-0 active:scale-100 cursor-not-allowed bg-gray-500;
+  }
+}
