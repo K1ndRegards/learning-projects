@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Icon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+
+    <title>Tracalorie | Track your Calories</title>
+  </head>
+  <body class="text-dark">
+    <!-- Templates -->
+    <template id="list-item-template">
+      <li class="list-item">
+        <p class="list-item__name">Item</p>
+        <div class="list-item__calories">
+          <p class="list-item__calories-number">300</p>
+        </div>
+        <button type="button" class="list-item__remove btn btn-danger">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+    </template>
+
+    <!-- Website header -->
+    <header
+      class="flex flex-col md:flex-row justify-center md:justify-between items-center py-2 md:py-4 px-12 bg-primary text-white"
+    >
+      <h1 class="text-3xl md:text-4xl mb-2 md:mb-0">
+        <i class="fa-solid fa-utensils"></i>Tracalorie
+      </h1>
+
+      <div class="flex gap-4 justify-center items-center">
+        <button type="button" class="btn" id="open-limit-modal">
+          Set Daily Limit
+        </button>
+        <button type="button" class="btn" id="reset-button">Reset Day</button>
+      </div>
+    </header>
+
+    <!-- Modal window -->
+    <div
+      class="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-start pt-8 px-4 bg-black/30 hidden"
+      id="limit-modal"
+    >
+      <div class="max-w-full w-125 rounded-lg bg-white" id="limit-modal-window">
+        <header class="flex justify-between p-4">
+          <h2 class="text-xl">Set Daily Limit</h2>
+
+          <button type="button" id="close-modal-button">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </header>
+
+        <div class="border border-gray-200"></div>
+
+        <form class="flex flex-col space-y-4 p-4" id="limit-form">
+          <div>
+            <label for="calorie-limit" class="block mb-2"
+              >Daily Calorie Limit</label
+            >
+            <input
+              type="number"
+              name="calorie-limit"
+              class="input-field"
+              id="calorie-limit"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="save-limit">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <main class="px-4 md:px-12 py-16">
+      <!-- Stats -->
+      <section id="stats">
+        <!-- Grid row-1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <!-- Stats - daily calorie limit -->
+          <div class="stats-cell bg-dark text-white">
+            <p class="stats-number" id="stats-limit">2000</p>
+            <h2 class="stats-label">Daily Calorie Limit</h2>
+          </div>
+
+          <!-- Stats - gain/loss -->
+          <div class="stats-cell bg-primary text-white">
+            <p class="stats-number" id="stats-difference">700</p>
+            <h2 class="stats-label">Gain/Loss</h2>
+          </div>
+        </div>
+
+        <!-- Grid row-2 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Stats - calories consumed -->
+          <div class="stats-cell bg-light text-dark border border-gray-300">
+            <p class="stats-number" id="stats-consumed">700</p>
+            <h2 class="stats-label">Calories Consumed</h2>
+          </div>
+
+          <!-- Stats - calories burned -->
+          <div class="stats-cell bg-light text-dark border border-gray-300">
+            <p class="stats-number" id="stats-burned">0</p>
+            <h2 class="stats-label">Calories Burned</h2>
+          </div>
+
+          <!-- Stats - calories remaining -->
+          <div class="stats-cell bg-light text-dark border border-gray-300">
+            <p class="stats-number" id="stats-remaining">1300</p>
+            <h2 class="stats-label">Calories Remaining</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- Progress bar -->
+      <section
+        class="mt-12 w-full h-4 bg-gray-200 rounded-xl overflow-hidden"
+        id="progress-bar"
+      >
+        <div class="w-[33%] h-full bg-primary" id="progress-success"></div>
+      </section>
+
+      <!-- Filters -->
+      <section class="mt-16" id="filters">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Filter meals group -->
+          <div>
+            <label for="filter-meals" class="sr-only">Filter meals</label>
+            <input
+              type="text"
+              name="filter-meals"
+              class="input-field"
+              id="filter-meals"
+              placeholder="Filter Meals..."
+            />
+          </div>
+
+          <!-- Filter workouts group -->
+          <div>
+            <label for="filter-workouts" class="sr-only">Filter workouts</label>
+            <input
+              type="text"
+              name="filter-workouts"
+              class="input-field shadow-on-focus"
+              id="filter-workouts"
+              placeholder="Filter Workouts..."
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Items (Meals / Food Items and Workouts) -->
+      <section class="mt-12" id="items">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Meals / Food Items -->
+          <div class="flex flex-col">
+            <header class="flex justify-between items-center">
+              <h2 class="text-2xl pl-2 py-2 border-l-3 border-primary">
+                Meals / Food Items
+              </h2>
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="add-meal-button"
+              >
+                <i class="fa-solid fa-plus mr-1c"></i>Add Meal
+              </button>
+            </header>
+
+            <!-- Add meal form -->
+            <div class="mt-2" id="collapse-meal">
+              <form
+                class="p-4 space-y-4 border border-gray-300 rounded-lg bg-light"
+                id="meal-form"
+              >
+                <!-- Meal item input field -->
+                <div>
+                  <label for="meal-item" class="sr-only"
+                    >Enter Meal or Item</label
+                  >
+                  <input
+                    type="text"
+                    name="meal-item"
+                    class="input-field"
+                    id="meal-item"
+                    placeholder="Enter Meal of Item"
+                  />
+                </div>
+
+                <!-- Calorie intake input field -->
+                <div>
+                  <label for="calorie-intake" class="sr-only"
+                    >Enter Meal or Item</label
+                  >
+                  <input
+                    type="number"
+                    name="calorie-intake"
+                    class="input-field"
+                    id="calorie-intake"
+                    placeholder="Enter calories"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Add Meal Item
+                </button>
+              </form>
+            </div>
+
+            <ul class="flex flex-col space-y-2 mt-2" id="meal-item-list">
+              <li class="list-item">
+                <p class="list-item__name">Item</p>
+                <div class="list-item__calories">
+                  <p class="list-item__calories-number bg-primary">300</p>
+                </div>
+                <button type="button" class="list-item__remove btn btn-danger">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Workout Items -->
+          <div class="flex flex-col">
+            <header class="flex justify-between items-center">
+              <h2 class="text-2xl pl-2 py-2 border-l-3 border-secondary">
+                Workouts
+              </h2>
+
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="add-workout-button"
+              >
+                <i class="fa-solid fa-plus mr-1c"></i>Add Workout
+              </button>
+            </header>
+
+            <!-- Add meal form -->
+            <div class="mt-2" id="collapse-workout">
+              <form
+                class="p-4 space-y-4 border border-gray-300 rounded-lg bg-light"
+                id="workout-form"
+              >
+                <!-- Workout item input field -->
+                <div>
+                  <label for="workout-item" class="sr-only"
+                    >Enter Workout</label
+                  >
+                  <input
+                    type="text"
+                    name="workout-item"
+                    class="input-field"
+                    id="workout-item"
+                    placeholder="Enter Workout"
+                  />
+                </div>
+
+                <!-- Calorie burned input field -->
+                <div>
+                  <label for="calorie-intake" class="sr-only"
+                    >Enter burned calories</label
+                  >
+                  <input
+                    type="number"
+                    name="calorie-burned"
+                    class="input-field"
+                    id="calorie-burned"
+                    placeholder="Enter calories"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-secondary">
+                  Add Workout Item
+                </button>
+              </form>
+            </div>
+
+            <ul class="flex flex-col space-y-2 mt-2" id="meal-item-list">
+              <li class="list-item">
+                <p class="list-item__name">Item</p>
+                <div class="list-item__calories">
+                  <p class="list-item__calories-number bg-secondary">300</p>
+                </div>
+                <button type="button" class="list-item__remove btn btn-danger">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

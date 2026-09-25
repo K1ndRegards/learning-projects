@@ -1,0 +1,86 @@
+/* Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  /* Fonts */
+  --font-sans: 'Roboto', sans-serif;
+
+  /* Colors */
+  --color-primary: #599f3d;
+  --color-primary-light: #72ad5a;
+  --color-secondary: #fd7e14;
+  --color-secondary-light: #fd9137;
+  --color-danger: #dc3545;
+  --color-danger-dark: #bb2d3b;
+  --color-dark: #212529;
+  --color-light: #f8f9fa;
+}
+
+@layer base {
+  *:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #599f3d40;
+    border-color: #accf9e;
+    transition: all 0.15s ease-in;
+  }
+}
+
+@layer utilities {
+  /* Buttons */
+  .btn {
+    @apply py-2 px-4 rounded-md border border-white transition duration-300 cursor-pointer text-white hover:bg-white hover:text-dark;
+  }
+
+  .btn-primary {
+    @apply bg-primary border-primary hover:bg-primary-light hover:text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary border-secondary hover:bg-secondary-light hover:text-white;
+  }
+
+  .btn-danger {
+    @apply bg-danger border-danger hover:bg-danger-dark hover:text-white;
+  }
+
+  /* Stats */
+  .stats-cell {
+    @apply flex flex-col justify-center items-center p-4 pt-5 rounded-lg;
+  }
+
+  .stats-number {
+    @apply mb-2 text-3xl md:text-4xl font-bold;
+  }
+
+  .stats-label {
+    @apply text-2xl mb-4 text-center;
+  }
+
+  /* Input fields */
+  .input-field {
+    @apply px-4 py-2 w-full border border-gray-200 rounded-md transition duration-300 bg-white placeholder:text-lg placeholder:text-gray-400;
+  }
+
+  /* Item lists */
+  .list-item {
+    @apply flex justify-between items-center px-4 py-2 border border-gray-200 rounded-lg;
+  }
+
+  .list-item__name {
+    @apply flex-1 text-2xl;
+  }
+
+  .list-item__calories {
+    @apply flex-1;
+  }
+
+  .list-item__calories-number {
+    @apply inline-block px-4 py-2 rounded-lg text-2xl text-white;
+  }
+
+  .list-item__remove {
+    @apply flex-0;
+  }
+}

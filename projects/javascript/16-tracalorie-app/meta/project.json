@@ -1,0 +1,9 @@
+{
+  "title": "Tracalorie App",
+  "slug": "16-tracalorie-app",
+  "description": "",
+  "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+  "difficulty": 0,
+  "date": "2026-09-25",
+  "screenshot": "screenshot.webp"
+}
