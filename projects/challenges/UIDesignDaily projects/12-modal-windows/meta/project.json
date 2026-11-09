@@ -1,0 +1,9 @@
+{
+  "title": "Modal Windows",
+  "slug": "12-modal-windows",
+  "description": "Simple project to practice Tailwind CSS and JS by building couple interactive modal windows.",
+  "technologies": ["HTML", "CSS", "Tailwind CSS"],
+  "difficulty": 2,
+  "date": "2026-10-07",
+  "screenshot": "screenshot.webp"
+}
