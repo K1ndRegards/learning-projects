@@ -167,22 +167,22 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Meals / Food Items -->
           <div class="flex flex-col">
-            <header class="flex justify-between items-center">
+            <header class="flex justify-between items-center mb-2">
               <h2 class="text-2xl pl-2 py-2 border-l-3 border-primary">
                 Meals / Food Items
               </h2>
 
               <button
                 type="button"
-                class="btn btn-primary"
-                id="add-meal-button"
+                class="toggle-form-btn btn btn-primary"
+                data-target="#meal-form-collapse"
               >
-                <i class="fa-solid fa-plus mr-1c"></i>Add Meal
+                <i class="fa-solid fa-plus mr-1"></i>Add Meal
               </button>
             </header>
 
             <!-- Add meal form -->
-            <div class="mt-2" id="collapse-meal">
+            <div class="collapse-wrapper" id="meal-form-collapse">
               <form
                 class="p-4 space-y-4 border border-gray-300 rounded-lg bg-light"
                 id="meal-form"
@@ -197,7 +197,7 @@
                     name="meal-item"
                     class="input-field"
                     id="meal-item"
-                    placeholder="Enter Meal of Item"
+                    placeholder="Enter Meal or Item"
                   />
                 </div>
 
@@ -235,59 +235,61 @@
           </div>
 
           <!-- Workout Items -->
-          <div class="flex flex-col">
-            <header class="flex justify-between items-center">
+          <div class="flex flex-col mt-12 md:mt-0">
+            <header class="flex justify-between items-center mb-2">
               <h2 class="text-2xl pl-2 py-2 border-l-3 border-secondary">
                 Workouts
               </h2>
 
               <button
                 type="button"
-                class="btn btn-secondary"
-                id="add-workout-button"
+                class="toggle-form-btn btn btn-secondary"
+                data-target="#workout-form-wrapper"
               >
-                <i class="fa-solid fa-plus mr-1c"></i>Add Workout
+                <i class="fa-solid fa-plus mr-1"></i>Add Workout
               </button>
             </header>
 
-            <!-- Add meal form -->
-            <div class="mt-2" id="collapse-workout">
-              <form
-                class="p-4 space-y-4 border border-gray-300 rounded-lg bg-light"
-                id="workout-form"
-              >
-                <!-- Workout item input field -->
-                <div>
-                  <label for="workout-item" class="sr-only"
-                    >Enter Workout</label
-                  >
-                  <input
-                    type="text"
-                    name="workout-item"
-                    class="input-field"
-                    id="workout-item"
-                    placeholder="Enter Workout"
-                  />
-                </div>
+            <!-- Add workout form -->
+            <div class="collapse-wrapper" id="workout-form-wrapper">
+              <div class="collapse-inner">
+                <form
+                  class="p-4 space-y-4 border border-gray-300 rounded-lg bg-light"
+                  id="workout-form"
+                >
+                  <!-- Workout item input field -->
+                  <div>
+                    <label for="workout-item" class="sr-only"
+                      >Enter Workout</label
+                    >
+                    <input
+                      type="text"
+                      name="workout-item"
+                      class="input-field"
+                      id="workout-item"
+                      placeholder="Enter Workout"
+                    />
+                  </div>
 
-                <!-- Calorie burned input field -->
-                <div>
-                  <label for="calorie-intake" class="sr-only"
-                    >Enter burned calories</label
-                  >
-                  <input
-                    type="number"
-                    name="calorie-burned"
-                    class="input-field"
-                    id="calorie-burned"
-                    placeholder="Enter calories"
-                  />
-                </div>
+                  <!-- Calorie burned input field -->
+                  <div>
+                    <label for="calorie-intake" class="sr-only"
+                      >Enter burned calories</label
+                    >
+                    <input
+                      type="number"
+                      name="calorie-burned"
+                      class="input-field"
+                      id="calorie-burned"
+                      placeholder="Enter calories"
+                    />
+                  </div>
 
-                <button type="button" class="btn btn-secondary">
-                  Add Workout Item
-                </button>
-              </form>
+                  <button type="button" class="btn btn-secondary">
+                    Add Workout Item
+                  </button>
+                </form>
+              </div>
             </div>
 
             <ul class="flex flex-col space-y-2 mt-2" id="meal-item-list">
@@ -305,5 +307,7 @@
         </div>
       </section>
     </main>
+
+    <script type="module" src="./src/js/app.js"></script>
   </body>
 </html>

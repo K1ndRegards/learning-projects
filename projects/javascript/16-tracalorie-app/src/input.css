@@ -54,6 +54,15 @@
     @apply px-4 py-2 w-full border border-gray-200 rounded-md transition duration-300 bg-white placeholder:text-lg placeholder:text-gray-400;
   }
 
+  /* Form collapse styles */
+  .collapse-wrapper:not(.is-open) {
+    @apply hidden;
+  }
+
+  .collapsing {
+    @apply h-0 overflow-hidden transition-all duration-300;
+  }
+
   /* Item lists */
   .list-item {
     @apply flex justify-between items-center px-4 py-2 border border-gray-200 rounded-lg;
