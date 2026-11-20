@@ -19,6 +19,48 @@
 }
 
 @layer utilities {
+  /* Modal animations */
+  .modal-move-in {
+    animation-name: modal-move-in;
+    animation-duration: 300ms;
+  }
+
+  .modal-move-out {
+    animation-name: modal-move-in;
+    animation-duration: 300ms;
+    animation-direction: reverse;
+  }
+
+  .modal-opacity-in {
+    animation-name: modal-opacity-in;
+    animation-duration: 300ms;
+  }
+
+  .modal-opacity-out {
+    animation-name: modal-opacity-in;
+    animation-duration: 300ms;
+    animation-direction: reverse;
+  }
+
+  @keyframes modal-move-in {
+    from {
+      transform: translateY(-30px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes modal-opacity-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   /* Buttons */
   .btn {
     @apply py-2 px-4 rounded-md border border-white transition duration-50 cursor-pointer text-white hover:bg-white hover:text-dark active:translate-y-0.5 active:scale-98;

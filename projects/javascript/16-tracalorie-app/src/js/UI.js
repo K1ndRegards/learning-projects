@@ -99,14 +99,115 @@ class Collapse {
   }
 }
 
+class Modal {
+  constructor(targetSelector) {
+    // the whole modal itself
+    this.element = document.querySelector(targetSelector);
+
+    this.modalContent = this.element.querySelector('.modal-content');
+
+    this.handleBackdropClick = this.handleBackdropClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    this.element.querySelectorAll('.close-modal').forEach((btn) => {
+      btn.addEventListener('click', () => this.close());
+    });
+
+    this.element.addEventListener('click', this.handleBackdropClick);
+  }
+
+  handleBackdropClick(e) {
+    if (e.target === this.element) {
+      this.close();
+    }
+  }
+
+  handleKeyDown(e) {
+    if (e.key === 'Escape') {
+      this.close();
+    }
+  }
+
+  // Open modal window
+  open() {
+    if (!this.element) return;
+
+    this.element.classList.remove('hidden');
+    this.element.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+
+    document.addEventListener('keydown', this.handleKeyDown);
+
+    this.toggleAppearingAnimation();
+  }
+
+  // Close modal window
+  close() {
+    if (!this.element) return;
+
+    // toggle disappearing animation
+    this.toggleDisappearingAnimation();
+
+    // Wait for animation to end
+    this.element.addEventListener(
+      'animationend',
+      () => {
+        this.element.classList.add('hidden');
+        this.element.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+
+        document.removeEventListener('keydown', this.handleKeyDown);
+      },
+      { once: true },
+    );
+  }
+
+  toggleAppearingAnimation() {
+    this.modalContent.classList.remove('modal-move-out');
+    this.element.classList.remove('modal-opacity-out');
+
+    // force reflow
+    void this.modalContent.offsetWidth;
+    void this.element.offsetWidth;
+
+    this.modalContent.classList.add('modal-move-in');
+    this.element.classList.add('modal-opacity-in');
+  }
+
+  toggleDisappearingAnimation() {
+    this.modalContent.classList.remove('modal-move-in');
+    this.element.classList.remove('modal-opacity-in');
+
+    // force reflow
+    void this.modalContent.offsetWidth;
+    void this.element.offsetWidth;
+
+    this.modalContent.classList.add('modal-move-out');
+    this.element.classList.add('modal-opacity-out');
+  }
+}
+
+// All necessary UI elements
 const UI = {
   formCollapseBtns: null,
   collapses: new Map(),
+  openModalBtns: null,
+  modals: new Map(),
 };
 
+// Fetch all necessary DOM elements
 function cacheDOM() {
   UI.formCollapseBtns = document.querySelectorAll('.toggle-form-btn');
+  UI.openModalBtns = document.querySelectorAll('.open-modal');
+}
 
+// Setup interactive elements
+function setupElements() {
+  // Setup collapse elements
   UI.formCollapseBtns.forEach((btn) => {
     const targetSelector = btn.dataset.target;
 
@@ -114,14 +215,35 @@ function cacheDOM() {
       UI.collapses.set(targetSelector, new Collapse(targetSelector));
     }
   });
+
+  // Setup modal windows
+  UI.openModalBtns.forEach((btn) => {
+    const targetSelector = btn.dataset.target;
+
+    if (targetSelector && !UI.modals.has(targetSelector)) {
+      UI.modals.set(targetSelector, new Modal(targetSelector));
+    }
+  });
 }
 
-export default function initUI() {
-  cacheDOM();
-
+function attachEventHandlers() {
   UI.formCollapseBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       UI.collapses.get(btn.dataset.target).toggle();
     });
   });
+
+  UI.openModalBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      UI.modals.get(btn.dataset.target).open();
+    });
+  });
+}
+
+export default function initUI() {
+  cacheDOM();
+
+  setupElements();
+
+  attachEventHandlers();
 }

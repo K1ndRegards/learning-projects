@@ -42,7 +42,7 @@
       </h1>
 
       <div class="flex gap-4 justify-center items-center">
-        <button type="button" class="btn" id="open-limit-modal">
+        <button type="button" class="open-modal btn" data-target="#limit-modal">
           Set Daily Limit
         </button>
         <button type="button" class="btn" id="reset-button">Reset Day</button>
@@ -51,14 +51,14 @@
 
     <!-- Modal window -->
     <div
-      class="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-start pt-8 px-4 bg-black/30 hidden"
+      class="absolute top-0 left-0 right-0 bottom-0 justify-center items-start pt-8 px-4 bg-black/60 hidden"
       id="limit-modal"
     >
-      <div class="max-w-full w-125 rounded-lg bg-white" id="limit-modal-window">
+      <div class="modal-content max-w-full w-125 rounded-lg bg-white">
         <header class="flex justify-between p-4">
           <h2 class="text-xl">Set Daily Limit</h2>
 
-          <button type="button" id="close-modal-button">
+          <button type="button" class="close-modal cursor-pointer">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </header>
@@ -78,7 +78,11 @@
             />
           </div>
 
-          <button type="submit" class="btn btn-primary" id="save-limit">
+          <button
+            type="button"
+            class="close-modal btn btn-primary"
+            id="save-limit"
+          >
             Save
           </button>
         </form>
