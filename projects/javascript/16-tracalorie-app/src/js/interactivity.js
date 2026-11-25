@@ -104,6 +104,7 @@ class Modal {
     // the whole modal itself
     this.element = document.querySelector(targetSelector);
 
+    // Modal window content
     this.modalContent = this.element.querySelector('.modal-content');
 
     this.handleBackdropClick = this.handleBackdropClick.bind(this);
@@ -240,7 +241,7 @@ function attachEventHandlers() {
   });
 }
 
-export default function initUI() {
+export default function initInteractiveComponents() {
   cacheDOM();
 
   setupElements();
