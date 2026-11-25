@@ -54,6 +54,11 @@ export default class Storage {
   static _loadStorageData() {
     const data = localStorage.getItem(APP_STORAGE_KEY);
 
+    if (data === null) {
+      console.log('Setting default application data.');
+      return this._saveDefaultData();
+    }
+
     let parsed;
 
     try {
@@ -65,8 +70,11 @@ export default class Storage {
         );
       }
     } catch (err) {
-      console.error('Error occurred while parsing local storage data.\n', err);
-      console.warn('Resetting application data.');
+      console.warn(
+        'An error occurred while loading data from localStorage.\n',
+        err,
+      );
+      console.warn('Setting default application data.');
       parsed = this._saveDefaultData();
     }
 

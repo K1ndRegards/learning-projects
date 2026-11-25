@@ -2,13 +2,14 @@ import initInteractiveComponents from './interactivity.js';
 import CalorieTracker from './calorie-tracker.js';
 import { Meal, Workout } from './items.js';
 import Storage from './storage.js';
-import { MealPanel, WorkoutPanel, SetLimitModal } from './entity-panels.js';
+import { MealPanel, WorkoutPanel } from './entity-panels.js';
+import LimitModal from './limit-modal.js';
 
 class App {
   constructor() {
     initInteractiveComponents();
 
-    this.setLimitModal = new SetLimitModal(this.setLimit.bind(this));
+    this.setLimitModal = new LimitModal(this.setLimit.bind(this));
 
     this.mealPanel = new MealPanel({
       onSubmitCb: this.addNewMeal.bind(this),
@@ -125,5 +126,5 @@ class App {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new App();
+  new App();
 });

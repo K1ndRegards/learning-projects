@@ -1,7 +1,7 @@
 {
   "title": "Tracalorie App",
   "slug": "16-tracalorie-app",
-  "description": "",
+  "description": "JavaScript OOP calorie tracker project featuring meal and workout tracking, daily limits, filtering, and localStorage persistence.",
   "technologies": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
   "difficulty": 0,
   "date": "2026-09-25",

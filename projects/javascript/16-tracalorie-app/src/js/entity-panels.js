@@ -1,3 +1,6 @@
+const MAX_CALORIES_PER_ENTITY = 10000;
+const SOFT_CALORIES_LIMIT_PER_ENTITY = 2500;
+
 class EntityPanel {
   // type e.g. "meal" or "workout"
   constructor(type, callbacks) {
@@ -60,6 +63,8 @@ class EntityPanel {
   }
 
   bindEventHandlers() {
+    this.entityNameInputEventHandler =
+      this.entityNameInputEventHandler.bind(this);
     this.submitEventHandler = this.submitEventHandler.bind(this);
     this.listClickEventHandler = this.listClickEventHandler.bind(this);
     this.filterInputEventHandler = this.filterInputEventHandler.bind(this);
@@ -69,10 +74,23 @@ class EntityPanel {
     e.preventDefault();
 
     const name = this.UI.entityNameInput.value.trim();
-    const calories = Number(this.UI.calorieInput.value);
+    let calories = Number(this.UI.calorieInput.value);
 
     if (!name || Number.isNaN(calories)) return;
 
+    if (calories > MAX_CALORIES_PER_ENTITY) {
+      alert(
+        `The maximum calorie count (${MAX_CALORIES_PER_ENTITY}) per calorie entity has been exceeded.`,
+      );
+      this.UI.calorieInput.value = '5000';
+      return;
+    } else if (calories >= SOFT_CALORIES_LIMIT_PER_ENTITY) {
+      if (
+        !confirm(`Are you sure the number is correct? (${calories} calories)`)
+      ) {
+        return;
+      }
+    }
     this.UI.entityNameInput.value = '';
     this.UI.calorieInput.value = '';
 
@@ -106,11 +124,19 @@ class EntityPanel {
     });
   }
 
+  entityNameInputEventHandler() {
+    this.UI.entityNameInput.value = this.UI.entityNameInput.value.substr(0, 16);
+  }
+
   clearAll() {
     this.UI.itemList.innerHTML = '';
   }
 
   setupEvents() {
+    this.UI.entityNameInput.addEventListener(
+      'input',
+      this.entityNameInputEventHandler,
+    );
     this.UI.entityForm.addEventListener('submit', this.submitEventHandler);
     this.UI.itemList.addEventListener('click', this.listClickEventHandler);
     this.UI.filterField.addEventListener('input', this.filterInputEventHandler);
@@ -126,40 +152,5 @@ export class MealPanel extends EntityPanel {
 export class WorkoutPanel extends EntityPanel {
   constructor(callbacks) {
     super('workout', callbacks);
-  }
-}
-
-export class SetLimitModal {
-  constructor(setLimitCb) {
-    this.setLimitCb = setLimitCb;
-
-    this.UI = {
-      limitInputField: null,
-      limitForm: null,
-    };
-
-    this.cacheDOM();
-    this.bindEventHandlers();
-    this.setupEvents();
-  }
-
-  cacheDOM() {
-    this.UI.limitInputField = document.querySelector('input#calorie-limit');
-    this.UI.limitForm = document.querySelector('form#limit-form');
-  }
-
-  bindEventHandlers() {
-    this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
-  }
-
-  onSubmitEventHandler(e) {
-    e.preventDefault();
-
-    this.setLimitCb(Number(this.UI.limitInputField.value));
-    this.UI.limitInputField.value = '';
-  }
-
-  setupEvents() {
-    this.UI.limitForm.addEventListener('submit', this.onSubmitEventHandler);
   }
 }
