@@ -191,6 +191,12 @@ class ItemPanel {
 
     if (!name || Number.isNaN(calories)) return;
 
+    if (calories < 0) {
+      alert('The calorie number must be more or equal to 0.');
+      this._UI.calorieInput.value = calories * -1;
+      return;
+    }
+
     if (calories > MAX_CALORIES_PER_ENTITY) {
       alert(
         `The maximum calorie count (${MAX_CALORIES_PER_ENTITY}) per calorie entity has been exceeded.`,
