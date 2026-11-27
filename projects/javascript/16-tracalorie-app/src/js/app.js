@@ -1,127 +1,123 @@
-import initInteractiveComponents from './interactivity.js';
-import CalorieTracker from './calorie-tracker.js';
-import { Meal, Workout } from './items.js';
 import Storage from './storage.js';
-import { MealPanel, WorkoutPanel } from './entity-panels.js';
+import { Meal, Workout } from './calorie-entity.js';
 import LimitModal from './limit-modal.js';
+import Tracker from './tracker-panel.js';
+import { MealPanel, WorkoutPanel } from './item-panels.js';
 
 class App {
   constructor() {
-    initInteractiveComponents();
+    this._bindEventHandlers();
 
-    this.setLimitModal = new LimitModal(this.setLimit.bind(this));
+    this.tracker = new Tracker();
 
     this.mealPanel = new MealPanel({
-      onSubmitCb: this.addNewMeal.bind(this),
-      onRemoveCb: this.removeMeal.bind(this),
-      onFilterInputCb: this.filterMeals.bind(this),
-    });
-    this.workoutPanel = new WorkoutPanel({
-      onSubmitCb: this.addNewWorkout.bind(this),
-      onRemoveCb: this.removeWorkout.bind(this),
-      onFilterInputCb: this.filterWorkouts.bind(this),
+      onSubmitCb: this._submitMealCb,
+      onRemoveCb: this._removeMealCb,
+      onFilterCb: this._filterMealsCb,
     });
 
-    this.tracker = new CalorieTracker();
-    this.loadStorageData();
+    this.workoutPanel = new WorkoutPanel({
+      onSubmitCb: this._submitWorkoutCb,
+      onRemoveCb: this._removeWorkoutCb,
+      onFilterCb: this._filterWorkoutsCb,
+    });
+
+    new LimitModal(this._submitDailyLimitCb);
 
     document
-      .querySelector('button#reset-button')
-      .addEventListener('click', this.onReset.bind(this));
+      .querySelector('#reset-button')
+      .addEventListener('click', this._resetDay);
+
+    this._loadLocalStorageData();
   }
 
-  setLimit(value) {
-    this.tracker.setCalorieLimit(value);
-    Storage.saveCalorieLimit(value);
+  _bindEventHandlers() {
+    this._submitDailyLimitCb = this._submitDailyLimitCb.bind(this);
+
+    this._submitMealCb = this._submitMealCb.bind(this);
+    this._submitWorkoutCb = this._submitWorkoutCb.bind(this);
+
+    this._removeMealCb = this._removeMealCb.bind(this);
+    this._removeWorkoutCb = this._removeWorkoutCb.bind(this);
+
+    this._filterMealsCb = this._filterMealsCb.bind(this);
+    this._filterWorkoutsCb = this._filterWorkoutsCb.bind(this);
+
+    this._resetDay = this._resetDay.bind(this);
   }
 
-  addNewMeal(name, calories) {
-    const id = Storage.getNewMealId();
-    const newMeal = new Meal(id, name, calories);
-
-    Storage.saveMeal(newMeal.toJSON());
-
-    this.tracker.addMeal(newMeal);
-    this.mealPanel.createListItem(newMeal);
+  _loadLocalStorageData() {
+    this.tracker.setCalorieLimit(Storage.getDailyLimit());
+    Storage.getMeals().forEach((meal) => {
+      this.mealPanel.createListItem(meal);
+      this.tracker.addMeal(meal);
+    });
+    Storage.getWorkouts().forEach((workout) => {
+      this.workoutPanel.createListItem(workout);
+      this.tracker.addWorkout(workout);
+    });
   }
 
-  removeMeal(id) {
-    Storage.removeMeal(id);
+  _submitDailyLimitCb(calorieNumber) {
+    this.tracker.setCalorieLimit(calorieNumber);
+    Storage.saveDailyLimit(calorieNumber);
+  }
+
+  _submitMealCb(name, calories) {
+    const meal = new Meal(name, calories);
+
+    this.tracker.addMeal(meal);
+
+    this.mealPanel.createListItem(meal);
+
+    Storage.addMeal(meal);
+  }
+
+  _submitWorkoutCb(name, calories) {
+    const workout = new Workout(name, calories);
+
+    this.tracker.addWorkout(workout);
+
+    this.workoutPanel.createListItem(workout);
+
+    Storage.addWorkout(workout);
+  }
+
+  _removeMealCb(id) {
     this.tracker.removeMeal(id);
+    Storage.removeMeal(id);
   }
 
-  addNewWorkout(name, calories) {
-    const id = Storage.getNewWorkoutId();
-    const newWorkout = new Workout(id, name, calories);
-
-    Storage.saveWorkout(newWorkout.toJSON());
-
-    this.tracker.addWorkout(newWorkout);
-    this.workoutPanel.createListItem(newWorkout);
-  }
-
-  removeWorkout(id) {
-    Storage.removeWorkout(id);
+  _removeWorkoutCb(id) {
     this.tracker.removeWorkout(id);
+    Storage.removeWorkout(id);
   }
 
-  filterMeals(filterValue) {
-    const meals = this.tracker.getMeals();
-
-    const filteredMeals = meals.filter((meal) => {
-      return meal.name.toLowerCase().startsWith(filterValue.toLowerCase());
-    });
-
-    return new Set(filteredMeals.map((meal) => meal.id));
-  }
-
-  filterWorkouts(filterValue) {
-    const workouts = this.tracker.getWorkouts();
-
-    const filteredWorkouts = workouts.filter((workout) => {
-      return workout.name.toLowerCase().startsWith(filterValue.toLowerCase());
-    });
-
-    return new Set(filteredWorkouts.map((workout) => workout.id));
-  }
-
-  _loadMealsFromStorage() {
+  _filterMealsCb(filterValue) {
     const meals = Storage.getMeals();
 
-    meals.forEach((meal) => {
-      meal = new Meal(meal.id, meal.name, meal.calories);
-      this.tracker.addMeal(meal);
-      this.mealPanel.createListItem(meal);
-    });
+    return meals
+      .filter((meal) =>
+        meal.name.toLowerCase().startsWith(filterValue.toLowerCase()),
+      )
+      .map((item) => item.id);
   }
 
-  _loadWorkoutsFromStorage() {
+  _filterWorkoutsCb(filterValue) {
     const workouts = Storage.getWorkouts();
 
-    workouts.forEach((workout) => {
-      workout = new Workout(workout.id, workout.name, workout.calories);
-      this.tracker.addWorkout(workout);
-      this.workoutPanel.createListItem(workout);
-    });
+    return workouts
+      .filter((workout) =>
+        workout.name.toLowerCase().startsWith(filterValue.toLowerCase()),
+      )
+      .map((item) => item.id);
   }
 
-  _loadLimit() {
-    const currentLimit = Storage.getCalorieLimit();
-
-    this.tracker.setCalorieLimit(currentLimit);
-  }
-
-  loadStorageData() {
-    this._loadMealsFromStorage();
-    this._loadWorkoutsFromStorage();
-    this._loadLimit();
-  }
-
-  onReset() {
-    Storage.clearAll();
+  _resetDay() {
     this.tracker.clearAll();
     this.mealPanel.clearAll();
     this.workoutPanel.clearAll();
+    Storage.clearAll();
   }
 }
 

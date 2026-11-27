@@ -1,189 +1,127 @@
-import {
-  isValidId,
-  isValidCalories,
-  isPlainObject,
-  isPlainCalorieEntity,
-} from './validators.js';
-
 const APP_STORAGE_KEY = 'tracalorieApp';
 
-const CALORIE_LIMIT_STORAGE_KEY = 'calorieLimit';
-const MEALS_STORAGE_KEY = 'meals';
-const WORKOUTS_STORAGE_KEY = 'workouts';
+const CALORIE_LIMIT_STORAGE_KEY = 'calorieLimitValue';
+const MEALS_STORAGE_KEY = 'mealEntities';
+const WORKOUTS_STORAGE_KEY = 'workoutEntities';
+
+const DEFAULT_DATA = {
+  [CALORIE_LIMIT_STORAGE_KEY]: 2000,
+  [MEALS_STORAGE_KEY]: [],
+  [WORKOUTS_STORAGE_KEY]: [],
+};
 
 export default class Storage {
-  static _saveDefaultData() {
-    const defaultData = {
-      [CALORIE_LIMIT_STORAGE_KEY]: 2000,
-      [MEALS_STORAGE_KEY]: [],
-      [WORKOUTS_STORAGE_KEY]: [],
-    };
+  static loadLocalStorageData() {
+    const rawData = localStorage.getItem(APP_STORAGE_KEY);
 
-    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(defaultData));
+    if (rawData === null) {
+      localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(DEFAULT_DATA));
 
-    return defaultData;
-  }
-
-  static _isDataValid(data) {
-    if (!isPlainObject(data)) return false;
-
-    if (
-      !Object.hasOwn(data, CALORIE_LIMIT_STORAGE_KEY) ||
-      !isValidCalories(data[CALORIE_LIMIT_STORAGE_KEY])
-    ) {
-      return false;
+      return DEFAULT_DATA;
     }
 
-    if (
-      !Object.hasOwn(data, MEALS_STORAGE_KEY) ||
-      data[MEALS_STORAGE_KEY].some((item) => !isPlainCalorieEntity(item))
-    ) {
-      return false;
-    }
-
-    if (
-      !Object.hasOwn(data, WORKOUTS_STORAGE_KEY) ||
-      data[WORKOUTS_STORAGE_KEY].some((item) => !isPlainCalorieEntity(item))
-    ) {
-      return false;
-    }
-
-    return true;
-  }
-
-  static _loadStorageData() {
-    const data = localStorage.getItem(APP_STORAGE_KEY);
-
-    if (data === null) {
-      console.log('Setting default application data.');
-      return this._saveDefaultData();
-    }
-
-    let parsed;
-
+    let parsedData;
     try {
-      parsed = JSON.parse(data);
-
-      if (!this._isDataValid(parsed)) {
-        throw new Error(
-          `Invalid local storage data structure or values: ${parsed}`,
-        );
-      }
+      parsedData = JSON.parse(rawData);
     } catch (err) {
-      console.warn(
-        'An error occurred while loading data from localStorage.\n',
-        err,
-      );
-      console.warn('Setting default application data.');
-      parsed = this._saveDefaultData();
+      console.warn('Failed to parse data from local storage;');
+      console.warn('Overwriting with default data.');
+
+      localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(DEFAULT_DATA));
+
+      return DEFAULT_DATA;
     }
 
-    return parsed;
+    return parsedData;
   }
 
-  static saveCalorieLimit(calorieLimit) {
-    if (!isValidCalories(calorieLimit)) {
-      throw new Error(`Invalid calorie limit value. Received ${calorieLimit}`);
-    }
+  static saveDailyLimit(value) {
+    const data = this.loadLocalStorageData();
 
-    const data = this._loadStorageData();
-
-    data[CALORIE_LIMIT_STORAGE_KEY] = calorieLimit;
+    data[CALORIE_LIMIT_STORAGE_KEY] = value;
 
     localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
   }
 
-  static getCalorieLimit() {
-    const data = this._loadStorageData();
+  static getDailyLimit() {
+    const data = this.loadLocalStorageData();
 
     return data[CALORIE_LIMIT_STORAGE_KEY];
   }
 
-  static _saveCalorieEntity(entity, storageKey) {
-    const data = this._loadStorageData();
-
-    data[storageKey].push(entity);
-
-    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
-  }
-
-  static _removeCalorieEntity(entityId, storageKey) {
-    const data = this._loadStorageData();
-
-    data[storageKey] = data[storageKey].filter(
-      (calorieItem) => calorieItem.id !== entityId,
-    );
-
-    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
-  }
-
-  static _getUniqueId(storageKey) {
-    const data = this._loadStorageData();
-
-    const occupiedIds = new Set(
-      data[storageKey].map((mealItem) => mealItem.id),
-    );
-
-    let i = 1;
-    while (occupiedIds.has(i)) {
-      i++;
-    }
-    return i;
-  }
-
-  static saveMeal(mealObj) {
-    if (!isPlainCalorieEntity(mealObj)) {
-      throw new Error(`Invalid meal object. Received ${mealObj}`);
-    }
-
-    this._saveCalorieEntity(mealObj, MEALS_STORAGE_KEY);
-  }
-
-  static removeMeal(id) {
-    if (!isValidId(id)) {
-      throw new Error(`Invalid meal id value. Received ${id}`);
-    }
-
-    this._removeCalorieEntity(id, MEALS_STORAGE_KEY);
-  }
-
   static getMeals() {
-    const data = this._loadStorageData();
+    const data = this.loadLocalStorageData();
 
     return data[MEALS_STORAGE_KEY];
   }
 
-  static getNewMealId() {
-    return this._getUniqueId(MEALS_STORAGE_KEY);
+  static addMeal(mealObj) {
+    const data = this.loadLocalStorageData();
+
+    data[MEALS_STORAGE_KEY].push(mealObj);
+
+    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
   }
 
-  static saveWorkout(workoutObj) {
-    if (!isPlainCalorieEntity(workoutObj)) {
-      throw new Error(`Invalid workout object. Received ${workoutObj}`);
-    }
+  static removeMeal(id) {
+    const data = this.loadLocalStorageData();
 
-    this._saveCalorieEntity(workoutObj, WORKOUTS_STORAGE_KEY);
-  }
+    data[MEALS_STORAGE_KEY] = data[MEALS_STORAGE_KEY].filter(
+      (mealItem) => mealItem.id !== id,
+    );
 
-  static removeWorkout(id) {
-    if (!isValidId(id)) {
-      throw new Error(`Invalid workout id value. Received ${id}`);
-    }
-
-    this._removeCalorieEntity(id, WORKOUTS_STORAGE_KEY);
+    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
   }
 
   static getWorkouts() {
-    const data = this._loadStorageData();
+    const data = this.loadLocalStorageData();
 
     return data[WORKOUTS_STORAGE_KEY];
   }
 
+  static addWorkout(workoutObj) {
+    const data = this.loadLocalStorageData();
+
+    data[WORKOUTS_STORAGE_KEY].push(workoutObj);
+
+    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
+  }
+
+  static removeWorkout(id) {
+    const data = this.loadLocalStorageData();
+
+    data[WORKOUTS_STORAGE_KEY] = data[WORKOUTS_STORAGE_KEY].filter(
+      (workoutItem) => workoutItem.id !== id,
+    );
+
+    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
+  }
+
+  static _getUniqueId(occupiedIds) {
+    let i = 1;
+    while (occupiedIds.has(i)) {
+      i++;
+    }
+
+    return i;
+  }
+
+  static getNewMealId() {
+    const occupiedIds = new Set(this.getMeals().map((meal) => meal.id));
+    return this._getUniqueId(occupiedIds);
+  }
+
   static getNewWorkoutId() {
-    return this._getUniqueId(WORKOUTS_STORAGE_KEY);
+    const occupiedIds = new Set(this.getWorkouts().map((meal) => meal.id));
+    return this._getUniqueId(occupiedIds);
   }
 
   static clearAll() {
-    this._saveDefaultData();
+    const data = this.loadLocalStorageData();
+
+    data[MEALS_STORAGE_KEY] = [];
+    data[WORKOUTS_STORAGE_KEY] = [];
+
+    localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
   }
 }

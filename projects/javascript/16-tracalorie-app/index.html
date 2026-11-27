@@ -42,7 +42,7 @@
       </h1>
 
       <div class="flex gap-4 justify-center items-center">
-        <button type="button" class="open-modal btn" data-target="#limit-modal">
+        <button type="button" class="open-modal btn" id="open-limit-modal">
           Set Daily Limit
         </button>
         <button type="button" class="btn" id="reset-button">Reset Day</button>
@@ -54,41 +54,38 @@
       class="absolute top-0 left-0 right-0 bottom-0 justify-center items-start pt-8 px-4 bg-black/60 hidden"
       id="limit-modal"
     >
-      <div class="modal-content max-w-full w-125 rounded-lg bg-white">
+      <div class="max-w-full w-125 rounded-lg bg-white" id="modal-content">
         <header class="flex justify-between p-4">
           <h2 class="text-xl">Set Daily Limit</h2>
 
-          <button type="button" class="close-modal cursor-pointer">
+          <button type="button" class="cursor-pointer" id="close-modal-btn">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </header>
 
         <div class="border border-gray-200"></div>
 
-        <form class="flex flex-col space-y-4 p-4" id="limit-form">
+        <form class="flex flex-col space-y-4 p-4" id="calorie-limit-form">
           <div>
-            <label for="calorie-limit" class="block mb-2"
+            <label for="calorie-limit-input" class="block mb-2"
               >Daily Calorie Limit</label
             >
             <input
               type="number"
-              name="calorie-limit"
+              name="calorie-limit-input"
               class="input-field"
-              id="calorie-limit"
+              id="calorie-limit-input"
             />
           </div>
 
-          <button
-            type="submit"
-            class="close-modal btn btn-primary"
-            id="save-limit"
-          >
+          <button type="submit" class="btn btn-primary" id="save-limit-btn">
             Save
           </button>
         </form>
       </div>
     </div>
 
+    <!-- Main page content -->
     <main class="px-4 md:px-12 py-16">
       <!-- Stats -->
       <section id="stats">
@@ -132,8 +129,8 @@
       <!-- Progress bar -->
       <div class="mt-12 w-full h-4 bg-gray-200 rounded-xl overflow-hidden">
         <div
-          class="w-0 h-full bg-primary transition-all duration-400"
-          id="progress-success"
+          class="w-0 h-full transition-all duration-600"
+          id="progress-fill"
         ></div>
       </div>
 
@@ -178,15 +175,15 @@
 
               <button
                 type="button"
-                class="toggle-form-btn btn btn-primary"
-                data-target="#meal-form-collapse"
+                class="btn btn-primary"
+                id="toggle-meal-form"
               >
                 <i class="fa-solid fa-plus mr-1"></i>Add Meal
               </button>
             </header>
 
             <!-- Add meal form -->
-            <div class="collapse-wrapper" id="meal-form-collapse">
+            <div class="collapse-wrapper" id="meal-form-wrapper">
               <form
                 class="p-4 space-y-4 border border-gray-300 rounded-lg bg-light"
                 id="meal-form"
@@ -202,6 +199,7 @@
                     class="input-field"
                     id="meal-name-input"
                     placeholder="Enter meal name"
+                    maxlength="16"
                   />
                 </div>
 
@@ -237,8 +235,8 @@
 
               <button
                 type="button"
-                class="toggle-form-btn btn btn-secondary"
-                data-target="#workout-form-wrapper"
+                class="btn btn-secondary"
+                id="toggle-workout-form"
               >
                 <i class="fa-solid fa-plus mr-1"></i>Add Workout
               </button>
@@ -262,6 +260,7 @@
                       class="input-field"
                       id="workout-name-input"
                       placeholder="Enter workout name"
+                      maxlength="16"
                     />
                   </div>
 
